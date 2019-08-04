@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TinyTeam.UI;
 
 namespace TaoCi.Chuantong
 {
@@ -24,6 +25,15 @@ namespace TaoCi.Chuantong
             switch (LocalStep)
             {
                 case 1001001:
+                    TTUIPage.ShowPage<UITitle>();
+                    break;
+                case 1001002:
+                    SetStep(1002001);
+                    break;
+                case 1002001:
+                    TTUIPage.ShowPage<UICProcess>();
+                    UITitle.Instance.SetPage(2);
+                    UITitle.Instance.transform.Find("StartBtn").gameObject.SetActive(false);
                     break;
                 default:
                     break;

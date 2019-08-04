@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TinyTeam.UI;
 
-namespace TaoCi.Chuantong
+namespace TaoCi
 {
     public class UIManager : MonoBehaviour
     {
@@ -13,9 +14,18 @@ namespace TaoCi.Chuantong
         private void Awake()
         {
             Instance = this;
+            QuestionData.AddQuestion();
         }
 
-        void Start()
+        private void OnEnable()
+        {
+            TTUIPage.ShowPage<UITitle>();
+            TTUIPage.ClosePage<UITitle>();
+            TTUIPage.ShowPage<UICProcess>();
+            TTUIPage.ClosePage<UICProcess>();
+        }
+
+        private void Start()
         {
             AddStep();
         }

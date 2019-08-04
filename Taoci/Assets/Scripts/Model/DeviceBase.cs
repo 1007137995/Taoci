@@ -6,6 +6,13 @@ using HighlightingSystem;
 
 namespace TaoCi
 {
+    public enum TaociLayer
+    {
+        Top,
+        Center,
+        Bottom,
+    }
+
     public class DeviceBase : ObjectBase
     {
         public string introduction;

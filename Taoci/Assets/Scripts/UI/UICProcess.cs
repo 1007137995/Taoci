@@ -6,6 +6,8 @@ namespace TinyTeam.UI
 {
     public class UICProcess : TTUIPage
     {
+        public static UICProcess Instance;
+
         public UICProcess() : base(UIType.Normal, UIMode.DoNothing, UICollider.None)
         {
             uiPath = "UIPrefab/CProcess";
@@ -13,7 +15,7 @@ namespace TinyTeam.UI
 
         public override void Awake(GameObject go)
         {
-            base.Awake(go);
+            Instance = this;                        
         }
     }
 }
