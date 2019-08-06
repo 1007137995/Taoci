@@ -9,18 +9,26 @@ namespace TaoCi
     {
         private Transform lumen;
         private Transform aimPos;
-        private Transform oldPos;
+        private Vector3 oldPos;
 
         private void Start()
         {
             aimPos = transform.parent.Find("Pos");
-            oldPos = transform;
-            lumen = transform.parent.parent.Find("Lumen");            
+            oldPos = transform.localPosition;
+            lumen = transform.parent.parent.Find("Lumen");
+            lumen.GetComponent<Lumen>().FamenClose += RotateUp;
         }
 
         public override void OnMouseLeftClick()
         {
-            RotateDown();
+            switch (UIManager.Instance.step)
+            {
+                case 1002002:
+                    RotateDown();
+                    break;
+                default:
+                    break;
+            }
         }
 
         public void RotateDown()
@@ -34,19 +42,18 @@ namespace TaoCi
             sequence.OnComplete(delegate {
                 lumen.GetComponent<Lumen>().ChangeFamen(transform.name);
                 transform.GetComponent<Collider>().enabled = true;
-            }); 
+            });
         }
 
         public void RotateUp()
         {
             Sequence sequence = DOTween.Sequence();
-            sequence.Append(transform.DOLocalMove(oldPos.localPosition, 2));
-            sequence.Join(transform.DOLocalRotate(oldPos.localEulerAngles, 2));
+            sequence.Append(transform.DOLocalMove(oldPos, 2));
+            sequence.Join(transform.DOLocalRotate(new Vector3(0, 0, 0), 2));
             sequence.Append(transform.DOLocalRotate(new Vector3(0, -450, 0), 1.5f, RotateMode.LocalAxisAdd));
             sequence.Join(transform.DOLocalMoveY(-0.056f, 1.5f));
             sequence.OnComplete(delegate {
                 lumen.GetComponent<Lumen>().ChangeFamen(transform.name);
-                transform.GetComponent<Collider>().enabled = true;
             });
         }
     }

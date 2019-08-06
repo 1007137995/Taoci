@@ -9,10 +9,26 @@ namespace TaoCi
     {
         private bool upFamen = true;
         private bool bottomFamen = true;
+        private Transform yaoche;
+
+        public delegate void FamenHandler();
+        public event FamenHandler FamenClose;
+
+        private void Awake()
+        {
+            yaoche = transform.parent.Find("YaoChe");
+        }
 
         public override void OnMouseLeftClick()
         {
-            base.OnMouseLeftClick();
+            switch (UIManager.Instance.step)
+            {
+                case 1002002:
+                    OpenDoor();
+                    break;
+                default:
+                    break;
+            }
         }
 
         public void ChangeFamen(string name)
@@ -33,7 +49,23 @@ namespace TaoCi
             {
                 Sequence sequence = DOTween.Sequence();
                 sequence.Append(transform.DOLocalRotate(new Vector3(0, 0, -135), 1.5f));
+                sequence.Append(yaoche.DOLocalMoveX(-2.9f, 1.5f));
+                sequence.OnComplete(delegate
+                {
+                    UIManager.Instance.AddStep();
+                });
             }
+        }
+
+        public void CloseDoor()
+        {
+            Sequence sequence = DOTween.Sequence();
+            sequence.Append(yaoche.DOLocalMoveX(-1.039f, 1.5f));
+            sequence.Append(transform.DOLocalRotate(new Vector3(0, 0, 0), 1.5f).OnComplete(delegate { FamenClose(); }));
+            sequence.OnComplete(delegate
+            {
+                UIManager.Instance.AddStep();
+            });
         }
     }
 }

@@ -28,12 +28,22 @@ namespace TaoCi.Chuantong
                     TTUIPage.ShowPage<UITitle>();
                     break;
                 case 1001002:
+                    Dianyaolu.Instance.GetComponent<Collider>().enabled = false;
+                    Dianyaolu.Instance.GetComponent<HighlightingSystem.Highlighter>().enabled = false;
                     SetStep(1002001);
                     break;
                 case 1002001:
                     TTUIPage.ShowPage<UICProcess>();
+                    TTUIPage.ClosePage<UIIntroduce>();
                     UITitle.Instance.SetPage(2);
                     UITitle.Instance.transform.Find("StartBtn").gameObject.SetActive(false);
+                    LocalStepAdd();
+                    break;
+                case 1002002:
+                    
+                    break;
+                case 1002013:
+                    SetStep(1003001);
                     break;
                 default:
                     break;

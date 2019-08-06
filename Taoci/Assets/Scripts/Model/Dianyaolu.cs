@@ -8,7 +8,13 @@ namespace TaoCi
 {
     public class Dianyaolu : DeviceBase
     {
+        public static Dianyaolu Instance;
         private string info;
+
+        private void Awake()
+        {
+            Instance = this;
+        }
 
         private void Start()
         {
@@ -18,7 +24,7 @@ namespace TaoCi
 
         public override void OnMouseLeftClick()
         {
-            switch (ChuantongStep.Instance.LocalStep)
+            switch (UIManager.Instance.step)
             {
                 case 1001001:
                     TTUIPage.ShowPage<UIIntroduce>();
