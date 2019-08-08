@@ -26,6 +26,9 @@ namespace TaoCi
                 case 1002002:
                     OpenDoor();
                     break;
+                case 1005001:
+                    OpenDoor();
+                    break;
                 default:
                     break;
             }

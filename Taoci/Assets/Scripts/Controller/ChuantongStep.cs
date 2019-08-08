@@ -45,6 +45,15 @@ namespace TaoCi.Chuantong
                 case 1002013:
                     SetStep(1003001);
                     break;
+                case 1003001:
+                    
+                    break;
+                case 1004001:
+
+                    break;
+                case 1005001:
+
+                    break;
                 default:
                     break;
             }

@@ -7,18 +7,16 @@ using DG.Tweening;
 
 namespace TaoCi
 {
-    public class Peipin : DeviceBase
+    public class Peipin : InObjectBase
     {
-        public TaociLayer layer;
-        private Transform handPos;
-        private Transform oldPos;
-        private Vector3[] aimPos = new Vector3[3];
-        private Transform yaoche;
         private string info;
 
         private void Awake()
         {
             yaoche = transform.parent.parent.Find("DYL/YaoChe");
+            oldPos = transform.parent;
+            parentPos = transform.parent.parent;
+            handPos = transform.parent.parent.Find("Hand");
             aimPos[0] = new Vector3(0.983f, -0.456f, 1.251f);
             aimPos[1] = new Vector3(0.983f, -0.1005f, 1.251f);
             aimPos[2] = new Vector3(0.983f, 0.319f, 1.251f);
@@ -56,21 +54,49 @@ namespace TaoCi
                         Push(2);
                     }
                     break;
-                default:
+                case 1005002:
+                    if (layer == TaociLayer.Top)
+                    {
+                        Pull();
+                    }
                     break;
+                case 1005005:
+                    if (layer == TaociLayer.Center)
+                    {
+                        Pull();
+                    }
+                    break;
+                case 1005008:
+                    if (layer == TaociLayer.Bottom)
+                    {
+                        Pull();
+                    }
+                    break;
+                default:
+                    break;                
             }
         }
 
         public void Push(int index)
         {
             Sequence sequence = DOTween.Sequence();
-            sequence.Append(transform.parent.DOLocalMove(new Vector3(0, 0.2f, -0.5f), 1f));
-            sequence.Join(transform.parent.DOLocalRotate(new Vector3(-90, 0, 0), 1f));
+            sequence.Append(transform.parent.DOLocalMove(handPos.localPosition, 1f));
+            sequence.Join(transform.parent.DOLocalRotate(handPos.localEulerAngles, 1f));
             sequence.Append(transform.parent.DOLocalMove(aimPos[index], 1f));
             sequence.OnComplete(delegate
             {
                 transform.parent.SetParent(yaoche);
             });
+            UIManager.Instance.AddStep();
+        }
+
+        public void Pull()
+        {
+            transform.parent.SetParent(parentPos);
+            Sequence sequence = DOTween.Sequence();
+            sequence.Append(transform.parent.parent.DOLocalMove(handPos.localPosition, 1f));
+            sequence.Append(transform.parent.parent.DOLocalMove(oldPos.localPosition, 1f));
+            sequence.Join(transform.parent.parent.DOLocalRotate(oldPos.localEulerAngles, 1f));
             UIManager.Instance.AddStep();
         }
     }

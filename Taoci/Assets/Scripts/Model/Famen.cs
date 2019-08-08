@@ -26,6 +26,9 @@ namespace TaoCi
                 case 1002002:
                     RotateDown();
                     break;
+                case 1005001:
+                    RotateDown();
+                    break;
                 default:
                     break;
             }

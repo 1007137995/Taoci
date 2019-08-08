@@ -7,18 +7,16 @@ using DG.Tweening;
 
 namespace TaoCi
 {
-    public class Matizhu : DeviceBase
+    public class Matizhu : InObjectBase
     {
-        public TaociLayer layer;
-        private Transform handPos;
-        private Transform oldPos;
-        private Vector3[] aimPos = new Vector3[3];
-        private Transform yaoche;
         private string info;
 
         private void Awake()
         {
-            yaoche = transform.parent.Find("DYL/YaoChe");
+            yaoche = transform.parent.parent.Find("DYL/YaoChe");
+            oldPos = transform.parent;
+            parentPos = transform.parent.parent;
+            handPos = transform.parent.parent.Find("Hand");
             aimPos[0] = new Vector3(0.983f, 0.138f, 1.251f);
             aimPos[1] = new Vector3(0.983f, 0.138f, 1.251f);
             aimPos[2] = new Vector3(0.983f, 0.138f, 1.251f);
@@ -56,6 +54,24 @@ namespace TaoCi
                         Push(2);
                     }
                     break;
+                case 1005004:
+                    if (layer == TaociLayer.Top)
+                    {
+                        Pull();
+                    }
+                    break;
+                case 1005007:
+                    if (layer == TaociLayer.Center)
+                    {
+                        Pull();
+                    }
+                    break;
+                case 1005010:
+                    if (layer == TaociLayer.Bottom)
+                    {
+                        Pull();
+                    }
+                    break;
                 default:
                     break;
             }
@@ -71,6 +87,16 @@ namespace TaoCi
             {
                 transform.SetParent(yaoche);                
             });
+            UIManager.Instance.AddStep();
+        }
+
+        public void Pull()
+        {
+            transform.SetParent(parentPos);
+            Sequence sequence = DOTween.Sequence();
+            sequence.Append(transform.parent.DOLocalMove(handPos.localPosition, 1f));
+            sequence.Append(transform.parent.DOLocalMove(oldPos.localPosition, 1f));
+            sequence.Join(transform.parent.DOLocalRotate(oldPos.localEulerAngles, 1f));
             UIManager.Instance.AddStep();
         }
     }
