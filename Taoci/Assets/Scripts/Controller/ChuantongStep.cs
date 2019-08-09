@@ -37,6 +37,8 @@ namespace TaoCi.Chuantong
                     TTUIPage.ClosePage<UIIntroduce>();
                     UITitle.Instance.SetPage(2);
                     UITitle.Instance.transform.Find("StartBtn").gameObject.SetActive(false);
+                    CamOperator.Instance.GetComponent<Camera>().depth = 1;
+                    transform.GetComponent<InputListener>().cam = CamOperator.Instance.GetComponent<Camera>();
                     LocalStepAdd();
                     break;
                 case 1002002:
@@ -46,10 +48,11 @@ namespace TaoCi.Chuantong
                     SetStep(1003001);
                     break;
                 case 1003001:
-                    
+                    SetStep(1004001);
                     break;
                 case 1004001:
-
+                    Lumen.Instance.gameObject.SetActive(false);
+                    Fire.Instance.ChangeInFire(true);
                     break;
                 case 1005001:
 

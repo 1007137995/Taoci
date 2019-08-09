@@ -6,6 +6,7 @@ namespace TaoCi
 {
     public class CamOperator : MonoBehaviour
     {
+        public static CamOperator Instance;
         //先确定相机围绕哪个物体进行旋转，缩放，平移;也就是需要确定相机的父物体
         //先写右键旋转（相机）,确定相机旋转的速度
         public Transform target;
@@ -19,13 +20,14 @@ namespace TaoCi
         //相机距离目标物体的起始距离(距离设置为负值，是因为相机是在目标物体的正后方)
         private float distance = -5;
         //相机距离的物体的最近和最远距离
-        private float minDistance = -1;
-        private float maxDistance = -30;
+        private float minDistance = -5;
+        private float maxDistance = -5;
         //初始位置
         private float camPostion_x = 0;
         private float camPostion_y = 0;
         void Awake()
         {
+            Instance = this;
             transform.position = target.position;
             transform.rotation = Quaternion.Euler(y, x, 0);
             cam = transform;

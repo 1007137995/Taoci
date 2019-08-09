@@ -13,10 +13,10 @@ namespace TaoCi
 
         private void Awake()
         {
-            yaoche = transform.parent.parent.Find("DYL/YaoChe");
-            oldPos = transform.parent;
-            parentPos = transform.parent.parent;
-            handPos = transform.parent.parent.Find("Hand");
+            yaoche = transform.parent.Find("DYL/YaoChe");
+            oldPos = transform;
+            parentPos = transform.parent;
+            handPos = transform.parent.Find("Hand");
             aimPos[0] = new Vector3(0.983f, 0.138f, 1.251f);
             aimPos[1] = new Vector3(0.983f, 0.138f, 1.251f);
             aimPos[2] = new Vector3(0.983f, 0.138f, 1.251f);

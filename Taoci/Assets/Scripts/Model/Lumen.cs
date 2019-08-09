@@ -7,6 +7,7 @@ namespace TaoCi
 {
     public class Lumen : DeviceBase
     {
+        public static Lumen Instance;
         private bool upFamen = true;
         private bool bottomFamen = true;
         private Transform yaoche;
@@ -16,6 +17,7 @@ namespace TaoCi
 
         private void Awake()
         {
+            Instance = this;
             yaoche = transform.parent.Find("YaoChe");
         }
 
