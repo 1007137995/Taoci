@@ -289,7 +289,6 @@ GameObject:
   - component: {fileID: 44891876}
   - component: {fileID: 44891878}
   - component: {fileID: 44891877}
-  - component: {fileID: 44891879}
   m_Layer: 0
   m_Name: ScriptsObject
   m_TagString: Untagged
@@ -337,23 +336,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 893138359}
---- !u!114 &44891879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 44891875}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3290f6254ae7bbc4ca8acfdf79543a82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  root: {fileID: 0}
-  fixedRoot: {fileID: 0}
-  normalRoot: {fileID: 0}
-  popupRoot: {fileID: 0}
-  uiCamera: {fileID: 0}
 --- !u!1 &98630925 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100530, guid: f44d68eacc52606488f58b4ae6494f51,
@@ -645,7 +627,7 @@ PrefabInstance:
     - target: {fileID: 2539526701404049626, guid: 0f76a1ce7d54a1f49b7cba0011e017b7,
         type: 3}
       propertyPath: m_Name
-      value: DYL (2)
+      value: DYLView
       objectReference: {fileID: 0}
     - target: {fileID: 2539526701404049626, guid: 0f76a1ce7d54a1f49b7cba0011e017b7,
         type: 3}
@@ -779,6 +761,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f76a1ce7d54a1f49b7cba0011e017b7, type: 3}
+--- !u!4 &190730133 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2539526701403688186, guid: 0f76a1ce7d54a1f49b7cba0011e017b7,
+    type: 3}
+  m_PrefabInstance: {fileID: 190730132}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &213336615 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100424, guid: f44d68eacc52606488f58b4ae6494f51,
@@ -1319,13 +1307,14 @@ GameObject:
   - component: {fileID: 534669905}
   - component: {fileID: 534669904}
   - component: {fileID: 534669903}
+  - component: {fileID: 534669906}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &534669903
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1390,6 +1379,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &534669906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534669902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24b087b094e984049acf7a03a6f0a282, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 190730133}
 --- !u!1 &583200332 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100432, guid: f44d68eacc52606488f58b4ae6494f51,
