@@ -14,7 +14,8 @@ namespace TaoCi
         private void Awake()
         {
             yaoche = transform.parent.Find("DYL/YaoChe");
-            oldPos = transform;
+            oldPos = transform.localPosition;
+            oldRot = transform.localEulerAngles;
             parentPos = transform.parent;
             handPos = transform.parent.Find("Hand");
             aimPos[0] = new Vector3(0.983f, 0.138f, 1.251f);
@@ -54,19 +55,19 @@ namespace TaoCi
                         Push(2);
                     }
                     break;
-                case 1005004:
+                case 1005005:
                     if (layer == TaociLayer.Top)
                     {
                         Pull();
                     }
                     break;
-                case 1005007:
+                case 1005008:
                     if (layer == TaociLayer.Center)
                     {
                         Pull();
                     }
                     break;
-                case 1005010:
+                case 1005011:
                     if (layer == TaociLayer.Bottom)
                     {
                         Pull();
@@ -94,9 +95,9 @@ namespace TaoCi
         {
             transform.SetParent(parentPos);
             Sequence sequence = DOTween.Sequence();
-            sequence.Append(transform.parent.DOLocalMove(handPos.localPosition, 1f));
-            sequence.Append(transform.parent.DOLocalMove(oldPos.localPosition, 1f));
-            sequence.Join(transform.parent.DOLocalRotate(oldPos.localEulerAngles, 1f));
+            sequence.Append(transform.DOLocalMove(handPos.localPosition, 1f));
+            sequence.Append(transform.DOLocalMove(oldPos, 1f));
+            sequence.Join(transform.DOLocalRotate(oldRot, 1f));
             UIManager.Instance.AddStep();
         }
     }

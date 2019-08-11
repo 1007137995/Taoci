@@ -4,19 +4,11 @@ using UnityEngine;
 
 namespace TaoCi
 {
-    public enum QType
-    {
-        TEXT,
-        TEXTURE,
-        VIDEO
-    }
-
     public class QuestionData
     {
         public struct Que
         {
             public int id;
-            public QType type;
             public bool one;
             public string question;
             public List<string> toggle;
@@ -42,27 +34,76 @@ namespace TaoCi
             qaq.Clear();
 
             //
-            que.id = 3001001;
-            que.type = QType.TEXT;
-            que.one = false;
+            que.id = 1;
+            que.one = true;
             que.toggle = new List<string>();
             que.toggle.Add("");
             que.toggle.Add("");
             que.toggle.Add("");
+            que.question = "电窑炉投料口用途：";
+            que.toggle[0] = "A.用于排除窑内烟气和二氧化碳";
+            que.toggle[1] = "B.用于观察窑内温度和火势";
+            que.toggle[2] = "C.用于向窑内投放熏窑物品";
+            que.answer = "C";
+            que.shuoming = "";
+            que.qaudio = null;
+            que.raudio = null;
+            que.waudio = null;
+            que.score = 0;
+            qaq.Add(que.id, que);
+
+            que.id = 2;
+            que.one = true;
+            que.toggle = new List<string>();
             que.toggle.Add("");
             que.toggle.Add("");
-            que.question = "1.（多选）经评估，您认为该患者存在哪些引起压力性损伤的高危因素？";
-            que.toggle[0] = "A.摩擦力";
-            que.toggle[1] = "B.大小便失禁";
-            que.toggle[2] = "C.自主运动能力下降";
-            que.toggle[3] = "D.营养不良";
-            que.toggle[4] = "E.高龄";
-            que.answer = "ACDE";
-            que.shuoming = "【ACDE】根据护理评估结果，该患者不存在大小便失禁的高危因素。";
-            que.qaudio = Resources.Load<AudioClip>("ZJW/Audio/3-2-11");
-            que.raudio = Resources.Load<AudioClip>("ZJW/Audio/5-1-2");
-            que.waudio = Resources.Load<AudioClip>("ZJW/Audio/5-1-3");
-            que.score = 4;
+            que.toggle.Add("");
+            que.question = "电窑炉观火口用途：";
+            que.toggle[0] = "A.用于观察窑内温度和火势";
+            que.toggle[1] = "B.用于排除窑内烟气和二氧化碳";
+            que.toggle[2] = "C.用于向窑内投放熏窑物品";
+            que.answer = "A";
+            que.shuoming = "";
+            que.qaudio = null;
+            que.raudio = null;
+            que.waudio = null;
+            que.score = 0;
+            qaq.Add(que.id, que);
+
+            que.id = 3;
+            que.one = true;
+            que.toggle = new List<string>();
+            que.toggle.Add("");
+            que.toggle.Add("");
+            que.toggle.Add("");
+            que.question = "电窑炉排烟口用途：";
+            que.toggle[0] = "A.用于排除窑内多余烟气和二氧化碳";
+            que.toggle[1] = "B.用于观察窑内温度和火势";
+            que.toggle[2] = "C.用于向窑内投放熏窑物品";
+            que.answer = "A";
+            que.shuoming = "";
+            que.qaudio = null;
+            que.raudio = null;
+            que.waudio = null;
+            que.score = 0;
+            qaq.Add(que.id, que);
+
+            que.id = 1004007;
+            que.one = true;
+            que.toggle = new List<string>();
+            que.toggle.Add("");
+            que.toggle.Add("");
+            que.toggle.Add("");
+            que.question = "当窑温降至__℃以下即可出窑：";
+            que.toggle[0] = "A.70℃";
+            que.toggle[1] = "B.170℃";
+            que.toggle[2] = "C.270℃";
+            que.answer = "A";
+            que.shuoming = "";
+            que.qaudio = null;
+            que.raudio = null;
+            que.waudio = null;
+            que.score = 0;
             qaq.Add(que.id, que);
         }
     }

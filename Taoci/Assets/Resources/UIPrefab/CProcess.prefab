@@ -145,7 +145,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 5a45930727196b746b815507ae73c2ae, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 87b553cee15aa4c4ca47a3f085876284, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -170,7 +170,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6527846569865613385
 RectTransform:
   m_ObjectHideFlags: 0
@@ -388,7 +388,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 5a45930727196b746b815507ae73c2ae, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 87b553cee15aa4c4ca47a3f085876284, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -678,7 +678,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u964D\u6E29\n\u900F\u89C6"
+  m_Text: "\u51FA\u7A91"
 --- !u!1 &6527846570637057146
 GameObject:
   m_ObjectHideFlags: 0
@@ -829,7 +829,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 5a45930727196b746b815507ae73c2ae, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 87b553cee15aa4c4ca47a3f085876284, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -978,7 +978,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 69856b505c6a2fb4d8d02f5236c29928, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6880d7f6f88841c4cbda71c1a016aec7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1144,7 +1144,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u9AD8\u6E29\n\u900F\u89C6"
+  m_Text: "\u7A91\u53D8\n\u6280\u827A"
 --- !u!1 &6527846571155341429
 GameObject:
   m_ObjectHideFlags: 0
@@ -1369,7 +1369,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 5a45930727196b746b815507ae73c2ae, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 87b553cee15aa4c4ca47a3f085876284, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1686,7 +1686,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 5a45930727196b746b815507ae73c2ae, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 87b553cee15aa4c4ca47a3f085876284, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

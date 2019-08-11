@@ -10,6 +10,7 @@ namespace TaoCi
         public static UIManager Instance;
         public int step = 0;
         private StepManager stepManager = null;
+        private int index = 0;
 
         private void Awake()
         {
@@ -23,6 +24,18 @@ namespace TaoCi
             TTUIPage.ClosePage<UITitle>();
             TTUIPage.ShowPage<UICProcess>();
             TTUIPage.ClosePage<UICProcess>();
+            TTUIPage.ShowPage<UIIntroduce>();
+            TTUIPage.ClosePage<UIIntroduce>();
+            TTUIPage.ShowPage<UITip>();
+            TTUIPage.ClosePage<UITip>();
+            TTUIPage.ShowPage<UISetValue>();
+            TTUIPage.ClosePage<UISetValue>();
+            TTUIPage.ShowPage<UIQuestion>();
+            TTUIPage.ClosePage<UIQuestion>();
+            TTUIPage.ShowPage<UISingleBtn>();
+            TTUIPage.ClosePage<UISingleBtn>();
+            TTUIPage.ShowPage<UIPicture>();
+            TTUIPage.ClosePage<UIPicture>();
         }
 
         private void Start()
@@ -53,6 +66,16 @@ namespace TaoCi
         public Coroutine Delay(IEnumerator enumerator)
         {
             return StartCoroutine(enumerator);
+        }
+
+        public void EndView()
+        {
+            index++;
+            if (index == 3)
+            {
+                index = 0;
+                AddStep();
+            }
         }
     }
 }

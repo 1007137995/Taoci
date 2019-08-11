@@ -28,7 +28,7 @@ namespace TaoCi
                 case 1002002:
                     OpenDoor();
                     break;
-                case 1005001:
+                case 1005002:
                     OpenDoor();
                     break;
                 default:
@@ -52,24 +52,28 @@ namespace TaoCi
         {
             if (upFamen == false && bottomFamen == false)
             {
+                transform.GetComponent<Collider>().enabled = false;
                 Sequence sequence = DOTween.Sequence();
                 sequence.Append(transform.DOLocalRotate(new Vector3(0, 0, -135), 1.5f));
                 sequence.Append(yaoche.DOLocalMoveX(-2.9f, 1.5f));
                 sequence.OnComplete(delegate
                 {
                     UIManager.Instance.AddStep();
+                    transform.GetComponent<Collider>().enabled = true;
                 });
             }
         }
 
         public void CloseDoor()
         {
+            transform.GetComponent<Collider>().enabled = false;
             Sequence sequence = DOTween.Sequence();
             sequence.Append(yaoche.DOLocalMoveX(-1.039f, 1.5f));
             sequence.Append(transform.DOLocalRotate(new Vector3(0, 0, 0), 1.5f).OnComplete(delegate { FamenClose(); }));
             sequence.OnComplete(delegate
             {
                 UIManager.Instance.AddStep();
+                transform.GetComponent<Collider>().enabled = true;
             });
         }
     }

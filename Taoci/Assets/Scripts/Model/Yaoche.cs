@@ -20,7 +20,7 @@ namespace TaoCi
                 case 1002012:
                     lumen.GetComponent<Lumen>().CloseDoor();
                     break;
-                case 1005011:
+                case 1005012:
                     lumen.GetComponent<Lumen>().CloseDoor();
                     break;
                 default:

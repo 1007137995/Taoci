@@ -488,6 +488,7 @@ namespace TaoCi
             //isBurning = true;
             ////burnState.allowViewMove = true;
             ////burnState.allowViewRotate = true;
+            UIManager.Instance.AddStep();
         }
 
     }

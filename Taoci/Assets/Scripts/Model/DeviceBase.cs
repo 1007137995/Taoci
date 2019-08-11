@@ -46,7 +46,7 @@ namespace TaoCi
                 style.alignment = TextAnchor.MiddleCenter;
                 GUI.backgroundColor = new Color(0, 0, 0, 0);
                 GUI.BeginGroup(new Rect(Input.mousePosition.x + 20, Screen.height - Input.mousePosition.y - 40, groundWidth, groundHeight));
-                GUI.DrawTexture(new Rect(0, 0, groundWidth, groundHeight), Resources.Load<Texture>("ZJW/UI/btnbg"));
+                GUI.DrawTexture(new Rect(0, 0, groundWidth, groundHeight), Resources.Load<Texture>("UI/btnbg"));
                 GUI.Box(new Rect(0, 0, groundWidth, groundHeight), introduction, style);
                 GUI.EndGroup();
             }

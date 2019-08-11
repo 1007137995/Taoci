@@ -26,7 +26,7 @@ namespace TaoCi
                 case 1002002:
                     RotateDown();
                     break;
-                case 1005001:
+                case 1005002:
                     RotateDown();
                     break;
                 default:
@@ -42,10 +42,10 @@ namespace TaoCi
             sequence.Join(transform.DOLocalMoveY(-0.06f, 1.5f));
             sequence.Append(transform.DOLocalMove(aimPos.localPosition, 2));
             sequence.Join(transform.DOLocalRotate(aimPos.localEulerAngles, 2));
-            sequence.OnComplete(delegate {
-                lumen.GetComponent<Lumen>().ChangeFamen(transform.name);
+            sequence.OnComplete(delegate {                
                 transform.GetComponent<Collider>().enabled = true;
             });
+            lumen.GetComponent<Lumen>().ChangeFamen(transform.name);
         }
 
         public void RotateUp()

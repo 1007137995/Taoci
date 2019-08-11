@@ -14,7 +14,8 @@ namespace TaoCi
         private void Awake()
         {
             yaoche = transform.parent.parent.Find("DYL/YaoChe");
-            oldPos = transform.parent;
+            oldPos = transform.parent.localPosition;
+            oldRot = transform.parent.localEulerAngles;
             parentPos = transform.parent.parent;
             handPos = transform.parent.parent.Find("Hand");
             aimPos[0] = new Vector3(0.983f, -0.456f, 1.251f);
@@ -54,23 +55,26 @@ namespace TaoCi
                         Push(2);
                     }
                     break;
-                case 1005002:
+                case 1005003:
                     if (layer == TaociLayer.Top)
                     {
                         Pull();
                     }
                     break;
-                case 1005005:
+                case 1005006:
                     if (layer == TaociLayer.Center)
                     {
                         Pull();
                     }
                     break;
-                case 1005008:
+                case 1005009:
                     if (layer == TaociLayer.Bottom)
                     {
                         Pull();
                     }
+                    break;
+                case 1005013:
+                    TTUIPage.ShowPage<UIPicture>();
                     break;
                 default:
                     break;                
@@ -94,9 +98,9 @@ namespace TaoCi
         {
             transform.parent.SetParent(parentPos);
             Sequence sequence = DOTween.Sequence();
-            sequence.Append(transform.parent.parent.DOLocalMove(handPos.localPosition, 1f));
-            sequence.Append(transform.parent.parent.DOLocalMove(oldPos.localPosition, 1f));
-            sequence.Join(transform.parent.parent.DOLocalRotate(oldPos.localEulerAngles, 1f));
+            sequence.Append(transform.parent.DOLocalMove(handPos.localPosition, 1f));
+            sequence.Append(transform.parent.DOLocalMove(oldPos, 1f));
+            sequence.Join(transform.parent.DOLocalRotate(oldRot, 1f));
             UIManager.Instance.AddStep();
         }
     }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace TinyTeam.UI
 {
@@ -16,6 +17,11 @@ namespace TinyTeam.UI
         public override void Awake(GameObject go)
         {
             Instance = this;                        
+        }
+
+        public void SetPage(int index)
+        {
+            this.transform.Find("Step" + index.ToString()).GetComponent<Toggle>().isOn = true;
         }
     }
 }

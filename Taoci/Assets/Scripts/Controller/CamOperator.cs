@@ -16,7 +16,7 @@ namespace TaoCi
         //相机旋转的速率
         private float rSpeed = 10.0f;
         //获取相机Transform对象
-        private Transform cam;
+        public Transform cam;
         //相机距离目标物体的起始距离(距离设置为负值，是因为相机是在目标物体的正后方)
         private float distance = -5;
         //相机距离的物体的最近和最远距离
@@ -28,47 +28,38 @@ namespace TaoCi
         void Awake()
         {
             Instance = this;
-            transform.position = target.position;
+            transform.position = target.position + new Vector3(0, 1.2f, 0);
             transform.rotation = Quaternion.Euler(y, x, 0);
-            cam = transform;
+            cam = cam = transform.Find("Main Camera"); ;
             cam.localPosition = new Vector3(0, 0, distance);
         }
+
         void Update()
         {
+            //右键按下
             if (Input.GetMouseButton(1))
-            {
-                //右键按下
+            {                
                 x += Input.GetAxis("Mouse X") * rSpeed;
-
-
                 y -= Input.GetAxis("Mouse Y") * rSpeed;
-
-
                 x = ClampAngle(x, -360, 360);
-
-
                 y = ClampAngle(y, -70, 70);
-
-
                 var rotation = Quaternion.Euler(y, x, 0);
-
-
                 transform.rotation = rotation;
             }
-            else if (Input.GetAxis("Mouse ScrollWheel") != 0)
-            {
-                //中键滚动缩放
-                distance += Input.GetAxis("Mouse ScrollWheel") * 5;
-                distance = Mathf.Clamp(distance, maxDistance, minDistance);
-                cam.localPosition = new Vector3(camPostion_x, camPostion_y, distance);
-            }
-            //中键按下平移
-            if (Input.GetMouseButton(2))
-            {
-                camPostion_x -= Input.GetAxis("Mouse X") * 0.04f;
-                camPostion_y -= Input.GetAxis("Mouse Y") * 0.04f;
-                cam.localPosition = new Vector3(camPostion_x, camPostion_y, distance);
-            }
+            //中键滚动缩放
+            //else if (Input.GetAxis("Mouse ScrollWheel") != 0)
+            //{                
+            //    distance += Input.GetAxis("Mouse ScrollWheel") * 5;
+            //    distance = Mathf.Clamp(distance, maxDistance, minDistance);
+            //    cam.localPosition = new Vector3(camPostion_x, camPostion_y, distance);
+            //}
+            ////中键按下平移
+            //if (Input.GetMouseButton(2))
+            //{
+            //    camPostion_x -= Input.GetAxis("Mouse X") * 0.04f;
+            //    camPostion_y -= Input.GetAxis("Mouse Y") * 0.04f;
+            //    cam.localPosition = new Vector3(camPostion_x, camPostion_y, distance);
+            //}
         }
 
         static float ClampAngle(float angle, float minAngle, float maxAngle)

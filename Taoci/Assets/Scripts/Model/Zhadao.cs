@@ -14,6 +14,9 @@ namespace TaoCi
                 case 1003001:
                     OpenEle();
                     break;
+                case 1004001:
+                    CloseEle();
+                    break;
                 default:
                     break;
             }
@@ -22,11 +25,13 @@ namespace TaoCi
         private void OpenEle()
         {
             transform.DOLocalRotate(new Vector3(0, -90, -235), 1f);
+            UIManager.Instance.AddStep();
         }
 
         private void CloseEle()
         {
             transform.DOLocalRotate(new Vector3(0, -90, -90), 1f);
+            UIManager.Instance.AddStep();
         }
     }
 }
