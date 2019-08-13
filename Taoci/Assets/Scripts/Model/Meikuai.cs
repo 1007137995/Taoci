@@ -28,7 +28,7 @@ namespace TaoCi
             {
                 case 1001001:
                     TTUIPage.ShowPage<UIIntroduce>();
-                    UIIntroduce.Instance.ChangeInfo(introduction, info);
+                    UIIntroduce.Instance.ChangeInfo(introduction, info, "Meikuai");
                     break;
                 case 1004002:
                     SetInLu();

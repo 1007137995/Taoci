@@ -19,10 +19,17 @@ namespace TinyTeam.UI
             Instance = this;
         }
 
-        public void ChangeInfo(string name, string info)
+        public void ChangeInfo(string name, string info, string img)
         {
             this.transform.Find("Name").GetComponent<Text>().text = name;
             this.transform.Find("Info").GetComponent<Text>().text = info;
+            this.transform.Find("Image").GetComponent<Image>().overrideSprite = Resources.Load<Sprite>("UI/" + img);
+            this.transform.Find("CloseBtn").GetComponent<Button>().onClick.AddListener(() => Close());
+        }
+
+        private void Close()
+        {
+            TTUIPage.ClosePage(this);
         }
     }
 }

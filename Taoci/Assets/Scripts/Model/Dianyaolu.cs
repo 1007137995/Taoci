@@ -28,7 +28,7 @@ namespace TaoCi
             {
                 case 1001001:
                     TTUIPage.ShowPage<UIIntroduce>();
-                    UIIntroduce.Instance.ChangeInfo(introduction, info);
+                    UIIntroduce.Instance.ChangeInfo(introduction, info, "Dianyaolu");
                     break;
                 default:
                     break;

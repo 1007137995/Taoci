@@ -35,7 +35,7 @@ namespace TaoCi
             {
                 case 1001001:
                     TTUIPage.ShowPage<UIIntroduce>();
-                    UIIntroduce.Instance.ChangeInfo(introduction, info);
+                    UIIntroduce.Instance.ChangeInfo(introduction, info, "Peipin");
                     break;
                 case 1002005:
                     if (layer == TaociLayer.Bottom)
