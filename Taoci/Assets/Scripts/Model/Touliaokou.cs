@@ -40,7 +40,7 @@ namespace TaoCi {
 
         public Tween Open()
         {
-            Tween tween = transform.DOLocalMoveX(-0.305f, 1);
+            Tween tween = transform.DOLocalMoveX(-0.7f, 1);
             return tween;
         }
 

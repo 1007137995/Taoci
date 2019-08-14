@@ -56,25 +56,26 @@ namespace TaoCi.Chuantong
                     UITip.Instance.SetTip("点击取下两个阀门，点击打开电窑炉门，拉出窑车。");
                     break;
                 case 1002003:
-                    UITip.Instance.SetTip("点击马蹄柱，先在窑车四个角各立一根马蹄柱。");
+                    //UITip.Instance.SetTip("点击马蹄柱，先在窑车四个角各立一根马蹄柱。");
+                    LocalStepAdd();
                     break;
                 case 1002004:
-                    UITip.Instance.SetTip("点击硼板，将硼板平铺在四个马蹄柱上。");
+                    UITip.Instance.SetTip("点击硼板，将硼板平铺在窑车上。");
                     break;
                 case 1002005:
-                    UITip.Instance.SetTip("点击坭兴陶坯品，将坭兴陶坯品平铺在窑车上，第一层摆放完毕。");
+                    UITip.Instance.SetTip("点击马蹄柱，先在一层硼板四个角各立一根马蹄柱。");                    
                     break;
                 case 1002006:
-                    UITip.Instance.SetTip("点击马蹄柱，先在一层硼板四个角各立一根马蹄柱。");
+                    UITip.Instance.SetTip("点击坭兴陶坯品，将坭兴陶坯品平铺在窑车上，第一层摆放完毕。");
                     break;
                 case 1002007:
                     UITip.Instance.SetTip("点击硼板，将硼板平铺在四个马蹄柱上。");
                     break;
                 case 1002008:
-                    UITip.Instance.SetTip("点击坭兴陶坯品，将坭兴陶坯品平铺在窑车上，第二层摆放完毕。");
+                    UITip.Instance.SetTip("点击马蹄柱，先在二层硼板四个角各立一根马蹄柱。");
                     break;
                 case 1002009:
-                    UITip.Instance.SetTip("点击马蹄柱，先在二层硼板四个角各立一根马蹄柱。");
+                    UITip.Instance.SetTip("点击坭兴陶坯品，将坭兴陶坯品平铺在窑车上，第二层摆放完毕。");
                     break;
                 case 1002010:
                     UITip.Instance.SetTip("点击硼板，将硼板平铺在四个马蹄柱上。");
@@ -120,12 +121,15 @@ namespace TaoCi.Chuantong
                     UITip.Instance.SetTip("开启排烟口，使窑内上下通气，煤块、松香接触氧气火焰升高，窜出排烟口，而浓烟滞留在窑内两侧，此时窑内既有氧化气氛又有还原气氛，即中性气氛。");
                     ShaderColorController.Instance.Burn();
                     Lumen.Instance.gameObject.SetActive(false);
-                    ShaderColorController.Instance.fireLight.intensity = 5;
-                    Fire.Instance.ChangeInFire(true);
+                    ShaderColorController.Instance.fireLight.intensity = 3;
+                    Fire.Instance.ChangeLittleFire(true);
                     TTUIPage.ShowPage<UISingleBtn>();                    
                     break;
                 case 1004005:
                     TTUIPage.ClosePage<UISingleBtn>();
+                    Fire.Instance.ChangeLittleFire(false);
+                    ShaderColorController.Instance.fireLight.intensity = 5;
+                    Fire.Instance.ChangeInFire(true);
                     Fire.Instance.ChangeOutFire(true);
                     UITip.Instance.SetTip("处在氧化气氛下的坭兴陶会生成砖红色、古铜色或黄褐色，并留下火焰燎过的痕迹；而处在还原气氛下的坭兴陶坯体中的高价铁会还原变成氧化亚铁，同时浓烟中的碳元素会吸附到坭兴陶表面，形成黑灰色、深青色或深蓝色等暗色调，所以坭兴陶会呈现出一边红一边黑的效果。至此，窑变形成。");
                     UIManager.Instance.Delay(Wait());
@@ -159,7 +163,7 @@ namespace TaoCi.Chuantong
                     UITip.Instance.SetTip("点击取下最上层硼板。");
                     break;
                 case 1005005:
-                    UITip.Instance.SetTip("点击取下最上层马蹄柱。");
+                    UITip.Instance.SetTip("点击取下第二层马蹄柱。");
                     break;
                 case 1005006:
                     UITip.Instance.SetTip("点击取下第二层烧制好的陶瓷。");
@@ -168,7 +172,7 @@ namespace TaoCi.Chuantong
                     UITip.Instance.SetTip("点击取下第二层硼板。");
                     break;
                 case 1005008:
-                    UITip.Instance.SetTip("点击取下第二层马蹄柱。");
+                    UITip.Instance.SetTip("点击取下最下层马蹄柱。");
                     break;
                 case 1005009:
                     UITip.Instance.SetTip("点击取下最下层烧制好的陶瓷。");
@@ -177,7 +181,8 @@ namespace TaoCi.Chuantong
                     UITip.Instance.SetTip("点击取下最下层硼板。");
                     break;
                 case 1005011:
-                    UITip.Instance.SetTip("点击取下最下层马蹄柱。");
+                    //UITip.Instance.SetTip("点击取下最下层马蹄柱。");
+                    LocalStepAdd();
                     break;
                 case 1005012:
                     UITip.Instance.SetTip("点击窑车，关闭电窑炉。");

@@ -54,7 +54,7 @@ namespace TaoCi
             Sequence sequence = DOTween.Sequence();
             //sequence.Append(transform.DOLocalMove(oldPos, 2));
             //sequence.Join(transform.DOLocalRotate(new Vector3(0, 0, 0), 2));
-            sequence.Append(transform.DOLocalRotate(new Vector3(0, 180, -90), 1));
+            sequence.Append(transform.parent.DOLocalRotate(new Vector3(0, 180, -90), 1));
             sequence.Append(transform.DOLocalRotate(new Vector3(0, -450, 0), 1.5f, RotateMode.LocalAxisAdd));
             sequence.Join(transform.DOLocalMoveY(-0.056f, 1.5f));
             sequence.OnComplete(delegate {

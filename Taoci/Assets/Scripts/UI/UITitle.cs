@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TaoCi;
+using UnityEngine.SceneManagement;
 
 namespace TinyTeam.UI
 {
@@ -19,6 +20,7 @@ namespace TinyTeam.UI
         {
             Instance = this;
             transform.Find("StartBtn").GetComponent<Button>().onClick.AddListener(()=> UIManager.Instance.AddStep());
+            transform.Find("BackBtn").GetComponent<Button>().onClick.AddListener(() => SceneManager.LoadScene("CTDY"));
         }
 
         public void SetPage(int index)

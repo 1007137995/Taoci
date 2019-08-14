@@ -41,17 +41,17 @@ namespace TaoCi
         private void SetInLu()
         {
             Sequence sequence = DOTween.Sequence();
-            sequence.Append(Huoqian.Instance.transform.DOLocalMove(new Vector3(2.1996f, -0.6666f, 3.932f), 0.05f).OnComplete(delegate
+            sequence.Append(Huoqian.Instance.transform.DOLocalMove(new Vector3(2.1406f, -0.7986f, 3.932f), 0.05f).OnComplete(delegate
             {
-                Huoqian.Instance.transform.localEulerAngles = new Vector3(-30, 90, 30);
+                Huoqian.Instance.transform.localEulerAngles = new Vector3(-30, 90, 0);
             }));
-            sequence.Append(Huoqian.Instance.transform.DOLocalMove(new Vector3(2.1996f, -1.0605f, 3.932f), 1f).OnComplete(delegate
+            sequence.Append(Huoqian.Instance.transform.DOLocalMove(new Vector3(2.25f, -1.1828f, 3.9271f), 1f).OnComplete(delegate
             {
                 aim.transform.SetParent(Huoqian.Instance.transform);
             }));
-            sequence.Append(Huoqian.Instance.transform.DOLocalMove(new Vector3(1.7653f, 0.1842f, 1.2468f), 1f));
+            sequence.Append(Huoqian.Instance.transform.DOLocalMove(new Vector3(1.7063f, 0.0522f, 1.2468f), 1f));
             sequence.Append(touliaokou.GetComponent<Touliaokou>().Open());
-            sequence.Append(Huoqian.Instance.transform.DOLocalMove(new Vector3(1.7653f, -0.059f, 1.2468f), 1f).OnComplete(delegate
+            sequence.Append(Huoqian.Instance.transform.DOLocalMove(new Vector3(1.919f, -0.2277f, 1.2468f), 1f).OnComplete(delegate
             {
                 aim.transform.SetParent(transform);
                 aim.gameObject.SetActive(false);

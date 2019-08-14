@@ -18,9 +18,9 @@ namespace TaoCi
             oldRot = transform.localEulerAngles;
             parentPos = transform.parent;
             handPos = transform.parent.Find("Hand");
-            aimPos[0] = new Vector3(0.983f, 0.138f, 1.251f);
-            aimPos[1] = new Vector3(0.983f, 0.138f, 1.251f);
-            aimPos[2] = new Vector3(0.983f, 0.138f, 1.251f);
+            aimPos[0] = new Vector3(0.983f, -0.048f, 1.251f);
+            aimPos[1] = new Vector3(0.983f, -0.048f, 1.251f);
+            aimPos[2] = new Vector3(0.983f, -0.048f, 1.251f);
         }
 
         private void Start()
