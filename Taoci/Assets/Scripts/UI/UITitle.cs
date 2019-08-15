@@ -20,7 +20,7 @@ namespace TinyTeam.UI
         {
             Instance = this;
             transform.Find("StartBtn").GetComponent<Button>().onClick.AddListener(()=> UIManager.Instance.AddStep());
-            transform.Find("BackBtn").GetComponent<Button>().onClick.AddListener(() => SceneManager.LoadScene("CTDY"));
+            transform.Find("BackBtn").GetComponent<Button>().onClick.AddListener(() => SceneManager.LoadScene("Main"));
         }
 
         public void SetPage(int index)

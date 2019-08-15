@@ -128,7 +128,7 @@ namespace TaoCi.Chuantong
                 case 1004005:
                     TTUIPage.ClosePage<UISingleBtn>();
                     Fire.Instance.ChangeLittleFire(false);
-                    ShaderColorController.Instance.fireLight.intensity = 5;
+                    ShaderColorController.Instance.fireLight.intensity = 10;
                     Fire.Instance.ChangeInFire(true);
                     Fire.Instance.ChangeOutFire(true);
                     UITip.Instance.SetTip("处在氧化气氛下的坭兴陶会生成砖红色、古铜色或黄褐色，并留下火焰燎过的痕迹；而处在还原气氛下的坭兴陶坯体中的高价铁会还原变成氧化亚铁，同时浓烟中的碳元素会吸附到坭兴陶表面，形成黑灰色、深青色或深蓝色等暗色调，所以坭兴陶会呈现出一边红一边黑的效果。至此，窑变形成。");
@@ -189,6 +189,7 @@ namespace TaoCi.Chuantong
                     break;
                 case 1005013:
                     UITitle.Instance.SetPage(3);
+                    TTUIPage.ClosePage<UICProcess>();
                     UITip.Instance.SetTip("点击烧制好的陶瓷，显示要变效果图。");
                     break;
                 case 1005014:
@@ -206,7 +207,7 @@ namespace TaoCi.Chuantong
 
         IEnumerator Wait()
         {
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(10);
             LocalStepAdd();
         }
 
