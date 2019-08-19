@@ -21,6 +21,10 @@ namespace TaoCi
             aimPos[0] = new Vector3(0.983f, 0.138f, 1.251f);
             aimPos[1] = new Vector3(0.983f, -0.048f, 1.251f);
             aimPos[2] = new Vector3(0.983f, -0.048f, 1.251f);
+            if (ChuantongStep.Instance != null)
+            {
+                ChuantongStep.Instance.matizhu.Add(this.gameObject);
+            }
         }
 
         private void Start()
@@ -33,9 +37,14 @@ namespace TaoCi
         {
             switch (ChuantongStep.Instance.LocalStep)
             {
+                #region 传统
                 case 1001001:
                     TTUIPage.ShowPage<UIIntroduce>();
                     UIIntroduce.Instance.ChangeInfo(introduction, info, "Matizhu");
+                    foreach (GameObject item in ChuantongStep.Instance.matizhu)
+                    {
+                        item.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    }                    
                     break;
                 case 1002003:
                     if (layer == TaociLayer.Bottom)
@@ -46,24 +55,28 @@ namespace TaoCi
                 case 1002005:
                     if (layer == TaociLayer.Center)
                     {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
                         Push(1);
                     }
                     break;
                 case 1002008:
                     if (layer == TaociLayer.Top)
                     {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
                         Push(2);
                     }
                     break;
                 case 1005005:
                     if (layer == TaociLayer.Top)
                     {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
                         Pull();
                     }
                     break;
                 case 1005008:
                     if (layer == TaociLayer.Center)
                     {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
                         Pull();
                     }
                     break;
@@ -73,6 +86,105 @@ namespace TaoCi
                         //Pull();
                     }
                     break;
+                #endregion
+                #region 电柴
+                case 2001001:
+                    TTUIPage.ShowPage<UIIntroduce>();
+                    UIIntroduce.Instance.ChangeInfo(introduction, info, "Matizhu");
+                    foreach (GameObject item in ChuantongStep.Instance.matizhu)
+                    {
+                        item.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    }
+                    break;
+                case 2002003:
+                    if (layer == TaociLayer.Bottom)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                        Push(0);
+                    }
+                    break;
+                case 1002006:
+                    if (layer == TaociLayer.Center)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                        Push(1);
+                    }
+                    break;
+                case 1002009:
+                    if (layer == TaociLayer.Top)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                        Push(2);
+                    }
+                    break;
+                #endregion
+                default:
+                    break;
+            }
+        }
+
+        private void FixedUpdate()
+        {
+            switch (UIManager.Instance.step)
+            {
+                #region 传统
+                case 1002001:
+                    foreach (GameObject item in ChuantongStep.Instance.matizhu)
+                    {
+                        item.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    }
+                    break;
+                case 1002005:
+                    if (layer == TaociLayer.Center)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                    }
+                    break;
+                case 1002008:
+                    if (layer == TaociLayer.Top)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                    }
+                    break;
+                case 1005005:
+                    if (layer == TaociLayer.Top)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                    }
+                    break;
+                case 1005008:
+                    if (layer == TaociLayer.Center)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                    }
+                    break;
+                #endregion
+                #region 电柴
+                case 2002001:
+                    foreach (GameObject item in ChuantongStep.Instance.matizhu)
+                    {
+                        item.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    }
+                    break;
+                case 2002003:
+                    if (layer == TaociLayer.Bottom)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                    }
+                    break;
+                case 2002006:
+                    if (layer == TaociLayer.Center)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                    }
+                    break;
+                case 2002009:
+                    if (layer == TaociLayer.Top)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                    }
+                    break;
+                #endregion
                 default:
                     break;
             }

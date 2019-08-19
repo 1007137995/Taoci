@@ -13,6 +13,7 @@ namespace TaoCi
         public int wrong;
         public static bool iskaohe { get; set; }
         public static List<ScoreInfo> scoreList = new List<ScoreInfo>();
+        private static bool instack = false;
 
         public ScoreInfo() { }
 
@@ -27,7 +28,21 @@ namespace TaoCi
 
         public static void AddSocreInfo(ScoreInfo score)
         {
-            scoreList.Add(score);
+            foreach (ScoreInfo item in scoreList)
+            {
+                if (item.info == score.info)
+                {
+                    instack = true;
+                }
+            }
+            if (instack == false)
+            {
+                scoreList.Add(score);
+            }
+            else
+            {
+                instack = false;
+            }
         }
     }
 }

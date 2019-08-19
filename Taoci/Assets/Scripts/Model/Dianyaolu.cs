@@ -29,6 +29,27 @@ namespace TaoCi
                 case 1001001:
                     TTUIPage.ShowPage<UIIntroduce>();
                     UIIntroduce.Instance.ChangeInfo(introduction, info, "Dianyaolu");
+                    transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    break;
+                case 2001001:
+                    TTUIPage.ShowPage<UIIntroduce>();
+                    UIIntroduce.Instance.ChangeInfo(introduction, info, "Dianyaolu");
+                    transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void FixedUpdate()
+        {
+            switch (UIManager.Instance.step)
+            {
+                case 1002001:
+                    transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    break;
+                case 2002001:
+                    transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
                     break;
                 default:
                     break;

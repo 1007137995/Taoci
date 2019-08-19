@@ -14,6 +14,7 @@ namespace TaoCi
 
         public delegate void FamenHandler();
         public event FamenHandler FamenClose;
+        bool b = true;
 
         private void Awake()
         {
@@ -25,12 +26,62 @@ namespace TaoCi
         {
             switch (UIManager.Instance.step)
             {
+                #region
                 case 1002002:
-                    OpenDoor();
+                    transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    OpenDoor();                    
                     break;
                 case 1005002:
+                    transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    OpenDoor();                    
+                    break;
+                #endregion
+                #region
+                case 2002002:
+                    transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
                     OpenDoor();
                     break;
+                #endregion
+                default:
+                    break;
+            }
+        }
+
+        private void FixedUpdate()
+        {
+            switch (UIManager.Instance.step)
+            {
+                #region
+                case 1002002:                    
+                    if (upFamen == false && bottomFamen == false && b)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                        b = false;
+                    }
+                    break;
+                case 1002004:
+                    b = true;
+                    break;
+                case 1005002:
+                    if (upFamen == false && bottomFamen == false && b)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                        b = false;
+                    }
+                    break;
+                case 1005003:
+                    b = true;
+                    break;
+                #endregion
+                #region
+                case 2002002:
+                    if (upFamen == false && bottomFamen == false && b)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                        b = false;
+                    }
+                    break;
+                #endregion
                 default:
                     break;
             }

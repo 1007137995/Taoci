@@ -15,7 +15,15 @@ namespace TaoCi {
                     UIQuestion.Instance.OpenQue();
                     UIQuestion.Instance.GetQuestion(1);
                     transform.GetComponent<Collider>().enabled = false;
+                    transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
                     UIManager.Instance.Delay(QuestionEnd());                    
+                    break;
+                case 2002001:
+                    UIQuestion.Instance.OpenQue();
+                    UIQuestion.Instance.GetQuestion(1);
+                    transform.GetComponent<Collider>().enabled = false;
+                    transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    UIManager.Instance.Delay(QuestionEnd());
                     break;
                 default:
                     break;

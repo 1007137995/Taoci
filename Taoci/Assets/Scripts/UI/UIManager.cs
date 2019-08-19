@@ -9,7 +9,7 @@ namespace TaoCi
     {
         public static UIManager Instance;
         public int step = 0;
-        private StepManager stepManager = null;
+        public StepManager stepManager = null;
         private int index = 0;
 
         private void Awake()
@@ -36,6 +36,8 @@ namespace TaoCi
             TTUIPage.ClosePage<UISingleBtn>();
             TTUIPage.ShowPage<UIPicture>();
             TTUIPage.ClosePage<UIPicture>();
+            TTUIPage.ShowPage<UIEnd>();
+            TTUIPage.ClosePage<UIEnd>();
         }
 
         private void Start()

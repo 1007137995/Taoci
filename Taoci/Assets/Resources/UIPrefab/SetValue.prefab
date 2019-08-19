@@ -837,7 +837,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 5773514874177246866}
   m_OnClick:
     m_PersistentCalls:
@@ -8383,7 +8383,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5949652604622705568
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8400,8 +8400,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 439, y: -63.4}
-  m_SizeDelta: {x: 700, y: 120}
+  m_AnchoredPosition: {x: 439, y: -4.8}
+  m_SizeDelta: {x: 700, y: 57.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5953218310278414046
 CanvasRenderer:
@@ -8444,7 +8444,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "1.\u6392\u6C34\u9636\u6BB5400\u2103\uFF0C\u8BBE\u5B9A4\u5C0F\u65F6\uFF1B\n2.\u4F4E\u6E29\u9636\u6BB5600\u2103\uFF0C\u8BBE\u5B9A3\u5C0F\u65F6\uFF1B\n3.\u4E2D\u6E29\u9636\u6BB5950\u2103\uFF0C\u8BBE\u5B9A3\u5C0F\u65F6\uFF1B\n4.\u9AD8\u6E29\u9636\u6BB51150\u2103\uFF0C\u8BBE\u5B9A2\u5C0F\u65F6\uFF1B\n5.\u4FDD\u6E29\u9636\u6BB51150\u2103\uFF0C\u8BBE\u5B9A0.2\u5C0F\u65F6\uFF1B"
+  m_Text: 
 --- !u!1 &5875274289683284258
 GameObject:
   m_ObjectHideFlags: 0
@@ -8674,7 +8674,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 5773514937623482528}
   m_OnClick:
     m_PersistentCalls:
@@ -12390,7 +12390,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 5773514939719810372}
   m_OnClick:
     m_PersistentCalls:
@@ -15440,7 +15440,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 5773514938144839066}
   m_OnClick:
     m_PersistentCalls:
@@ -15936,7 +15936,7 @@ MonoBehaviour:
   SetOverButton: {fileID: 5875274290446585594}
   beginBurnButton: {fileID: 5875274290902304192}
   tipButton: {fileID: 0}
-  tipText: {fileID: 0}
+  tipText: {fileID: 5773514874987851530}
   isBurning: 0
   setTempAndTimeImage:
   - {fileID: 5875274291120405074}

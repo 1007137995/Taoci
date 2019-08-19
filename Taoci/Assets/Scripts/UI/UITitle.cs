@@ -11,7 +11,7 @@ namespace TinyTeam.UI
     {
         public static UITitle Instance;
 
-        public UITitle() : base(UIType.Normal, UIMode.DoNothing, UICollider.None)
+        public UITitle() : base(UIType.Fixed, UIMode.DoNothing, UICollider.None)
         {
             uiPath = "UIPrefab/Title";
         }
@@ -19,8 +19,14 @@ namespace TinyTeam.UI
         public override void Awake(GameObject go)
         {
             Instance = this;
-            transform.Find("StartBtn").GetComponent<Button>().onClick.AddListener(()=> UIManager.Instance.AddStep());
-            transform.Find("BackBtn").GetComponent<Button>().onClick.AddListener(() => SceneManager.LoadScene("Main"));
+            transform.Find("StartBtn").GetComponent<Button>().onClick.AddListener(() => UIManager.Instance.AddStep());
+            transform.Find("BackBtn").GetComponent<Button>().onClick.AddListener(delegate
+            {
+                ShaderColorController.Instance.Reset();
+                SceneManager.LoadScene("Main");
+            });
+            transform.Find("HelpBtn").GetComponent<Button>().onClick.AddListener(() => transform.Find("Help").gameObject.SetActive(true));
+            transform.Find("Help/Close").GetComponent<Button>().onClick.AddListener(() => transform.Find("Help").gameObject.SetActive(false));
         }
 
         public void SetPage(int index)

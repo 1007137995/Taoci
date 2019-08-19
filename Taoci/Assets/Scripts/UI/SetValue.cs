@@ -36,7 +36,7 @@ namespace TaoCi
         public GameObject beginBurnButton;
 
         public GameObject tipButton;
-        public GameObject tipText;
+        public Text tipText;
         private bool tipOn;
 
         public bool isBurning;
@@ -47,6 +47,7 @@ namespace TaoCi
         public GameObject[] setTimeImage;
         public GameObject[] setTempImage;
         private int index = 0;
+        private int errorindex = 0;
 
         void Awake()
         {
@@ -194,6 +195,7 @@ namespace TaoCi
             resultTime[index].GetComponent<Text>().text = "时间：" + t.text + "h";
             timeShower.GetComponent<Text>().text = t.text;
             resultTimeNumber[index] = float.Parse(timeShower.GetComponent<Text>().text);
+            CheckTime(index, t.text);
         }
         
         public void SetTempToText(Text t)
@@ -201,6 +203,7 @@ namespace TaoCi
             resultTemp[index].GetComponent<Text>().text = "温度：" + t.text + "°C";
             tempShower.GetComponent<Text>().text = t.text;
             resultTempNumber[index] = int.Parse(tempShower.GetComponent<Text>().text);
+            CheckTemp(index, t.text);
         }
 
         public void GetBackImage()
@@ -275,12 +278,12 @@ namespace TaoCi
         {
             if (!tipOn)
             {
-                tipText.SetActive(true);
+                tipText.gameObject.SetActive(true);
                 tipOn = true;
             }
             else
             {
-                tipText.SetActive(false);
+                tipText.gameObject.SetActive(false);
                 tipOn = false;
             }
         }
@@ -370,7 +373,125 @@ namespace TaoCi
         //    }
         //}
 
+        public void CheckTime(int i, string t)
+        {
+            switch (i)
+            {
+                case 0:
+                    switch (t)
+                    {
+                        case "1":
+                            tipText.text = "升温过快，窑内水汽排除不彻底，坭兴陶坯品炸裂，烧窑失败。";
+                            errorindex++;
+                            break;
+                        case "2":
+                            tipText.text = "升温过快，窑内水汽排除不彻底，坭兴陶坯品炸裂，烧窑失败。";
+                            errorindex++;
+                            break;
+                        case "4":
+                            ScoreInfo.AddSocreInfo(new ScoreInfo(0, "排水阶段时间设置：", "C", true, errorindex));
+                            stepButton[1].GetComponent<Button>().interactable = true;
+                            tipText.text = "";
+                            errorindex = 0;
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case 1:
+                    switch (t)
+                    {
+                        case "1":
+                            tipText.text = "升温过快，坭兴陶坯品炸裂，烧窑失败。";
+                            errorindex++;
+                            break;
+                        case "2":
+                            tipText.text = "升温过快，坭兴陶坯品炸裂，烧窑失败。";
+                            errorindex++;
+                            break;
+                        case "3":
+                            ScoreInfo.AddSocreInfo(new ScoreInfo(0, "低温阶段时间设置：", "C", true, errorindex));
+                            stepButton[2].GetComponent<Button>().interactable = true;
+                            tipText.text = "";
+                            errorindex = 0;
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case 2:
+                    switch (t)
+                    {
+                        case "1":
+                            ScoreInfo.AddSocreInfo(new ScoreInfo(0, "中温阶段时间设置：", "A", true, errorindex));
+                            stepButton[3].GetComponent<Button>().interactable = true;
+                            tipText.text = "";
+                            errorindex = 0;
+                            break;
+                        case "2":
+                            tipText.text = "升温过快，坭兴陶坯品炸裂，烧窑失败。";
+                            errorindex++;
+                            break;
+                        case "3":
+                            tipText.text = "升温过快，坭兴陶坯品炸裂，烧窑失败。";
+                            errorindex++;
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case 3:
+                    tipText.text = "";
+                    break;
+                case 4:
+                    tipText.text = "";
+                    break;
+                default:
+                    break;
+            }
+        }
 
+        public void CheckTemp(int i, string t)
+        {
+            switch (i)
+            {
+                case 0:
+                    tipText.text = "";
+                    break;
+                case 1:
+                    tipText.text = "";
+                    break;
+                case 2:
+                    tipText.text = "";
+                    break;
+                case 3:
+                    switch (t)
+                    {
+                        case "1000":
+                            tipText.text = "烧制温度不够，造成“生火”，坭兴陶未烧结。";
+                            errorindex++;
+                            break;
+                        case "1150":
+                            ScoreInfo.AddSocreInfo(new ScoreInfo(0, "高温阶段温度设置：", "A", true, errorindex));
+                            stepButton[4].GetComponent<Button>().interactable = true;
+                            tipText.text = "";
+                            errorindex = 0;
+                            break;
+                        case "1250":
+                            tipText.text = "烧制温度过高，造成“过烧”，坭兴陶制品变形坍塌，烧制失败。";
+                            errorindex++;
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case 4:
+                    tipText.text = "";
+                    break;
+                default:
+                    break;
+            }
+        }
 
         public void OnClickSetButton()
         {

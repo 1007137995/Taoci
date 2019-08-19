@@ -13,6 +13,7 @@ namespace TaoCi
         private string info;
         private GameObject aim;
         private Vector3 aimPos;
+        bool b = true;
 
         private void Start()
         {
@@ -24,14 +25,38 @@ namespace TaoCi
 
         public override void OnMouseLeftClick()
         {
-            switch (ChuantongStep.Instance.LocalStep)
+            switch (UIManager.Instance.step)
             {
                 case 1001001:
                     TTUIPage.ShowPage<UIIntroduce>();
                     UIIntroduce.Instance.ChangeInfo(introduction, info, "Meikuai");
+                    transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
                     break;
                 case 1004002:
                     SetInLu();
+                    transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void FixedUpdate()
+        {
+            switch (UIManager.Instance.step)
+            {
+                case 1002001:
+                    transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    break;
+                case 1004002:                    
+                    if (b)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                        b = false;
+                    }
+                    break;
+                case 1004003:
+                    b = true;
                     break;
                 default:
                     break;

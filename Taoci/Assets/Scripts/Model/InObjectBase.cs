@@ -10,7 +10,7 @@ namespace TaoCi
         protected Transform handPos;
         protected Vector3 oldPos;
         protected Vector3 oldRot;
-        protected Vector3[] aimPos = new Vector3[3];
+        public Vector3[] aimPos = new Vector3[3];
         protected Transform yaoche;
         protected Transform parentPos;
     }

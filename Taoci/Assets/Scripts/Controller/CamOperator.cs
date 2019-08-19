@@ -37,7 +37,7 @@ namespace TaoCi
         void Update()
         {
             //右键按下
-            if (Input.GetMouseButton(1))
+            if (Input.GetMouseButton(0))
             {                
                 x += Input.GetAxis("Mouse X") * rSpeed;
                 y -= Input.GetAxis("Mouse Y") * rSpeed;

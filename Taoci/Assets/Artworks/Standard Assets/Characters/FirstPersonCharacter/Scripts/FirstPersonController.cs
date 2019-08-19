@@ -67,7 +67,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         // Update is called once per frame
         private void Update()
         {
-            if (Input.GetMouseButton(1) && m_WalkSpeed!=0)
+            if (Input.GetMouseButton(0) && m_WalkSpeed!=0)
             {
                 RotateView();
             }

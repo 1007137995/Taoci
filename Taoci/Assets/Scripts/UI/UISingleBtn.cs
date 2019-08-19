@@ -10,7 +10,7 @@ namespace TinyTeam.UI
     {
         public static UISingleBtn Instance;
 
-        public UISingleBtn() : base(UIType.Normal, UIMode.DoNothing, UICollider.None)
+        public UISingleBtn() : base(UIType.Fixed, UIMode.DoNothing, UICollider.None)
         {
             uiPath = "UIPrefab/SingleBtn";
         }

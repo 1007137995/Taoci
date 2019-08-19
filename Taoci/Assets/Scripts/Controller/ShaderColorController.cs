@@ -9,7 +9,9 @@ namespace TaoCi
     {
         public static ShaderColorController Instance;
         public List<GameObject> taoci = new List<GameObject>();
+        public List<Sprite> sprites = new List<Sprite>();
         public Material jiazi;
+        public Material wall;
         public Material originTaoci;
         public Material newTaoci;
         public Light fireLight;
@@ -27,9 +29,9 @@ namespace TaoCi
 
         public void Burn()
         {
-            Debug.Log(11);
             jiazi.color = Color.red;
             originTaoci.color = Color.red;
+            wall.color = new Color(1,0.4f,0.4f);
         }
 
         public void Cool()
@@ -43,11 +45,19 @@ namespace TaoCi
             Sequence sequence = DOTween.Sequence();
             sequence.Append(newTaoci.DOColor(Color.white, 10));
             sequence.Join(jiazi.DOColor(Color.white, 10));
+            sequence.Join(wall.DOColor(Color.white, 10));
             sequence.Join(DOTween.To(()=> fireLight.range, x => fireLight.intensity = x, 0, 10));
             sequence.OnComplete(delegate
             {
                 UIManager.Instance.AddStep();
             });
+        }
+
+        public void Reset()
+        {
+            jiazi.color = Color.white;
+            originTaoci.color = Color.white;
+            wall.color = Color.white;
         }
     }
 }

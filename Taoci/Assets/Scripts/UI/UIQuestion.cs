@@ -24,7 +24,7 @@ namespace TinyTeam.UI
     {
         #region
         private Text queText;
-        //private Text shuomingText;
+        private GameObject shuomingText;
         //private GameObject answerimg;
         private ToggleGroup tg;
         public List<Toggle> toggle = new List<Toggle>();
@@ -47,7 +47,7 @@ namespace TinyTeam.UI
             #region
             Instance = this;
             queText = transform.Find("QuestionText").GetComponent<Text>();
-            //shuomingText = transform.Find("AnswerImage/Scroll View/Viewport/Content/ShuomingText").GetComponent<Text>();
+            shuomingText = transform.Find("Shuoming").gameObject;
             tg = transform.Find("ToggleGroup").GetComponent<ToggleGroup>();
             toggle.Clear();
             for (int i = 0; i < tg.transform.childCount; i++)
@@ -153,20 +153,32 @@ namespace TinyTeam.UI
         public ScoreInfo Check()
         {
             chooce = "";
-            foreach (Toggle go in toggle)
+            int index = -1;
+            //foreach (Toggle go in toggle)
+            //{
+            //    if (go.isOn == true)
+            //    {
+            //        chooce += go.name;
+            //    }
+            //}
+            for (int i = 0; i < toggle.Count; i++)
             {
-                if (go.isOn == true)
+                if (toggle[i].isOn == true)
                 {
-                    chooce += go.name;
+                    chooce += toggle[i].name;
+                    index = i;
                 }
-            }            
+            }
             if (chooce.CompareTo(qaq.answer) == 0)
             {
                 scoreInfo = new ScoreInfo(qaq.score, qaq.question, qaq.answer, true, 0);
+                shuomingText.gameObject.SetActive(false);
             }
             else
             {
                 scoreInfo = new ScoreInfo(0, qaq.question, qaq.answer, false, 0);
+                shuomingText.gameObject.SetActive(true);
+                shuomingText.GetComponent<Text>().text = qaq.error[index];
             }
             return scoreInfo;
         }

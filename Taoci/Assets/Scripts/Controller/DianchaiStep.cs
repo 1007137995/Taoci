@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using TinyTeam.UI;
+using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
 
-namespace TaoCi.Chuantong
+namespace TaoCi
 {
-    public class ChuantongStep : StepManager
+    public class DianchaiStep : StepManager
     {
-        public static ChuantongStep Instance;
+        public static DianchaiStep Instance;
         public List<GameObject> matizhu = new List<GameObject>();
         public List<GameObject> pengban = new List<GameObject>();
         public List<GameObject> peipin = new List<GameObject>();
@@ -18,7 +18,7 @@ namespace TaoCi.Chuantong
         {
             Instance = this;
             LocalStepChange += new EventHandler(DoThings);
-            setStep = 1001000;
+            setStep = 2001000;
             LocalStep = setStep;
             gameObject.AddComponent<UIManager>();
             UIManager.Instance.GetStepManager(this);
@@ -28,16 +28,16 @@ namespace TaoCi.Chuantong
         {
             switch (LocalStep)
             {
-                case 1001001:
+                case 2001001:
                     TTUIPage.ShowPage<UITitle>();
                     CamOperator.Instance.GetComponent<CamOperator>().enabled = false;
                     break;
-                case 1001002:
+                case 2001002:
                     Dianyaolu.Instance.GetComponent<Collider>().enabled = false;
                     Dianyaolu.Instance.GetComponent<HighlightingSystem.Highlighter>().enabled = false;
-                    SetStep(1002001);//1002001
+                    SetStep(2002001);//1002001
                     break;
-                case 1002001:
+                case 2002001:
                     TTUIPage.ShowPage<UICProcess>();
                     TTUIPage.ClosePage<UIIntroduce>();
                     UITitle.Instance.SetPage(2);
@@ -48,7 +48,7 @@ namespace TaoCi.Chuantong
                     transform.GetComponent<InputListener>().cam = CamOperator.Instance.cam.GetComponent<Camera>();
                     CamOperator.Instance.target.gameObject.SetActive(true);
                     break;
-                case 1002002:
+                case 2002002:
                     FirstPersonController.Instance.GetComponent<FirstPersonController>().enabled = true;
                     CamOperator.Instance.GetComponent<CamOperator>().enabled = false;
                     UICProcess.Instance.SetPage(2);
@@ -58,54 +58,58 @@ namespace TaoCi.Chuantong
                     TTUIPage.ShowPage<UITip>();
                     UITip.Instance.SetTip("点击取下两个阀门，点击打开电窑炉门，拉出窑车。");
                     break;
-                case 1002003:
-                    //UITip.Instance.SetTip("点击马蹄柱，先在窑车四个角各立一根马蹄柱。");
-                    LocalStepAdd();
+                case 2002003:
+                    UITip.Instance.SetTip("点击马蹄柱，先在窑车四个角各立一根马蹄柱。");
                     break;
-                case 1002004:
+                case 2002004:
+                    TTUIPage.ShowPage<UIQuestion>();
+                    UIQuestion.Instance.GetQuestion(2002004);
+                    UIManager.Instance.Delay(QuestionEnd());
+                    break;
+                case 2002005:
                     UITip.Instance.SetTip("点击硼板，将硼板平铺在窑车上。");
                     break;
-                case 1002005:
-                    UITip.Instance.SetTip("点击马蹄柱，先在一层硼板四个角各立一根马蹄柱。");                    
+                case 2002006:
+                    UITip.Instance.SetTip("点击马蹄柱，先在一层硼板四个角各立一根马蹄柱。");
                     break;
-                case 1002006:
+                case 2002007:
                     UITip.Instance.SetTip("点击坭兴陶坯品，将坭兴陶坯品平铺在窑车上，第一层摆放完毕。");
                     break;
-                case 1002007:
+                case 2002008:
                     UITip.Instance.SetTip("点击硼板，将硼板平铺在四个马蹄柱上。");
                     break;
-                case 1002008:
+                case 2002009:
                     UITip.Instance.SetTip("点击马蹄柱，先在二层硼板四个角各立一根马蹄柱。");
                     break;
-                case 1002009:
+                case 2002010:
                     UITip.Instance.SetTip("点击坭兴陶坯品，将坭兴陶坯品平铺在窑车上，第二层摆放完毕。");
                     break;
-                case 1002010:
+                case 2002011:
                     UITip.Instance.SetTip("点击硼板，将硼板平铺在四个马蹄柱上。");
                     break;
-                case 1002011:
+                case 2002012:
                     UITip.Instance.SetTip("点击坭兴陶坯品，将坭兴陶坯品平铺在窑车上，第三层摆放完毕。");
                     break;
-                case 1002012:
+                case 2002013:
                     UITip.Instance.SetTip("点击窑车，将窑车推回电窑炉，关闭炉门。");
                     break;
-                case 1002013:
+                case 2002014:
                     TTUIPage.ClosePage<UITip>();
                     SetStep(1003001);
                     break;
-                case 1003001:
+                case 2003001:
                     UICProcess.Instance.SetPage(3);
                     TTUIPage.ShowPage<UITip>();
                     UITip.Instance.SetTip("点击开关，通电。");
                     break;
-                case 1003002:
+                case 2003002:
                     UITip.Instance.SetTip("点击电窑控制面板，设定坭兴陶烧制升温曲线。");
                     break;
-                case 1003003:
+                case 2003003:
                     TTUIPage.ClosePage<UITip>();
                     TTUIPage.ShowPage<UISetValue>();
                     break;
-                case 1003004:
+                case 2003004:
                     TTUIPage.ClosePage<UISetValue>();
                     SetStep(1004001);
                     break;
@@ -126,7 +130,7 @@ namespace TaoCi.Chuantong
                     Lumen.Instance.gameObject.SetActive(false);
                     ShaderColorController.Instance.fireLight.intensity = 3;
                     Fire.Instance.ChangeLittleFire(true);
-                    TTUIPage.ShowPage<UISingleBtn>();                    
+                    TTUIPage.ShowPage<UISingleBtn>();
                     break;
                 case 1004005:
                     TTUIPage.ClosePage<UISingleBtn>();
@@ -140,7 +144,7 @@ namespace TaoCi.Chuantong
                 case 1004006:
                     Fire.Instance.ChangeInFire(false);
                     Fire.Instance.ChangeOutFire(false);
-                    UITip.Instance.SetTip("开启排烟口、观火口、投料口，进入降温环节。");                    
+                    UITip.Instance.SetTip("开启排烟口、观火口、投料口，进入降温环节。");
                     ShaderColorController.Instance.Cool();
                     break;
                 case 1004007:

@@ -9,7 +9,7 @@ namespace TinyTeam.UI
     {
         public static UICProcess Instance;
 
-        public UICProcess() : base(UIType.Normal, UIMode.DoNothing, UICollider.None)
+        public UICProcess() : base(UIType.Fixed, UIMode.DoNothing, UICollider.None)
         {
             uiPath = "UIPrefab/CProcess";
         }
