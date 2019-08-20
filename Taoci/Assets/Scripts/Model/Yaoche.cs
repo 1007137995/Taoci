@@ -33,6 +33,10 @@ namespace TaoCi
                     transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
                     lumen.GetComponent<Lumen>().CloseDoor();
                     break;
+                case 2005012:
+                    transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    lumen.GetComponent<Lumen>().CloseDoor();
+                    break;
                 #endregion
                 default:
                     break;
@@ -72,6 +76,19 @@ namespace TaoCi
                         transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
                         b = false;
                     }
+                    break;
+                case 2003001:
+                    b = true;
+                    break;
+                case 2005012:
+                    if (b)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                        b = false;
+                    }
+                    break;
+                case 2005013:
+                    b = true;
                     break;
                 #endregion
                 default:

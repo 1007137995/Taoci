@@ -31,7 +31,7 @@ namespace TaoCi
                     UIIntroduce.Instance.ChangeInfo(introduction, info, "Meikuai");
                     transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
                     break;
-                case 1004002:
+                case 2004002:
                     SetInLu();
                     transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
                     break;
@@ -47,14 +47,14 @@ namespace TaoCi
                 case 2002001:
                     transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
                     break;
-                case 1004002:
+                case 2004002:
                     if (b)
                     {
                         transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
                         b = false;
                     }
                     break;
-                case 1004003:
+                case 2004003:
                     b = true;
                     break;
                 default:

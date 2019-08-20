@@ -117,6 +117,27 @@ namespace TaoCi
                         Push(2);
                     }
                     break;
+                case 2005005:
+                    if (layer == TaociLayer.Top)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                        Pull();
+                    }
+                    break;
+                case 2005008:
+                    if (layer == TaociLayer.Center)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                        Pull();
+                    }
+                    break;
+                case 2005011:
+                    if (layer == TaociLayer.Bottom)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                        Pull();
+                    }
+                    break;
                 #endregion
                 default:
                     break;
@@ -180,6 +201,24 @@ namespace TaoCi
                     break;
                 case 2002009:
                     if (layer == TaociLayer.Top)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                    }
+                    break;
+                case 2002008:
+                    if (layer == TaociLayer.Top)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                    }
+                    break;
+                case 2005005:
+                    if (layer == TaociLayer.Top)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                    }
+                    break;
+                case 2005008:
+                    if (layer == TaociLayer.Center)
                     {
                         transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
                     }

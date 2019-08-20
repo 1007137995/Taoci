@@ -39,6 +39,10 @@ namespace TaoCi
                     transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
                     RotateDown();
                     break;
+                case 2005002:
+                    transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    RotateDown();
+                    break;
                 #endregion
                 default:
                     break;
@@ -78,6 +82,19 @@ namespace TaoCi
                         transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
                         b = false;
                     }
+                    break;
+                case 2002004:
+                    b = true;
+                    break;
+                case 2005002:
+                    if (b)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                        b = false;
+                    }
+                    break;
+                case 2005003:
+                    b = true;
                     break;
                 #endregion
                 default:

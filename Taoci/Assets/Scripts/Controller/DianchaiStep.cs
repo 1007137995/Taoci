@@ -113,18 +113,18 @@ namespace TaoCi
                     TTUIPage.ClosePage<UISetValue>();
                     SetStep(1004001);
                     break;
-                case 1004001:
+                case 2004001:
                     UICProcess.Instance.SetPage(4);
                     TTUIPage.ShowPage<UITip>();
                     UITip.Instance.SetTip("点击开关，关闭电源");
                     break;
-                case 1004002:
-                    UITip.Instance.SetTip("点击煤块，从投料口向炉内投入0.5kg煤块。");
+                case 2004002:
+                    UITip.Instance.SetTip("点击木柴，持续不断从投料口放入窑内给窑内升温。");
                     break;
-                case 1004003:
-                    UITip.Instance.SetTip("点击松香，从投料口向炉内投入0.5kg松香。");
+                case 2004003:
+                    LocalStepAdd();
                     break;
-                case 1004004:
+                case 2004004:
                     UITip.Instance.SetTip("开启排烟口，使窑内上下通气，煤块、松香接触氧气火焰升高，窜出排烟口，而浓烟滞留在窑内两侧，此时窑内既有氧化气氛又有还原气氛，即中性气氛。");
                     ShaderColorController.Instance.Burn();
                     Lumen.Instance.gameObject.SetActive(false);
@@ -132,7 +132,7 @@ namespace TaoCi
                     Fire.Instance.ChangeLittleFire(true);
                     TTUIPage.ShowPage<UISingleBtn>();
                     break;
-                case 1004005:
+                case 2004005:
                     TTUIPage.ClosePage<UISingleBtn>();
                     Fire.Instance.ChangeLittleFire(false);
                     ShaderColorController.Instance.fireLight.intensity = 5;
@@ -156,54 +156,53 @@ namespace TaoCi
                     Lumen.Instance.gameObject.SetActive(true);
                     SetStep(1005001);
                     break;
-                case 1005001:
+                case 2005001:
                     UICProcess.Instance.SetPage(5);
                     UITip.Instance.SetTip("点击戴上手套。");
                     break;
-                case 1005002:
+                case 2005002:
                     UITip.Instance.SetTip("点击取下两个阀门，点击打开电窑炉门，拉出窑车。");
                     break;
-                case 1005003:
+                case 2005003:
                     UITip.Instance.SetTip("点击取下最上层烧制好的陶瓷。");
                     break;
-                case 1005004:
+                case 2005004:
                     UITip.Instance.SetTip("点击取下最上层硼板。");
                     break;
-                case 1005005:
-                    UITip.Instance.SetTip("点击取下第二层马蹄柱。");
+                case 2005005:
+                    UITip.Instance.SetTip("点击取下最上层马蹄柱。");
                     break;
-                case 1005006:
+                case 2005006:
                     UITip.Instance.SetTip("点击取下第二层烧制好的陶瓷。");
                     break;
-                case 1005007:
+                case 2005007:
                     UITip.Instance.SetTip("点击取下第二层硼板。");
                     break;
-                case 1005008:
-                    UITip.Instance.SetTip("点击取下最下层马蹄柱。");
+                case 2005008:
+                    UITip.Instance.SetTip("点击取下第二层马蹄柱。");
                     break;
-                case 1005009:
+                case 2005009:
                     UITip.Instance.SetTip("点击取下最下层烧制好的陶瓷。");
                     break;
-                case 1005010:
+                case 2005010:
                     UITip.Instance.SetTip("点击取下最下层硼板。");
                     break;
-                case 1005011:
-                    //UITip.Instance.SetTip("点击取下最下层马蹄柱。");
-                    LocalStepAdd();
+                case 2005011:
+                    UITip.Instance.SetTip("点击取下最下层马蹄柱。");
                     break;
-                case 1005012:
+                case 2005012:
                     UITip.Instance.SetTip("点击窑车，关闭电窑炉。");
                     break;
-                case 1005013:
+                case 2005013:
                     UITitle.Instance.SetPage(3);
                     TTUIPage.ClosePage<UICProcess>();
                     UITip.Instance.SetTip("点击烧制好的陶瓷，显示要变效果图。");
                     break;
-                case 1005014:
+                case 2005014:
                     TTUIPage.ClosePage<UITip>();
-                    SetStep(1006001);
+                    SetStep(2006001);
                     break;
-                case 1006001:
+                case 2006001:
                     UITitle.Instance.SetPage(4);
                     TTUIPage.ClosePage<UIPicture>();
                     TTUIPage.ShowPage<UIEnd>();
