@@ -47,10 +47,10 @@ namespace TaoCi
             sequence.Join(jiazi.DOColor(Color.white, 10));
             sequence.Join(wall.DOColor(Color.white, 10));
             sequence.Join(DOTween.To(()=> fireLight.range, x => fireLight.intensity = x, 0, 10));
-            sequence.OnComplete(delegate
-            {
-                UIManager.Instance.AddStep();
-            });
+            //sequence.OnComplete(delegate
+            //{
+            //    UIManager.Instance.AddStep();
+            //});
         }
 
         public void Reset()

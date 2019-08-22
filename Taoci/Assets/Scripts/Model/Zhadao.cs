@@ -19,8 +19,8 @@ namespace TaoCi
                     transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
                     break;
                 case 1004001:
-                    CloseEle();
-                    transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    //CloseEle();
+                    //transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
                     break;
                 #endregion
                 #region
@@ -53,16 +53,16 @@ namespace TaoCi
                 case 1003002:
                     b = true;
                     break;
-                case 1004001:
-                    if (b)
-                    {
-                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
-                        b = false;
-                    }
-                    break;
-                case 1004002:
-                    b = true;
-                    break;
+                //case 1004001:
+                //    if (b)
+                //    {
+                //        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                //        b = false;
+                //    }
+                //    break;
+                //case 1004002:
+                //    b = true;
+                //    break;
                 #endregion
                 #region
                 case 2003001:

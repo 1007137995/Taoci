@@ -26,6 +26,8 @@ namespace TaoCi
             TTUIPage.ClosePage<UICProcess>();
             TTUIPage.ShowPage<UIIntroduce>();
             TTUIPage.ClosePage<UIIntroduce>();
+            TTUIPage.ShowPage<UIIntroduceBtn>();
+            TTUIPage.ClosePage<UIIntroduceBtn>();
             TTUIPage.ShowPage<UITip>();
             TTUIPage.ClosePage<UITip>();
             TTUIPage.ShowPage<UISetValue>();
@@ -36,6 +38,8 @@ namespace TaoCi
             TTUIPage.ClosePage<UISingleBtn>();
             TTUIPage.ShowPage<UIPicture>();
             TTUIPage.ClosePage<UIPicture>();
+            TTUIPage.ShowPage<UISlider>();
+            TTUIPage.ClosePage<UISlider>();
             TTUIPage.ShowPage<UIEnd>();
             TTUIPage.ClosePage<UIEnd>();
         }

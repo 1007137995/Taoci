@@ -39,12 +39,12 @@ namespace TaoCi
             {
                 #region 传统
                 case 1001001:
-                    TTUIPage.ShowPage<UIIntroduce>();
-                    UIIntroduce.Instance.ChangeInfo(introduction, info, "Matizhu");
-                    foreach (GameObject item in ChuantongStep.Instance.matizhu)
-                    {
-                        item.GetComponent<HighlightingSystem.Highlighter>().tween = false;
-                    }                    
+                    //TTUIPage.ShowPage<UIIntroduce>();
+                    //UIIntroduce.Instance.ChangeInfo(introduction, info, "Matizhu");
+                    //foreach (GameObject item in ChuantongStep.Instance.matizhu)
+                    //{
+                    //    item.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    //}                    
                     break;
                 case 1002003:
                     if (layer == TaociLayer.Bottom)
@@ -103,14 +103,14 @@ namespace TaoCi
                         Push(0);
                     }
                     break;
-                case 1002006:
+                case 2002006:
                     if (layer == TaociLayer.Center)
                     {
                         transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
                         Push(1);
                     }
                     break;
-                case 1002009:
+                case 2002009:
                     if (layer == TaociLayer.Top)
                     {
                         transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
@@ -150,10 +150,10 @@ namespace TaoCi
             {
                 #region 传统
                 case 1002001:
-                    foreach (GameObject item in ChuantongStep.Instance.matizhu)
-                    {
-                        item.GetComponent<HighlightingSystem.Highlighter>().tween = false;
-                    }
+                    //foreach (GameObject item in ChuantongStep.Instance.matizhu)
+                    //{
+                    //    item.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    //}
                     break;
                 case 1002005:
                     if (layer == TaociLayer.Center)

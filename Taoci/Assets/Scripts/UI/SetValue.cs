@@ -383,10 +383,14 @@ namespace TaoCi
                         case "1":
                             tipText.text = "升温过快，窑内水汽排除不彻底，坭兴陶坯品炸裂，烧窑失败。";
                             errorindex++;
+                            AudioManager.instance.StopAudio();
+                            AudioManager.instance.PlayAudio(Resources.Load<AudioClip>("Audio/Worning"));
                             break;
                         case "2":
                             tipText.text = "升温过快，窑内水汽排除不彻底，坭兴陶坯品炸裂，烧窑失败。";
                             errorindex++;
+                            AudioManager.instance.StopAudio();
+                            AudioManager.instance.PlayAudio(Resources.Load<AudioClip>("Audio/Worning"));
                             break;
                         case "4":
                             ScoreInfo.AddSocreInfo(new ScoreInfo(0, "排水阶段时间设置：", "C", true, errorindex));
@@ -404,16 +408,21 @@ namespace TaoCi
                         case "1":
                             tipText.text = "升温过快，坭兴陶坯品炸裂，烧窑失败。";
                             errorindex++;
+                            AudioManager.instance.StopAudio();
+                            AudioManager.instance.PlayAudio(Resources.Load<AudioClip>("Audio/Worning"));
                             break;
                         case "2":
                             tipText.text = "升温过快，坭兴陶坯品炸裂，烧窑失败。";
                             errorindex++;
+                            AudioManager.instance.StopAudio();
+                            AudioManager.instance.PlayAudio(Resources.Load<AudioClip>("Audio/Worning"));
                             break;
                         case "3":
                             ScoreInfo.AddSocreInfo(new ScoreInfo(0, "低温阶段时间设置：", "C", true, errorindex));
                             stepButton[2].GetComponent<Button>().interactable = true;
                             tipText.text = "";
                             errorindex = 0;
+                            AudioManager.instance.StopAudio();
                             break;
                         default:
                             break;
@@ -427,14 +436,19 @@ namespace TaoCi
                             stepButton[3].GetComponent<Button>().interactable = true;
                             tipText.text = "";
                             errorindex = 0;
+                            AudioManager.instance.StopAudio();
                             break;
                         case "2":
                             tipText.text = "升温过快，坭兴陶坯品炸裂，烧窑失败。";
                             errorindex++;
+                            AudioManager.instance.StopAudio();
+                            AudioManager.instance.PlayAudio(Resources.Load<AudioClip>("Audio/Worning"));
                             break;
                         case "3":
                             tipText.text = "升温过快，坭兴陶坯品炸裂，烧窑失败。";
                             errorindex++;
+                            AudioManager.instance.StopAudio();
+                            AudioManager.instance.PlayAudio(Resources.Load<AudioClip>("Audio/Worning"));
                             break;
                         default:
                             break;
@@ -442,9 +456,11 @@ namespace TaoCi
                     break;
                 case 3:
                     tipText.text = "";
+                    AudioManager.instance.StopAudio();
                     break;
                 case 4:
                     tipText.text = "";
+                    AudioManager.instance.StopAudio();
                     break;
                 default:
                     break;
@@ -457,12 +473,15 @@ namespace TaoCi
             {
                 case 0:
                     tipText.text = "";
+                    AudioManager.instance.StopAudio();
                     break;
                 case 1:
                     tipText.text = "";
+                    AudioManager.instance.StopAudio();
                     break;
                 case 2:
                     tipText.text = "";
+                    AudioManager.instance.StopAudio();
                     break;
                 case 3:
                     switch (t)
@@ -476,6 +495,7 @@ namespace TaoCi
                             stepButton[4].GetComponent<Button>().interactable = true;
                             tipText.text = "";
                             errorindex = 0;
+                            AudioManager.instance.StopAudio();
                             break;
                         case "1250":
                             tipText.text = "烧制温度过高，造成“过烧”，坭兴陶制品变形坍塌，烧制失败。";
@@ -487,6 +507,7 @@ namespace TaoCi
                     break;
                 case 4:
                     tipText.text = "";
+                    AudioManager.instance.StopAudio();
                     break;
                 default:
                     break;

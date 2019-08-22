@@ -30,11 +30,13 @@ namespace TaoCi.Chuantong
             {
                 case 1001001:
                     TTUIPage.ShowPage<UITitle>();
+                    TTUIPage.ShowPage<UIIntroduceBtn>();
                     CamOperator.Instance.GetComponent<CamOperator>().enabled = false;
                     break;
                 case 1001002:
                     Dianyaolu.Instance.GetComponent<Collider>().enabled = false;
                     Dianyaolu.Instance.GetComponent<HighlightingSystem.Highlighter>().enabled = false;
+                    TTUIPage.ClosePage<UIIntroduceBtn>();
                     SetStep(1002001);//1002001
                     break;
                 case 1002001:
@@ -111,10 +113,17 @@ namespace TaoCi.Chuantong
                     break;
                 case 1004001:
                     UICProcess.Instance.SetPage(4);
+                    //UITip.Instance.SetTip("点击开关，关闭电源");
                     TTUIPage.ShowPage<UITip>();
-                    UITip.Instance.SetTip("点击开关，关闭电源");
+                    UITip.Instance.SetTip("升温过程。");
+                    TTUIPage.ShowPage<UISlider>();
+                    UISlider.Instance.Wait(10);
+                    AudioManager.instance.StopAudio();
+                    AudioManager.instance.PlayAudio(Resources.Load<AudioClip>("Audio/Burn"));
                     break;
                 case 1004002:
+                    AudioManager.instance.StopAudio();
+                    TTUIPage.ClosePage<UISlider>();
                     UITip.Instance.SetTip("点击煤块，从投料口向炉内投入0.5kg煤块。");
                     break;
                 case 1004003:
@@ -126,10 +135,12 @@ namespace TaoCi.Chuantong
                     Lumen.Instance.gameObject.SetActive(false);
                     ShaderColorController.Instance.fireLight.intensity = 3;
                     Fire.Instance.ChangeLittleFire(true);
-                    TTUIPage.ShowPage<UISingleBtn>();                    
+                    TTUIPage.ShowPage<UISingleBtn>();
+                    UISingleBtn.Instance.transform.Find("PaiyankouBtn").gameObject.SetActive(true);
+                    UISingleBtn.Instance.transform.Find("EffectBtn").gameObject.SetActive(true);
                     break;
                 case 1004005:
-                    TTUIPage.ClosePage<UISingleBtn>();
+                    UISingleBtn.Instance.transform.Find("PaiyankouBtn").gameObject.SetActive(false);                    
                     Fire.Instance.ChangeLittleFire(false);
                     ShaderColorController.Instance.fireLight.intensity = 5;
                     Fire.Instance.ChangeInFire(true);
@@ -142,8 +153,12 @@ namespace TaoCi.Chuantong
                     Fire.Instance.ChangeOutFire(false);
                     UITip.Instance.SetTip("开启排烟口、观火口、投料口，进入降温环节。");                    
                     ShaderColorController.Instance.Cool();
+                    TTUIPage.ShowPage<UISlider>();
+                    UISlider.Instance.Wait(24);
                     break;
                 case 1004007:
+                    TTUIPage.ClosePage<UISingleBtn>();
+                    TTUIPage.ClosePage<UISlider>();
                     TTUIPage.ShowPage<UIQuestion>();
                     UIQuestion.Instance.GetQuestion(1004007);
                     UIManager.Instance.Delay(QuestionEnd());

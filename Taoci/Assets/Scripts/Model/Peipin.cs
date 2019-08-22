@@ -41,12 +41,12 @@ namespace TaoCi
             {
                 #region 传统
                 case 1001001:
-                    TTUIPage.ShowPage<UIIntroduce>();
-                    UIIntroduce.Instance.ChangeInfo(introduction, info, "Peipin");
-                    foreach (GameObject item in ChuantongStep.Instance.peipin)
-                    {
-                        item.GetComponent<HighlightingSystem.Highlighter>().tween = false;
-                    }
+                    //TTUIPage.ShowPage<UIIntroduce>();
+                    //UIIntroduce.Instance.ChangeInfo(introduction, info, "Peipin");
+                    //foreach (GameObject item in ChuantongStep.Instance.peipin)
+                    //{
+                    //    item.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    //}
                     break;
                 case 1002006:
                     if (layer == TaociLayer.Bottom)
@@ -206,10 +206,10 @@ namespace TaoCi
             {
                 #region 传统
                 case 1002001:
-                    foreach (GameObject item in ChuantongStep.Instance.peipin)
-                    {
-                        item.GetComponent<HighlightingSystem.Highlighter>().tween = false;
-                    }
+                    //foreach (GameObject item in ChuantongStep.Instance.peipin)
+                    //{
+                    //    item.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    //}
                     break;
                 case 1002006:
                     if (layer == TaociLayer.Bottom)

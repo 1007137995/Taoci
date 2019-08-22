@@ -19,6 +19,9 @@ namespace TinyTeam.UI
         {
             Instance = this;
             transform.Find("PaiyankouBtn").GetComponent<Button>().onClick.AddListener(() => UIManager.Instance.AddStep());
+            transform.Find("EffectBtn").GetComponent<Button>().onClick.AddListener(() => Lumen.Instance.gameObject.SetActive(!Lumen.Instance.gameObject.activeSelf));
+            transform.Find("PaiyankouBtn").gameObject.SetActive(false);
+            transform.Find("EffectBtn").gameObject.SetActive(false);
         }
     }
 }

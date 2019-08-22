@@ -1,0 +1,343 @@
+fileFormatVersion: 2
+guid: 4209f54262363f8419bee99cb3c7b7a9
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: CJ-BIAOSHI-01
+    100002: CJ-BIAOSHI-010
+    100004: CJ-BIAOSHI-02
+    100006: CJ-BIAOSHI-03
+    100008: CJ-BIAOSHI-04
+    100010: CJ-BIAOSHI-05
+    100012: CJ-BIAOSHI-06
+    100014: CJ-BIAOSHI-07
+    100016: CJ-BIAOSHI-08
+    100018: CJ-BIAOSHI-09
+    100020: CJ-DENG-005
+    100022: CJ-DENG-006
+    100024: CJ-DENG-01
+    100026: CJ-DENG-02
+    100028: CJ-DENG-03
+    100030: CJ-DENG-04
+    100032: CJ-DENGJU
+    100034: CJ-FANGZI
+    100036: CJ-HUAHUA
+    100038: CJ-MEN
+    100040: CJ-PAIZI
+    100042: CJ-PENZAI-01
+    100044: CJ-PENZAI-02
+    100046: CJ-PENZAI-03
+    100048: CJ-PENZAI-04
+    100050: CJ-PENZAI-05
+    100052: CJ-SHU
+    100054: CJ-ZHUANGSHI-008
+    100056: CJ-ZHUANGSHI-009
+    100058: CJ-ZHUANGSHI-01
+    100060: CJ-ZHUANGSHI-010
+    100062: CJ-ZHUANGSHI-011
+    100064: CJ-ZHUANGSHI-012
+    100066: CJ-ZHUANGSHI-02
+    100068: CJ-ZHUANGSHI-03
+    100070: CJ-ZHUANGSHI-04
+    100072: CJ-ZHUANGSHI-05
+    100074: CJ-ZHUANGSHI-06
+    100076: CJ-ZHUANGSHI-07
+    100078: DiBan
+    100080: DiBan01
+    100082: DiBan02
+    100084: DiBan03
+    100086: DiBan04
+    100088: DiBan05
+    100090: DiBan06
+    100092: Particle View 01
+    100094: Particle View 01 1
+    100096: Particle View 02
+    100098: QiangBi
+    100100: QiangBi01
+    100102: QiangBi02
+    100104: QiangBi03
+    100106: QiangBi04
+    100108: QiangBi06
+    100110: //RootNode
+    400000: CJ-BIAOSHI-01
+    400002: CJ-BIAOSHI-010
+    400004: CJ-BIAOSHI-02
+    400006: CJ-BIAOSHI-03
+    400008: CJ-BIAOSHI-04
+    400010: CJ-BIAOSHI-05
+    400012: CJ-BIAOSHI-06
+    400014: CJ-BIAOSHI-07
+    400016: CJ-BIAOSHI-08
+    400018: CJ-BIAOSHI-09
+    400020: CJ-DENG-005
+    400022: CJ-DENG-006
+    400024: CJ-DENG-01
+    400026: CJ-DENG-02
+    400028: CJ-DENG-03
+    400030: CJ-DENG-04
+    400032: CJ-DENGJU
+    400034: CJ-FANGZI
+    400036: CJ-HUAHUA
+    400038: CJ-MEN
+    400040: CJ-PAIZI
+    400042: CJ-PENZAI-01
+    400044: CJ-PENZAI-02
+    400046: CJ-PENZAI-03
+    400048: CJ-PENZAI-04
+    400050: CJ-PENZAI-05
+    400052: CJ-SHU
+    400054: CJ-ZHUANGSHI-008
+    400056: CJ-ZHUANGSHI-009
+    400058: CJ-ZHUANGSHI-01
+    400060: CJ-ZHUANGSHI-010
+    400062: CJ-ZHUANGSHI-011
+    400064: CJ-ZHUANGSHI-012
+    400066: CJ-ZHUANGSHI-02
+    400068: CJ-ZHUANGSHI-03
+    400070: CJ-ZHUANGSHI-04
+    400072: CJ-ZHUANGSHI-05
+    400074: CJ-ZHUANGSHI-06
+    400076: CJ-ZHUANGSHI-07
+    400078: DiBan
+    400080: DiBan01
+    400082: DiBan02
+    400084: DiBan03
+    400086: DiBan04
+    400088: DiBan05
+    400090: DiBan06
+    400092: Particle View 01
+    400094: Particle View 01 1
+    400096: Particle View 02
+    400098: QiangBi
+    400100: QiangBi01
+    400102: QiangBi02
+    400104: QiangBi03
+    400106: QiangBi04
+    400108: QiangBi06
+    400110: //RootNode
+    2100000: 'Material #2008'
+    2100002: 'Material #2006'
+    2100004: 'Material #1926'
+    2100006: 'Material #1928'
+    2100008: 'Material #1927'
+    2100010: 'Material #2009'
+    2100012: 'Material #2007'
+    2100014: Men
+    2300000: CJ-BIAOSHI-01
+    2300002: CJ-BIAOSHI-010
+    2300004: CJ-BIAOSHI-02
+    2300006: CJ-BIAOSHI-03
+    2300008: CJ-BIAOSHI-04
+    2300010: CJ-BIAOSHI-05
+    2300012: CJ-BIAOSHI-06
+    2300014: CJ-BIAOSHI-07
+    2300016: CJ-BIAOSHI-08
+    2300018: CJ-BIAOSHI-09
+    2300020: CJ-DENG-005
+    2300022: CJ-DENG-006
+    2300024: CJ-DENG-01
+    2300026: CJ-DENG-02
+    2300028: CJ-DENG-03
+    2300030: CJ-DENG-04
+    2300032: CJ-PENZAI-01
+    2300034: CJ-PENZAI-02
+    2300036: CJ-PENZAI-03
+    2300038: CJ-PENZAI-04
+    2300040: CJ-PENZAI-05
+    2300042: CJ-ZHUANGSHI-008
+    2300044: CJ-ZHUANGSHI-009
+    2300046: CJ-ZHUANGSHI-01
+    2300048: CJ-ZHUANGSHI-010
+    2300050: CJ-ZHUANGSHI-011
+    2300052: CJ-ZHUANGSHI-012
+    2300054: CJ-ZHUANGSHI-02
+    2300056: CJ-ZHUANGSHI-03
+    2300058: CJ-ZHUANGSHI-04
+    2300060: CJ-ZHUANGSHI-05
+    2300062: CJ-ZHUANGSHI-06
+    2300064: CJ-ZHUANGSHI-07
+    2300066: DiBan01
+    2300068: DiBan02
+    2300070: DiBan03
+    2300072: DiBan04
+    2300074: DiBan05
+    2300076: DiBan06
+    2300078: QiangBi01
+    2300080: QiangBi02
+    2300082: QiangBi03
+    2300084: QiangBi04
+    2300086: QiangBi06
+    3300000: CJ-BIAOSHI-01
+    3300002: CJ-BIAOSHI-010
+    3300004: CJ-BIAOSHI-02
+    3300006: CJ-BIAOSHI-03
+    3300008: CJ-BIAOSHI-04
+    3300010: CJ-BIAOSHI-05
+    3300012: CJ-BIAOSHI-06
+    3300014: CJ-BIAOSHI-07
+    3300016: CJ-BIAOSHI-08
+    3300018: CJ-BIAOSHI-09
+    3300020: CJ-DENG-005
+    3300022: CJ-DENG-006
+    3300024: CJ-DENG-01
+    3300026: CJ-DENG-02
+    3300028: CJ-DENG-03
+    3300030: CJ-DENG-04
+    3300032: CJ-PENZAI-01
+    3300034: CJ-PENZAI-02
+    3300036: CJ-PENZAI-03
+    3300038: CJ-PENZAI-04
+    3300040: CJ-PENZAI-05
+    3300042: CJ-ZHUANGSHI-008
+    3300044: CJ-ZHUANGSHI-009
+    3300046: CJ-ZHUANGSHI-01
+    3300048: CJ-ZHUANGSHI-010
+    3300050: CJ-ZHUANGSHI-011
+    3300052: CJ-ZHUANGSHI-012
+    3300054: CJ-ZHUANGSHI-02
+    3300056: CJ-ZHUANGSHI-03
+    3300058: CJ-ZHUANGSHI-04
+    3300060: CJ-ZHUANGSHI-05
+    3300062: CJ-ZHUANGSHI-06
+    3300064: CJ-ZHUANGSHI-07
+    3300066: DiBan01
+    3300068: DiBan02
+    3300070: DiBan03
+    3300072: DiBan04
+    3300074: DiBan05
+    3300076: DiBan06
+    3300078: QiangBi01
+    3300080: QiangBi02
+    3300082: QiangBi03
+    3300084: QiangBi04
+    3300086: QiangBi06
+    4300000: QiangBi06
+    4300002: DiBan06
+    4300004: CJ-DENG-01
+    4300006: CJ-DENG-02
+    4300008: CJ-DENG-03
+    4300010: CJ-DENG-04
+    4300012: CJ-DENG-005
+    4300014: CJ-DENG-006
+    4300016: CJ-ZHUANGSHI-07
+    4300018: CJ-ZHUANGSHI-06
+    4300020: CJ-ZHUANGSHI-05
+    4300022: CJ-ZHUANGSHI-04
+    4300024: CJ-ZHUANGSHI-03
+    4300026: CJ-ZHUANGSHI-01
+    4300028: CJ-ZHUANGSHI-02
+    4300030: CJ-ZHUANGSHI-008
+    4300032: CJ-ZHUANGSHI-009
+    4300034: CJ-ZHUANGSHI-010
+    4300036: CJ-ZHUANGSHI-011
+    4300038: CJ-ZHUANGSHI-012
+    4300040: CJ-BIAOSHI-01
+    4300042: CJ-BIAOSHI-02
+    4300044: CJ-BIAOSHI-03
+    4300046: CJ-BIAOSHI-04
+    4300048: CJ-BIAOSHI-05
+    4300050: CJ-BIAOSHI-06
+    4300052: CJ-BIAOSHI-08
+    4300054: CJ-BIAOSHI-07
+    4300056: CJ-BIAOSHI-09
+    4300058: CJ-BIAOSHI-010
+    4300060: CJ-PENZAI-02
+    4300062: CJ-PENZAI-03
+    4300064: CJ-PENZAI-04
+    4300066: CJ-PENZAI-05
+    4300068: CJ-PENZAI-01
+    4300070: QiangBi01
+    4300072: QiangBi02
+    4300074: DiBan04
+    4300076: DiBan03
+    4300078: DiBan02
+    4300080: DiBan01
+    4300082: DiBan05
+    4300084: QiangBi04
+    4300086: QiangBi03
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

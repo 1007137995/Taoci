@@ -28,9 +28,9 @@ namespace TaoCi
             switch (UIManager.Instance.step)
             {
                 case 1001001:
-                    TTUIPage.ShowPage<UIIntroduce>();
-                    UIIntroduce.Instance.ChangeInfo(introduction, info, "Meikuai");
-                    transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    //TTUIPage.ShowPage<UIIntroduce>();
+                    //UIIntroduce.Instance.ChangeInfo(introduction, info, "Meikuai");
+                    //transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
                     break;
                 case 1004002:
                     SetInLu();
@@ -46,7 +46,7 @@ namespace TaoCi
             switch (UIManager.Instance.step)
             {
                 case 1002001:
-                    transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    //transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
                     break;
                 case 1004002:                    
                     if (b)

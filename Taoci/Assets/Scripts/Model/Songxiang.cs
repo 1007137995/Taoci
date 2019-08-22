@@ -28,9 +28,9 @@ namespace TaoCi
             switch (ChuantongStep.Instance.LocalStep)
             {
                 case 1001001:
-                    TTUIPage.ShowPage<UIIntroduce>();
-                    UIIntroduce.Instance.ChangeInfo(introduction, info, "Songxiang");
-                    transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    //TTUIPage.ShowPage<UIIntroduce>();
+                    //UIIntroduce.Instance.ChangeInfo(introduction, info, "Songxiang");
+                    //transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
                     break;
                 case 1004003:
                     transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
@@ -46,7 +46,7 @@ namespace TaoCi
             switch (UIManager.Instance.step)
             {
                 case 1002001:
-                    transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    //transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
                     break;
                 case 1004003:
                     if (b)
