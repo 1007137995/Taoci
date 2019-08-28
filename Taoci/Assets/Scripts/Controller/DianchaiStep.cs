@@ -29,16 +29,22 @@ namespace TaoCi
             switch (LocalStep)
             {
                 case 2001001:
+                    FirstPersonController.Instance.GetComponent<FirstPersonController>().enabled = false;
                     TTUIPage.ShowPage<UITitle>();
+                    //TTUIPage.ShowPage<UIIntroduceBtn>();
+                    TTUIPage.ShowPage<UITip>();
+                    UITip.Instance.SetTip("请先阅读实验守则和实验目的。");
                     CamOperator.Instance.GetComponent<CamOperator>().enabled = false;
                     break;
                 case 2001002:
                     Dianyaolu.Instance.GetComponent<Collider>().enabled = false;
                     Dianyaolu.Instance.GetComponent<HighlightingSystem.Highlighter>().enabled = false;
+                    TTUIPage.ClosePage<UIIntroduceBtn>();
                     SetStep(2002001);//1002001
                     break;
                 case 2002001:
                     TTUIPage.ShowPage<UICProcess>();
+                    TTUIPage.ShowPage<UIKou>();
                     TTUIPage.ClosePage<UIIntroduce>();
                     UITitle.Instance.SetPage(2);
                     UITitle.Instance.transform.Find("StartBtn").gameObject.SetActive(false);
@@ -47,8 +53,10 @@ namespace TaoCi
                     CamOperator.Instance.cam.GetComponent<Camera>().depth = 1;
                     transform.GetComponent<InputListener>().cam = CamOperator.Instance.cam.GetComponent<Camera>();
                     CamOperator.Instance.target.gameObject.SetActive(true);
+                    CamOperator.Instance.GetComponent<CamOperator>().enabled = false;
                     break;
                 case 2002002:
+                    TTUIPage.ClosePage<UIKou>();
                     FirstPersonController.Instance.GetComponent<FirstPersonController>().enabled = true;
                     CamOperator.Instance.GetComponent<CamOperator>().enabled = false;
                     UICProcess.Instance.SetPage(2);
@@ -62,11 +70,13 @@ namespace TaoCi
                     UITip.Instance.SetTip("点击马蹄柱，先在窑车四个角各立一根马蹄柱。");
                     break;
                 case 2002004:
+                    TTUIPage.ClosePage<UITip>();
                     TTUIPage.ShowPage<UIQuestion>();
                     UIQuestion.Instance.GetQuestion(2002004);
                     UIManager.Instance.Delay(QuestionEnd());
                     break;
                 case 2002005:
+                    TTUIPage.ShowPage<UITip>();
                     UITip.Instance.SetTip("点击硼板，将硼板平铺在窑车上。");
                     break;
                 case 2002006:
@@ -95,7 +105,7 @@ namespace TaoCi
                     break;
                 case 2002014:
                     TTUIPage.ClosePage<UITip>();
-                    SetStep(1003001);
+                    SetStep(2003001);
                     break;
                 case 2003001:
                     UICProcess.Instance.SetPage(3);
@@ -111,60 +121,74 @@ namespace TaoCi
                     break;
                 case 2003004:
                     TTUIPage.ClosePage<UISetValue>();
-                    SetStep(1004001);
+                    SetStep(2004001);
                     break;
                 case 2004001:
                     UICProcess.Instance.SetPage(4);
-                    TTUIPage.ShowPage<UITip>();
-                    UITip.Instance.SetTip("点击开关，关闭电源");
+                    //TTUIPage.ShowPage<UITip>();
+                    //UITip.Instance.SetTip("点击开关，关闭电源");
+                    TTUIPage.ShowPage<UISlider>();
+                    UISlider.Instance.Wait("升温过程，等待12小时");
+                    AudioManager.instance.StopAudio();
+                    AudioManager.instance.PlayAudio(Resources.Load<AudioClip>("Audio/Burn"));
                     break;
                 case 2004002:
-                    UITip.Instance.SetTip("点击木柴，持续不断从投料口放入窑内给窑内升温。");
+                    AudioManager.instance.StopAudio();
+                    TTUIPage.ClosePage<UISlider>();
+                    TTUIPage.ShowPage<UITip>();
+                    UITip.Instance.SetTip("进入窑变技艺环节，点击木柴，持续不断从投料口放入窑内给窑内升温。");
                     break;
                 case 2004003:
                     LocalStepAdd();
                     break;
                 case 2004004:
-                    UITip.Instance.SetTip("开启排烟口，使窑内上下通气，煤块、松香接触氧气火焰升高，窜出排烟口，而浓烟滞留在窑内两侧，此时窑内既有氧化气氛又有还原气氛，即中性气氛。");
+                    //UITip.Instance.SetTip("开启排烟口，使窑内上下通气，煤块、松香接触氧气火焰升高，窜出排烟口，而浓烟滞留在窑内两侧，此时窑内既有氧化气氛又有还原气氛，即中性气氛。");
                     ShaderColorController.Instance.Burn();
-                    Lumen.Instance.gameObject.SetActive(false);
                     ShaderColorController.Instance.fireLight.intensity = 3;
-                    Fire.Instance.ChangeLittleFire(true);
+                    //Fire.Instance.ChangeLittleFire(true);
                     TTUIPage.ShowPage<UISingleBtn>();
+                    UISingleBtn.Instance.transform.Find("EffectBtn").gameObject.SetActive(true);
+                    UIManager.Instance.Delay(Openpaiyankou());
                     break;
                 case 2004005:
-                    TTUIPage.ClosePage<UISingleBtn>();
-                    Fire.Instance.ChangeLittleFire(false);
+                    UISingleBtn.Instance.transform.Find("PaiyankouBtn").gameObject.SetActive(false);
+                    //Fire.Instance.ChangeLittleFire(false);
                     ShaderColorController.Instance.fireLight.intensity = 5;
                     Fire.Instance.ChangeInFire(true);
-                    Fire.Instance.ChangeOutFire(true);
-                    UITip.Instance.SetTip("处在氧化气氛下的坭兴陶会生成砖红色、古铜色或黄褐色，并留下火焰燎过的痕迹；而处在还原气氛下的坭兴陶坯体中的高价铁会还原变成氧化亚铁，同时浓烟中的碳元素会吸附到坭兴陶表面，形成黑灰色、深青色或深蓝色等暗色调，所以坭兴陶会呈现出一边红一边黑的效果。至此，窑变形成。");
+                    //Fire.Instance.ChangeOutFire(true);
+                    UITip.Instance.SetTip("木柴在窑内燃烧，形成草木灰和变幻莫测的落灰釉，至此，窑变形成。");
                     UIManager.Instance.Delay(Wait());
                     break;
-                case 1004006:
+                case 2004006:
                     Fire.Instance.ChangeInFire(false);
                     Fire.Instance.ChangeOutFire(false);
-                    UITip.Instance.SetTip("开启排烟口、观火口、投料口，进入降温环节。");
+                    //UITip.Instance.SetTip("开启排烟口、观火口、投料口，进入降温环节。");       
+                    TTUIPage.ClosePage<UITip>();
                     ShaderColorController.Instance.Cool();
+                    TTUIPage.ShowPage<UISlider>();
+                    UISlider.Instance.Wait("降温阶段，等待24小时");
                     break;
-                case 1004007:
+                case 2004007:
+                    TTUIPage.ClosePage<UISingleBtn>();
+                    TTUIPage.ClosePage<UISlider>();
                     TTUIPage.ShowPage<UIQuestion>();
                     UIQuestion.Instance.GetQuestion(1004007);
                     UIManager.Instance.Delay(QuestionEnd());
                     break;
-                case 1004008:
+                case 2004008:
                     Lumen.Instance.gameObject.SetActive(true);
-                    SetStep(1005001);
+                    SetStep(2005001);
                     break;
                 case 2005001:
                     UICProcess.Instance.SetPage(5);
+                    TTUIPage.ShowPage<UITip>();
                     UITip.Instance.SetTip("点击戴上手套。");
                     break;
                 case 2005002:
                     UITip.Instance.SetTip("点击取下两个阀门，点击打开电窑炉门，拉出窑车。");
                     break;
                 case 2005003:
-                    UITip.Instance.SetTip("点击取下最上层烧制好的陶瓷。");
+                    UITip.Instance.SetTip("点击取下最上层烧制好的坭兴陶。");
                     break;
                 case 2005004:
                     UITip.Instance.SetTip("点击取下最上层硼板。");
@@ -173,7 +197,7 @@ namespace TaoCi
                     UITip.Instance.SetTip("点击取下最上层马蹄柱。");
                     break;
                 case 2005006:
-                    UITip.Instance.SetTip("点击取下第二层烧制好的陶瓷。");
+                    UITip.Instance.SetTip("点击取下第二层烧制好的坭兴陶。");
                     break;
                 case 2005007:
                     UITip.Instance.SetTip("点击取下第二层硼板。");
@@ -182,7 +206,7 @@ namespace TaoCi
                     UITip.Instance.SetTip("点击取下第二层马蹄柱。");
                     break;
                 case 2005009:
-                    UITip.Instance.SetTip("点击取下最下层烧制好的陶瓷。");
+                    UITip.Instance.SetTip("点击取下最下层烧制好的坭兴陶。");
                     break;
                 case 2005010:
                     UITip.Instance.SetTip("点击取下最下层硼板。");
@@ -196,7 +220,11 @@ namespace TaoCi
                 case 2005013:
                     UITitle.Instance.SetPage(3);
                     TTUIPage.ClosePage<UICProcess>();
-                    UITip.Instance.SetTip("点击烧制好的陶瓷，显示要变效果图。");
+                    UITip.Instance.SetTip("点击烧制好的坭兴陶，显示要变效果图。");
+                    foreach (GameObject item in peipin)
+                    {
+                        item.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                    }
                     break;
                 case 2005014:
                     TTUIPage.ClosePage<UITip>();
@@ -222,6 +250,12 @@ namespace TaoCi
         IEnumerator QuestionEnd()
         {
             yield return new WaitUntil(() => !UIQuestion.Instance.gameObject.activeSelf);
+            LocalStepAdd();
+        }
+
+        IEnumerator Openpaiyankou()
+        {
+            yield return new WaitUntil(() => UISingleBtn.Instance.transform.Find("PaiyankouBtn").gameObject.activeSelf);
             LocalStepAdd();
         }
     }

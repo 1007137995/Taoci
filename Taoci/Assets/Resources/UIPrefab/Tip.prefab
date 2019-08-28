@@ -72,7 +72,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 50}
-  m_SizeDelta: {x: 500, y: 50}
+  m_SizeDelta: {x: 520, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &854263318061455524
 CanvasRenderer:
@@ -146,7 +146,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 50}
-  m_SizeDelta: {x: 450, y: 50}
+  m_SizeDelta: {x: 500, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &854263319362126337
 CanvasRenderer:
@@ -178,15 +178,15 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: c8863b0a28dc7874998c8e78f3ebad00, type: 3}
-    m_FontSize: 14
+    m_FontSize: 12
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 3
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: "\u5904\u5728\u6C27\u5316\u6C14\u6C1B\u4E0B\u7684\u576D\u5174\u9676\u4F1A\u751F\u6210\u7816\u7EA2\u8272\u3001\u53E4\u94DC\u8272\u6216\u9EC4\u8910\u8272\uFF0C\u5E76\u7559\u4E0B\u706B\u7130\u71CE\u8FC7\u7684\u75D5\u8FF9\uFF1B\u800C\u5904\u5728\u8FD8\u539F\u6C14\u6C1B\u4E0B\u7684\u576D\u5174\u9676\u576F\u4F53\u4E2D\u7684\u9AD8\u4EF7\u94C1\u4F1A\u8FD8\u539F\u53D8\u6210\u6C27\u5316\u4E9A\u94C1\uFF0C\u540C\u65F6\u6D53\u70DF\u4E2D\u7684\u78B3\u5143\u7D20\u4F1A\u5438\u9644\u5230\u576D\u5174\u9676\u8868\u9762\uFF0C\u5F62\u6210\u9ED1\u7070\u8272\u3001\u6DF1\u9752\u8272\u6216\u6DF1\u84DD\u8272\u7B49\u6697\u8272\u8C03\uFF0C\u6240\u4EE5\u576D\u5174\u9676\u4F1A\u5448\u73B0\u51FA\u4E00\u8FB9\u7EA2\u4E00\u8FB9\u9ED1\u7684\u6548\u679C\u3002\u81F3\u6B64\uFF0C\u7A91\u53D8\u5F62\u6210\u3002"

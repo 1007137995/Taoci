@@ -93,13 +93,13 @@ namespace TaoCi
 
         private void OpenEle()
         {
-            transform.DOLocalRotate(new Vector3(0, -90, -235), 1f);
+            transform.DOLocalRotate(new Vector3(0, -90, -90), 1f);
             UIManager.Instance.AddStep();
         }
 
         private void CloseEle()
         {
-            transform.DOLocalRotate(new Vector3(0, -90, -90), 1f);
+            transform.DOLocalRotate(new Vector3(0, -90, -235), 1f);
             UIManager.Instance.AddStep();
         }
     }

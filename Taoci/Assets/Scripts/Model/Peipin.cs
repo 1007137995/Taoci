@@ -12,6 +12,8 @@ namespace TaoCi
     {
         private string info;
         public GameObject[] peipin;
+        public Material[] newmaterial;
+        public Sprite sprite;
 
         private void Awake()
         {
@@ -20,12 +22,13 @@ namespace TaoCi
             oldRot = transform.parent.localEulerAngles;
             parentPos = transform.parent.parent;
             handPos = transform.parent.parent.Find("Hand");
-            aimPos[0] = new Vector3(0.983f, -0.642f, 1.251f);
-            aimPos[1] = new Vector3(0.983f, -0.2865f, 1.251f);
-            aimPos[2] = new Vector3(0.983f, 0.133f, 1.251f);
             if (ChuantongStep.Instance != null)
             {
                 ChuantongStep.Instance.peipin.Add(this.gameObject);
+            }
+            if (DianchaiStep.Instance != null)
+            {
+                DianchaiStep.Instance.peipin.Add(this.gameObject);
             }
         }
 
@@ -109,22 +112,23 @@ namespace TaoCi
                     }
                     break;
                 case 1005013:
-                    foreach (GameObject item in ChuantongStep.Instance.peipin)
+                    foreach (GameObject item in peipin)
                     {
                         item.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                        item.GetComponent<Collider>().enabled = false;
                     }
                     TTUIPage.ShowPage<UIPicture>();
-                    UIPicture.Instance.transform.Find("Image").GetComponent<Image>().overrideSprite = ShaderColorController.Instance.sprites[0];
+                    UIPicture.Instance.SetImg(sprite);
                     break;
                 #endregion
                 #region 电柴
                 case 2001001:
-                    TTUIPage.ShowPage<UIIntroduce>();
-                    UIIntroduce.Instance.ChangeInfo(introduction, info, "Peipin");
-                    foreach (GameObject item in ChuantongStep.Instance.peipin)
-                    {
-                        item.GetComponent<HighlightingSystem.Highlighter>().tween = false;
-                    }
+                    //TTUIPage.ShowPage<UIIntroduce>();
+                    //UIIntroduce.Instance.ChangeInfo(introduction, info, "Peipin");
+                    //foreach (GameObject item in DianchaiStep.Instance.peipin)
+                    //{
+                    //    item.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    //}
                     break;
                 case 2002007:
                     if (layer == TaociLayer.Bottom)
@@ -187,12 +191,13 @@ namespace TaoCi
                     }
                     break;
                 case 2005013:
-                    foreach (GameObject item in ChuantongStep.Instance.peipin)
+                    foreach (GameObject item in peipin)
                     {
                         item.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                        item.GetComponent<Collider>().enabled = false;
                     }
                     TTUIPage.ShowPage<UIPicture>();
-                    UIPicture.Instance.transform.Find("Image").GetComponent<Image>().overrideSprite = ShaderColorController.Instance.sprites[0];
+                    UIPicture.Instance.SetImg(sprite);
                     break;
                 #endregion
                 default:
@@ -247,16 +252,13 @@ namespace TaoCi
                         transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
                     }
                     break;
-                case 1005013:
-                    transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
-                    break;
                 #endregion
                 #region 电柴
                 case 2002001:
-                    foreach (GameObject item in ChuantongStep.Instance.peipin)
-                    {
-                        item.GetComponent<HighlightingSystem.Highlighter>().tween = false;
-                    }
+                //    foreach (GameObject item in DianchaiStep.Instance.peipin)
+                //    {
+                //        item.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                //    }
                     break;
                 case 2002007:
                     if (layer == TaociLayer.Bottom)
@@ -293,9 +295,6 @@ namespace TaoCi
                     {
                         transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
                     }
-                    break;
-                case 2005013:
-                    transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
                     break;
                 #endregion
                 default:

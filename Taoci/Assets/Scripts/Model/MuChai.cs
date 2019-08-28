@@ -27,9 +27,9 @@ namespace TaoCi
             switch (UIManager.Instance.step)
             {
                 case 2001001:
-                    TTUIPage.ShowPage<UIIntroduce>();
-                    UIIntroduce.Instance.ChangeInfo(introduction, info, "Meikuai");
-                    transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    //TTUIPage.ShowPage<UIIntroduce>();
+                    //UIIntroduce.Instance.ChangeInfo(introduction, info, "Meikuai");
+                    //transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
                     break;
                 case 2004002:
                     SetInLu();
@@ -45,7 +45,7 @@ namespace TaoCi
             switch (UIManager.Instance.step)
             {
                 case 2002001:
-                    transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    //transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
                     break;
                 case 2004002:
                     if (b)
@@ -64,12 +64,13 @@ namespace TaoCi
 
         private void SetInLu()
         {
+            transform.GetComponent<Collider>().enabled = false;
             Sequence sequence = DOTween.Sequence();
-            sequence.Append(Huoqian.Instance.transform.DOLocalMove(new Vector3(2.1406f, -0.7986f, 3.932f), 0.05f).OnComplete(delegate
+            sequence.Append(Huoqian.Instance.transform.DOLocalMove(new Vector3(2.168f, -0.724f, 3.5838f), 0.05f).OnComplete(delegate
             {
                 Huoqian.Instance.transform.localEulerAngles = new Vector3(-30, 90, 0);
             }));
-            sequence.Append(Huoqian.Instance.transform.DOLocalMove(new Vector3(2.25f, -1.1828f, 3.9271f), 1f).OnComplete(delegate
+            sequence.Append(Huoqian.Instance.transform.DOLocalMove(new Vector3(2.168f, -1.139f, 3.5838f), 1f).OnComplete(delegate
             {
                 aim.transform.SetParent(Huoqian.Instance.transform);
             }));

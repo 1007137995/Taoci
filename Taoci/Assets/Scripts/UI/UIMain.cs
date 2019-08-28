@@ -20,7 +20,7 @@ namespace TinyTeam.UI
 
         public void Chuantong()
         {
-            MainScene.Instance.scene ="CTDY";
+            MainScene.Instance.scene ="CTYB";
             TTUIPage.ClosePage(this);
         }
     }

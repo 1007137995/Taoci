@@ -25,7 +25,7 @@ namespace TaoCi
 
         public override void OnMouseLeftClick()
         {
-            switch (ChuantongStep.Instance.LocalStep)
+            switch (UIManager.Instance.step)
             {
                 case 1001001:
                     //TTUIPage.ShowPage<UIIntroduce>();
@@ -65,6 +65,7 @@ namespace TaoCi
 
         private void SetInLu()
         {
+
             Sequence sequence = DOTween.Sequence();
             sequence.Append(Huoqian.Instance.transform.DOLocalMove(new Vector3(2.0834f, -0.7986f, 3.4497f), 0.05f).OnComplete(delegate 
             {

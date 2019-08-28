@@ -20,9 +20,9 @@ namespace TinyTeam.UI
             Instance = this;
         }
 
-        public void Wait(int time)
+        public void Wait(string txt)
         {
-            transform.Find("slider/Time").GetComponent<Text>().text = "等待" + time.ToString() + "h";
+            transform.Find("slider/Time").GetComponent<Text>().text = txt;
             UIManager.Instance.Delay(Run(10));
         }
 

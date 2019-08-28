@@ -30,6 +30,8 @@ namespace TaoCi
             TTUIPage.ClosePage<UIIntroduceBtn>();
             TTUIPage.ShowPage<UITip>();
             TTUIPage.ClosePage<UITip>();
+            TTUIPage.ShowPage<UIKou>();
+            TTUIPage.ClosePage<UIKou>();
             TTUIPage.ShowPage<UISetValue>();
             TTUIPage.ClosePage<UISetValue>();
             TTUIPage.ShowPage<UIQuestion>();

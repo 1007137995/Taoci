@@ -9,6 +9,7 @@ namespace TinyTeam.UI
     public class UISingleBtn : TTUIPage
     {
         public static UISingleBtn Instance;
+        public bool b = true;
 
         public UISingleBtn() : base(UIType.Fixed, UIMode.DoNothing, UICollider.None)
         {
@@ -19,7 +20,14 @@ namespace TinyTeam.UI
         {
             Instance = this;
             transform.Find("PaiyankouBtn").GetComponent<Button>().onClick.AddListener(() => UIManager.Instance.AddStep());
-            transform.Find("EffectBtn").GetComponent<Button>().onClick.AddListener(() => Lumen.Instance.gameObject.SetActive(!Lumen.Instance.gameObject.activeSelf));
+            transform.Find("EffectBtn").GetComponent<Button>().onClick.AddListener(() => {
+                Lumen.Instance.gameObject.SetActive(!Lumen.Instance.gameObject.activeSelf);
+                if (b)
+                {
+                    b = false;
+                    transform.Find("PaiyankouBtn").gameObject.SetActive(true);
+                }                
+            });
             transform.Find("PaiyankouBtn").gameObject.SetActive(false);
             transform.Find("EffectBtn").gameObject.SetActive(false);
         }

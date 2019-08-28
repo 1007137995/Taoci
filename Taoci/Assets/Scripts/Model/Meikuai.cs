@@ -65,6 +65,7 @@ namespace TaoCi
 
         private void SetInLu()
         {
+            transform.GetComponent<Collider>().enabled = false;
             Sequence sequence = DOTween.Sequence();
             sequence.Append(Huoqian.Instance.transform.DOLocalMove(new Vector3(2.1406f, -0.7986f, 3.932f), 0.05f).OnComplete(delegate
             {

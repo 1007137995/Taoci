@@ -382,12 +382,14 @@ namespace TaoCi
                     {
                         case "1":
                             tipText.text = "升温过快，窑内水汽排除不彻底，坭兴陶坯品炸裂，烧窑失败。";
+                            tipText.color = Color.red;
                             errorindex++;
                             AudioManager.instance.StopAudio();
                             AudioManager.instance.PlayAudio(Resources.Load<AudioClip>("Audio/Worning"));
                             break;
                         case "2":
                             tipText.text = "升温过快，窑内水汽排除不彻底，坭兴陶坯品炸裂，烧窑失败。";
+                            tipText.color = Color.red;
                             errorindex++;
                             AudioManager.instance.StopAudio();
                             AudioManager.instance.PlayAudio(Resources.Load<AudioClip>("Audio/Worning"));
@@ -395,8 +397,10 @@ namespace TaoCi
                         case "4":
                             ScoreInfo.AddSocreInfo(new ScoreInfo(0, "排水阶段时间设置：", "C", true, errorindex));
                             stepButton[1].GetComponent<Button>().interactable = true;
-                            tipText.text = "";
+                            tipText.text = "选择正确";
+                            tipText.color = new Color(0, 130.0f / 255.0f, 10.0f / 255.0f);
                             errorindex = 0;
+                            AudioManager.instance.StopAudio();
                             break;
                         default:
                             break;
@@ -407,12 +411,14 @@ namespace TaoCi
                     {
                         case "1":
                             tipText.text = "升温过快，坭兴陶坯品炸裂，烧窑失败。";
+                            tipText.color = Color.red;
                             errorindex++;
                             AudioManager.instance.StopAudio();
                             AudioManager.instance.PlayAudio(Resources.Load<AudioClip>("Audio/Worning"));
                             break;
                         case "2":
                             tipText.text = "升温过快，坭兴陶坯品炸裂，烧窑失败。";
+                            tipText.color = Color.red;
                             errorindex++;
                             AudioManager.instance.StopAudio();
                             AudioManager.instance.PlayAudio(Resources.Load<AudioClip>("Audio/Worning"));
@@ -420,7 +426,8 @@ namespace TaoCi
                         case "3":
                             ScoreInfo.AddSocreInfo(new ScoreInfo(0, "低温阶段时间设置：", "C", true, errorindex));
                             stepButton[2].GetComponent<Button>().interactable = true;
-                            tipText.text = "";
+                            tipText.text = "选择正确";
+                            tipText.color = new Color(0, 130.0f / 255.0f, 10.0f / 255.0f);
                             errorindex = 0;
                             AudioManager.instance.StopAudio();
                             break;
@@ -432,23 +439,26 @@ namespace TaoCi
                     switch (t)
                     {
                         case "1":
-                            ScoreInfo.AddSocreInfo(new ScoreInfo(0, "中温阶段时间设置：", "A", true, errorindex));
-                            stepButton[3].GetComponent<Button>().interactable = true;
-                            tipText.text = "";
-                            errorindex = 0;
+                            tipText.text = "升温过快，坭兴陶坯品炸裂，烧窑失败。";
+                            tipText.color = Color.red;
+                            errorindex++;
                             AudioManager.instance.StopAudio();
+                            AudioManager.instance.PlayAudio(Resources.Load<AudioClip>("Audio/Worning"));
                             break;
                         case "2":
                             tipText.text = "升温过快，坭兴陶坯品炸裂，烧窑失败。";
+                            tipText.color = Color.red;
                             errorindex++;
                             AudioManager.instance.StopAudio();
                             AudioManager.instance.PlayAudio(Resources.Load<AudioClip>("Audio/Worning"));
                             break;
                         case "3":
-                            tipText.text = "升温过快，坭兴陶坯品炸裂，烧窑失败。";
-                            errorindex++;
-                            AudioManager.instance.StopAudio();
-                            AudioManager.instance.PlayAudio(Resources.Load<AudioClip>("Audio/Worning"));
+                            ScoreInfo.AddSocreInfo(new ScoreInfo(0, "中温阶段时间设置：", "C", true, errorindex));
+                            stepButton[3].GetComponent<Button>().interactable = true;
+                            tipText.text = "选择正确";
+                            tipText.color = new Color(0, 130.0f / 255.0f, 10.0f / 255.0f);
+                            errorindex = 0;
+                            AudioManager.instance.StopAudio();                            
                             break;
                         default:
                             break;
@@ -488,18 +498,25 @@ namespace TaoCi
                     {
                         case "1000":
                             tipText.text = "烧制温度不够，造成“生火”，坭兴陶未烧结。";
+                            tipText.color = Color.red;
                             errorindex++;
+                            AudioManager.instance.StopAudio();
+                            AudioManager.instance.PlayAudio(Resources.Load<AudioClip>("Audio/Worning"));
                             break;
                         case "1150":
                             ScoreInfo.AddSocreInfo(new ScoreInfo(0, "高温阶段温度设置：", "A", true, errorindex));
                             stepButton[4].GetComponent<Button>().interactable = true;
-                            tipText.text = "";
+                            tipText.text = "选择正确";
+                            tipText.color = new Color(0, 130.0f / 255.0f, 10.0f / 255.0f);
                             errorindex = 0;
                             AudioManager.instance.StopAudio();
                             break;
                         case "1250":
                             tipText.text = "烧制温度过高，造成“过烧”，坭兴陶制品变形坍塌，烧制失败。";
+                            tipText.color = Color.red;
                             errorindex++;
+                            AudioManager.instance.StopAudio();
+                            AudioManager.instance.PlayAudio(Resources.Load<AudioClip>("Audio/Worning"));
                             break;
                         default:
                             break;

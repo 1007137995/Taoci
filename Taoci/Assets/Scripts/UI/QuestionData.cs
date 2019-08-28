@@ -51,6 +51,7 @@ namespace TaoCi
             que.toggle[2] = "C.用于向窑内投放熏窑物品";
             que.error[0] = "选择错误";
             que.error[1] = "选择错误";
+            que.error[2] = "选择正确";
             que.answer = "C";
             que.shuoming = "";
             que.qaudio = null;
@@ -73,6 +74,7 @@ namespace TaoCi
             que.toggle[0] = "A.用于观察窑内温度和火势";
             que.toggle[1] = "B.用于排除窑内烟气和二氧化碳";
             que.toggle[2] = "C.用于向窑内投放熏窑物品";
+            que.error[0] = "选择正确";
             que.error[1] = "选择错误";
             que.error[2] = "选择错误";
             que.answer = "A";
@@ -97,6 +99,7 @@ namespace TaoCi
             que.toggle[0] = "A.用于排除窑内多余烟气和二氧化碳";
             que.toggle[1] = "B.用于观察窑内温度和火势";
             que.toggle[2] = "C.用于向窑内投放熏窑物品";
+            que.error[0] = "选择正确";
             que.error[1] = "选择错误";
             que.error[2] = "选择错误";
             que.answer = "A";
@@ -121,6 +124,7 @@ namespace TaoCi
             que.toggle[0] = "A.70℃";
             que.toggle[1] = "B.170℃";
             que.toggle[2] = "C.270℃";
+            que.error[0] = "选择正确";
             que.error[1] = "出窑温度过高，坭兴陶易发生冷裂，烧制失败。";
             que.error[2] = "出窑温度过高，坭兴陶发生冷裂，烧制失败。";
             que.answer = "A";
@@ -146,6 +150,7 @@ namespace TaoCi
             que.toggle[1] = "B.高温硼板";
             que.toggle[2] = "C.木柴";
             que.error[0] = "此处是火膛，不能放置坭兴陶坯品。";
+            que.error[1] = "选择正确";
             que.error[2] = "此时不能放置木柴。";
             que.answer = "B";
             que.shuoming = "";

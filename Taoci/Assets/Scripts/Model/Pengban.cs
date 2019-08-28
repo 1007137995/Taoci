@@ -18,12 +18,13 @@ namespace TaoCi
             oldRot = transform.localEulerAngles;
             parentPos = transform.parent;
             handPos = transform.parent.Find("Hand");
-            aimPos[0] = new Vector3(0.983f, -0.048f, 1.251f);
-            aimPos[1] = new Vector3(0.983f, -0.048f, 1.251f);
-            aimPos[2] = new Vector3(0.983f, -0.048f, 1.251f);
             if (ChuantongStep.Instance != null)
             {
                 ChuantongStep.Instance.pengban.Add(this.gameObject);
+            }
+            if (DianchaiStep.Instance != null)
+            {
+                DianchaiStep.Instance.pengban.Add(this.gameObject);
             }
         }
 
@@ -35,7 +36,7 @@ namespace TaoCi
 
         public override void OnMouseLeftClick()
         {            
-            switch (ChuantongStep.Instance.LocalStep)
+            switch (UIManager.Instance.step)
             {
                 #region 传统
                 case 1001001:
@@ -90,12 +91,12 @@ namespace TaoCi
                     break;
                 #endregion
                 case 2001001:
-                    TTUIPage.ShowPage<UIIntroduce>();
-                    UIIntroduce.Instance.ChangeInfo(introduction, info, "Pengban");
-                    foreach (GameObject item in ChuantongStep.Instance.pengban)
-                    {
-                        item.GetComponent<HighlightingSystem.Highlighter>().tween = false;
-                    }
+                    //TTUIPage.ShowPage<UIIntroduce>();
+                    //UIIntroduce.Instance.ChangeInfo(introduction, info, "Pengban");
+                    //foreach (GameObject item in DianchaiStep.Instance.pengban)
+                    //{
+                    //    item.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    //}
                     break;
                 case 2002005:
                     if (layer == TaociLayer.Bottom)
@@ -115,6 +116,27 @@ namespace TaoCi
                     if (layer == TaociLayer.Top)
                     {
                         Push(2);
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    }
+                    break;
+                case 2005004:
+                    if (layer == TaociLayer.Top)
+                    {
+                        Pull();
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    }
+                    break;
+                case 2005007:
+                    if (layer == TaociLayer.Center)
+                    {
+                        Pull();
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    }
+                    break;
+                case 2005010:
+                    if (layer == TaociLayer.Bottom)
+                    {
+                        Pull();
                         transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
                     }
                     break;
@@ -173,10 +195,10 @@ namespace TaoCi
                 #endregion
                 #region
                 case 2002001:
-                    foreach (GameObject item in ChuantongStep.Instance.pengban)
-                    {
-                        item.GetComponent<HighlightingSystem.Highlighter>().tween = false;
-                    }
+                    //foreach (GameObject item in DianchaiStep.Instance.pengban)
+                    //{
+                    //    item.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    //}
                     break;
                 case 2002005:
                     if (layer == TaociLayer.Bottom)
@@ -192,6 +214,24 @@ namespace TaoCi
                     break;
                 case 2002011:
                     if (layer == TaociLayer.Top)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                    }
+                    break;
+                case 2005004:
+                    if (layer == TaociLayer.Top)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                    }
+                    break;
+                case 2005007:
+                    if (layer == TaociLayer.Center)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                    }
+                    break;
+                case 2005010:
+                    if (layer == TaociLayer.Bottom)
                     {
                         transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
                     }

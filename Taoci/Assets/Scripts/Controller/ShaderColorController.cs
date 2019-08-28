@@ -9,11 +9,11 @@ namespace TaoCi
     {
         public static ShaderColorController Instance;
         public List<GameObject> taoci = new List<GameObject>();
-        public List<Sprite> sprites = new List<Sprite>();
+        //public List<Sprite> sprites = new List<Sprite>();
         public Material jiazi;
         public Material wall;
-        public Material originTaoci;
-        public Material newTaoci;
+        public Material[] originTaoci;
+        public Material[] newTaoci;
         public Light fireLight;
 
         private void Awake()
@@ -30,21 +30,34 @@ namespace TaoCi
         public void Burn()
         {
             jiazi.color = Color.red;
-            originTaoci.color = Color.red;
+            foreach (Material item in originTaoci)
+            {
+                item.color = Color.red;
+            }            
             wall.color = new Color(1,0.4f,0.4f);
         }
 
         public void Cool()
         {
-            originTaoci.color = Color.white;
+            foreach (Material item in originTaoci)
+            {
+                item.color = Color.white;
+            }
             foreach (GameObject item in taoci)
             {
-                item.transform.GetComponent<Renderer>().material = newTaoci;
+                item.transform.GetComponent<Renderer>().materials = item.transform.GetComponent<Peipin>().newmaterial;
             }
-            newTaoci.color = Color.red;
+            foreach (Material item in newTaoci)
+            {
+                item.color = Color.red;
+            }
             Sequence sequence = DOTween.Sequence();
-            sequence.Append(newTaoci.DOColor(Color.white, 10));
-            sequence.Join(jiazi.DOColor(Color.white, 10));
+            
+            sequence.Append(jiazi.DOColor(Color.white, 10));
+            foreach (Material item in newTaoci)
+            {
+                sequence.Join(item.DOColor(Color.white, 10));
+            }
             sequence.Join(wall.DOColor(Color.white, 10));
             sequence.Join(DOTween.To(()=> fireLight.range, x => fireLight.intensity = x, 0, 10));
             //sequence.OnComplete(delegate
@@ -56,7 +69,14 @@ namespace TaoCi
         public void Reset()
         {
             jiazi.color = Color.white;
-            originTaoci.color = Color.white;
+            foreach (Material item in originTaoci)
+            {
+                item.color = Color.white;
+            }
+            foreach (Material item in newTaoci)
+            {
+                item.color = Color.white;
+            }
             wall.color = Color.white;
         }
     }

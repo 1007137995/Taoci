@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityStandardAssets.Characters.FirstPerson;
 
 namespace TinyTeam.UI
 {
@@ -11,7 +12,7 @@ namespace TinyTeam.UI
 
         public UIAttention() : base(UIType.Normal, UIMode.HideOther, UICollider.None)
         {
-            uiPath = "Attention";
+            uiPath = "UIPrefab/Attention";
         }
 
         public override void Awake(GameObject go)
@@ -23,6 +24,10 @@ namespace TinyTeam.UI
 
         private void End()
         {
+            FirstPersonController.Instance.GetComponent<FirstPersonController>().enabled = true;
+            TTUIPage.ShowPage<UIIntroduceBtn>();
+            TTUIPage.ShowPage<UITip>();
+            UITip.Instance.SetTip("请点击器材认知。");
             TTUIPage.ClosePage(this);
         }
     }

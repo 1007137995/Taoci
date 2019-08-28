@@ -18,17 +18,17 @@ namespace TaoCi
         //获取相机Transform对象
         public Transform cam;
         //相机距离目标物体的起始距离(距离设置为负值，是因为相机是在目标物体的正后方)
-        private float distance = -5;
+        private float distance = 0;
         //相机距离的物体的最近和最远距离
-        private float minDistance = -5;
-        private float maxDistance = -5;
+        private float minDistance = 0;
+        private float maxDistance = 0;
         //初始位置
         private float camPostion_x = 0;
         private float camPostion_y = 0;
         void Awake()
         {
             Instance = this;
-            transform.position = target.position + new Vector3(0, 1.2f, 0);
+            //transform.position = target.position + new Vector3(0, 1.2f, 0);
             transform.rotation = Quaternion.Euler(y, x, 0);
             cam = cam = transform.Find("Main Camera"); ;
             cam.localPosition = new Vector3(0, 0, distance);

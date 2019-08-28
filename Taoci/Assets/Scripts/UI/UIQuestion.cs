@@ -173,12 +173,23 @@ namespace TinyTeam.UI
             {
                 scoreInfo = new ScoreInfo(qaq.score, qaq.question, qaq.answer, true, 0);
                 shuomingText.gameObject.SetActive(false);
+                AudioManager.instance.StopAudio();
+            }
+            else if (index != -1)
+            {
+                scoreInfo = new ScoreInfo(0, qaq.question, qaq.answer, false, 0);
+                shuomingText.gameObject.SetActive(true);
+                shuomingText.GetComponent<Text>().text = qaq.error[index];
+                AudioManager.instance.StopAudio();
+                AudioManager.instance.PlayAudio(Resources.Load<AudioClip>("Audio/Worning"));
             }
             else
             {
                 scoreInfo = new ScoreInfo(0, qaq.question, qaq.answer, false, 0);
                 shuomingText.gameObject.SetActive(true);
-                shuomingText.GetComponent<Text>().text = qaq.error[index];
+                shuomingText.GetComponent<Text>().text = "请输入答案";
+                AudioManager.instance.StopAudio();
+                AudioManager.instance.PlayAudio(Resources.Load<AudioClip>("Audio/Worning"));
             }
             return scoreInfo;
         }
