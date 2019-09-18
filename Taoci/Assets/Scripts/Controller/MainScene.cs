@@ -9,6 +9,11 @@ public class MainScene : MonoBehaviour
     public string scene;
     public static MainScene Instance;
 
+    public GameObject chuantong;
+    public GameObject dingdian;
+    public GameObject dianchai;
+    public GameObject yanshao;
+
     void Awake()
     {
         Instance = this;

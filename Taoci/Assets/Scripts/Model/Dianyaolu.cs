@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TaoCi.Chuantong;
 using TinyTeam.UI;
 
 namespace TaoCi

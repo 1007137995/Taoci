@@ -28,7 +28,7 @@ namespace TaoCi
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.name == "yao")
+            if (other.tag == "yao")
             {
                 MainScene.Instance.GoScene();
             }

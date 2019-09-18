@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TaoCi.Chuantong;
 using TinyTeam.UI;
 using DG.Tweening;
 
@@ -27,6 +26,7 @@ namespace TaoCi
         {
             switch (UIManager.Instance.step)
             {
+                #region
                 case 1001001:
                     //TTUIPage.ShowPage<UIIntroduce>();
                     //UIIntroduce.Instance.ChangeInfo(introduction, info, "Meikuai");
@@ -36,6 +36,18 @@ namespace TaoCi
                     SetInLu();
                     transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
                     break;
+                #endregion
+                #region
+                case 4001001:
+                    //TTUIPage.ShowPage<UIIntroduce>();
+                    //UIIntroduce.Instance.ChangeInfo(introduction, info, "Meikuai");
+                    //transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    break;
+                case 4004002:
+                    SetInLu();
+                    transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    break;
+                #endregion
                 default:
                     break;
             }
@@ -45,6 +57,7 @@ namespace TaoCi
         {
             switch (UIManager.Instance.step)
             {
+                #region
                 case 1002001:
                     //transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
                     break;
@@ -58,6 +71,22 @@ namespace TaoCi
                 case 1004003:
                     b = true;
                     break;
+                #endregion
+                #region
+                case 4002001:
+                    //transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    break;
+                case 4004002:
+                    if (b)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                        b = false;
+                    }
+                    break;
+                case 4004003:
+                    b = true;
+                    break;
+                #endregion
                 default:
                     break;
             }

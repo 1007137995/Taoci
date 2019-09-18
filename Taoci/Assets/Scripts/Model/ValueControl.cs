@@ -24,6 +24,18 @@ namespace TaoCi
                     UIManager.Instance.AddStep();
                     break;
                 #endregion
+                #region
+                case 3003002:
+                    transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    UIManager.Instance.AddStep();
+                    break;
+                #endregion
+                #region
+                case 4003002:
+                    transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    UIManager.Instance.AddStep();
+                    break;
+                #endregion
                 default:
                     break;
             }
@@ -54,6 +66,30 @@ namespace TaoCi
                     }
                     break;
                 case 2003003:
+                    b = true;
+                    break;
+                #endregion
+                #region
+                case 3003002:
+                    if (b)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                        b = false;
+                    }
+                    break;
+                case 3003003:
+                    b = true;
+                    break;
+                #endregion
+                #region
+                case 4003002:
+                    if (b)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                        b = false;
+                    }
+                    break;
+                case 4003003:
                     b = true;
                     break;
                 #endregion

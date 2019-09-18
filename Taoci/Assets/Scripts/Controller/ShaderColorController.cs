@@ -39,10 +39,7 @@ namespace TaoCi
 
         public void Cool()
         {
-            foreach (Material item in originTaoci)
-            {
-                item.color = Color.white;
-            }
+            
             foreach (GameObject item in taoci)
             {
                 item.transform.GetComponent<Renderer>().materials = item.transform.GetComponent<Peipin>().newmaterial;
@@ -58,7 +55,11 @@ namespace TaoCi
             {
                 sequence.Join(item.DOColor(Color.white, 10));
             }
-            sequence.Join(wall.DOColor(Color.white, 10));
+            foreach (Material item in originTaoci)
+            {
+                sequence.Join(item.DOColor(Color.white, 10));
+            }
+            sequence.Join(wall.DOColor(Color.white, 10));            
             sequence.Join(DOTween.To(()=> fireLight.range, x => fireLight.intensity = x, 0, 10));
             //sequence.OnComplete(delegate
             //{

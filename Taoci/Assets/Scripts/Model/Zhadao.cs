@@ -15,8 +15,11 @@ namespace TaoCi
             {
                 #region
                 case 1003001:
-                    OpenEle();
-                    transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    if (b == true)
+                    {
+                        OpenEle();
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    }                    
                     break;
                 case 1004001:
                     //CloseEle();
@@ -25,12 +28,41 @@ namespace TaoCi
                 #endregion
                 #region
                 case 2003001:
-                    OpenEle();
-                    transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    if (b == true)
+                    {
+                        OpenEle();
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    }
                     break;
                 case 2004001:
-                    CloseEle();
-                    transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    //CloseEle();
+                    //transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    break;
+                #endregion
+                #region
+                case 3003001:
+                    if (b == true)
+                    {
+                        OpenEle();
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    }
+                    break;
+                case 3004001:
+                    //CloseEle();
+                    //transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    break;
+                #endregion
+                #region
+                case 4003001:
+                    if (b == true)
+                    {
+                        OpenEle();
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    }
+                    break;
+                case 4004001:
+                    //CloseEle();
+                    //transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
                     break;
                 #endregion
                 default:
@@ -47,7 +79,6 @@ namespace TaoCi
                     if (b)
                     {
                         transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
-                        b = false;
                     }
                     break;
                 case 1003002:
@@ -69,22 +100,63 @@ namespace TaoCi
                     if (b)
                     {
                         transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
-                        b = false;
                     }
                     break;
                 case 2003002:
                     b = true;
                     break;
-                case 2004001:
+                //case 2004001:
+                //    if (b)
+                //    {
+                //        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                //        b = false;
+                //    }
+                //    break;
+                //case 2004002:
+                //    b = true;
+                //    break;
+                #endregion
+                #region
+                case 3003001:
                     if (b)
                     {
                         transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
-                        b = false;
                     }
                     break;
-                case 2004002:
+                case 3003002:
                     b = true;
                     break;
+                //case 3004001:
+                //    if (b)
+                //    {
+                //        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                //        b = false;
+                //    }
+                //    break;
+                //case 3004002:
+                //    b = true;
+                //    break;
+                #endregion
+                #region
+                case 4003001:
+                    if (b)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                    }
+                    break;
+                case 4003002:
+                    b = true;
+                    break;
+                //case 1004001:
+                //    if (b)
+                //    {
+                //        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                //        b = false;
+                //    }
+                //    break;
+                //case 1004002:
+                //    b = true;
+                //    break;
                 #endregion
                 default:
                     break;
@@ -93,14 +165,14 @@ namespace TaoCi
 
         private void OpenEle()
         {
-            transform.DOLocalRotate(new Vector3(0, -90, -90), 1f);
-            UIManager.Instance.AddStep();
+            b = false;
+            transform.DOLocalRotate(new Vector3(0, -90, -90), 1f).OnComplete(()=> UIManager.Instance.AddStep());
         }
 
         private void CloseEle()
         {
-            transform.DOLocalRotate(new Vector3(0, -90, -235), 1f);
-            UIManager.Instance.AddStep();
+            b = false;
+            transform.DOLocalRotate(new Vector3(0, -90, -235), 1f).OnComplete(()=> UIManager.Instance.AddStep());
         }
     }
 }

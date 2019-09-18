@@ -159,6 +159,31 @@ namespace TaoCi
             que.waudio = null;
             que.score = 0;
             qaq.Add(que.id, que);
+            
+            que.id = 3004004;
+            que.one = true;
+            que.toggle = new List<string>();
+            que.error = new List<string>();
+            que.toggle.Add("");
+            que.toggle.Add("");
+            que.toggle.Add("");
+            que.error.Add("");
+            que.error.Add("");
+            que.error.Add("");
+            que.question = "应该放入多少海盐：";
+            que.toggle[0] = "A.250g";
+            que.toggle[1] = "B.750g";
+            que.toggle[2] = "C.1250g";
+            que.error[0] = "投量过少，不能产生釉面窑变。";
+            que.error[1] = "选择正确";
+            que.error[2] = "投量过多，氯化钠腐蚀坭兴陶坯品，导致变形或坍塌。";
+            que.answer = "B";
+            que.shuoming = "";
+            que.qaudio = null;
+            que.raudio = null;
+            que.waudio = null;
+            que.score = 0;
+            qaq.Add(que.id, que);
         }
     }
 }

@@ -7,7 +7,7 @@ namespace TaoCi
     public class Yaoche : DeviceBase
     {
         private Transform lumen;
-        bool b = true;
+        public bool b = true;
 
         private void Awake()
         {
@@ -20,22 +20,74 @@ namespace TaoCi
             {
                 #region
                 case 1002012:
-                    transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
-                    lumen.GetComponent<Lumen>().CloseDoor();
+                    if (b == true)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                        lumen.GetComponent<Lumen>().CloseDoor();
+                        b = false;
+                    }                    
                     break;
                 case 1005012:
-                    transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
-                    lumen.GetComponent<Lumen>().CloseDoor();
+                    if (b == true)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                        lumen.GetComponent<Lumen>().CloseDoor();
+                        b = false;
+                    }
                     break;
                 #endregion
                 #region
                 case 2002013:
-                    transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
-                    lumen.GetComponent<Lumen>().CloseDoor();
+                    if (b == true)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                        lumen.GetComponent<Lumen>().CloseDoor();
+                        b = false;
+                    }
                     break;
                 case 2005012:
-                    transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
-                    lumen.GetComponent<Lumen>().CloseDoor();
+                    if (b == true)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                        lumen.GetComponent<Lumen>().CloseDoor();
+                        b = false;
+                    }
+                    break;
+                #endregion
+                #region
+                case 3002012:
+                    if (b == true)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                        lumen.GetComponent<Lumen>().CloseDoor();
+                        b = false;
+                    }
+                    break;
+                case 3005012:
+                    if (b == true)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                        lumen.GetComponent<Lumen>().CloseDoor();
+                        b = false;
+                    }
+                    break;
+                #endregion
+                #region
+                case 4002014:
+                    if (b == true)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                        lumen.GetComponent<Lumen>().CloseDoor();
+                        b = false;
+                    }
+                    break;
+                case 4005014:
+                    if (b == true)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                        lumen.GetComponent<Lumen>().CloseDoor();
+                        b = false;
+                    }
                     break;
                 #endregion
                 default:
@@ -52,7 +104,6 @@ namespace TaoCi
                     if (b)
                     {
                         transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
-                        b = false;
                     }
                     break;
                 case 1003001:
@@ -62,7 +113,6 @@ namespace TaoCi
                     if (b)
                     {
                         transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
-                        b = false;
                     }
                     break;
                 case 1005013:
@@ -74,7 +124,6 @@ namespace TaoCi
                     if (b)
                     {
                         transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
-                        b = false;
                     }
                     break;
                 case 2003001:
@@ -84,10 +133,49 @@ namespace TaoCi
                     if (b)
                     {
                         transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
-                        b = false;
                     }
                     break;
                 case 2005013:
+                    b = true;
+                    break;
+                #endregion
+                #region
+                case 3002012:
+                    if (b)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                    }
+                    break;
+                case 3003001:
+                    b = true;
+                    break;
+                case 3005012:
+                    if (b)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                    }
+                    break;
+                case 3005013:
+                    b = true;
+                    break;
+                #endregion
+                #region
+                case 4002014:
+                    if (b)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                    }
+                    break;
+                case 4003001:
+                    b = true;
+                    break;
+                case 4005014:
+                    if (b)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                    }
+                    break;
+                case 4005015:
                     b = true;
                     break;
                 #endregion

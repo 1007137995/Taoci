@@ -46,6 +46,26 @@ namespace TaoCi
                     OpenDoor();
                     break;
                 #endregion
+                #region
+                case 3002002:
+                    transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    OpenDoor();
+                    break;
+                case 3005002:
+                    transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    OpenDoor();
+                    break;
+                #endregion
+                #region
+                case 4002002:
+                    transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    OpenDoor();
+                    break;
+                case 4005002:
+                    transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    OpenDoor();
+                    break;
+                #endregion
                 default:
                     break;
             }
@@ -96,6 +116,50 @@ namespace TaoCi
                     }
                     break;
                 case 2005003:
+                    b = true;
+                    break;
+                #endregion
+                #region
+                case 3002002:
+                    if (upFamen == false && bottomFamen == false && b)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                        b = false;
+                    }
+                    break;
+                case 3002004:
+                    b = true;
+                    break;
+                case 3005002:
+                    if (upFamen == false && bottomFamen == false && b)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                        b = false;
+                    }
+                    break;
+                case 3005003:
+                    b = true;
+                    break;
+                #endregion
+                #region
+                case 4002002:
+                    if (upFamen == false && bottomFamen == false && b)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                        b = false;
+                    }
+                    break;
+                case 4002004:
+                    b = true;
+                    break;
+                case 4005002:
+                    if (upFamen == false && bottomFamen == false && b)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                        b = false;
+                    }
+                    break;
+                case 4005003:
                     b = true;
                     break;
                 #endregion

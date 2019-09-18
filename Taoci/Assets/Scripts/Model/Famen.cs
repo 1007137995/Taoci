@@ -44,6 +44,26 @@ namespace TaoCi
                     RotateDown();
                     break;
                 #endregion
+                #region
+                case 3002002:
+                    transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    RotateDown();
+                    break;
+                case 3005002:
+                    transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    RotateDown();
+                    break;
+                #endregion
+                #region
+                case 4002002:
+                    transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    RotateDown();
+                    break;
+                case 4005002:
+                    transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    RotateDown();
+                    break;
+                #endregion
                 default:
                     break;
             }
@@ -97,6 +117,50 @@ namespace TaoCi
                     b = true;
                     break;
                 #endregion
+                #region
+                case 3002002:
+                    if (b)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                        b = false;
+                    }
+                    break;
+                case 3002004:
+                    b = true;
+                    break;
+                case 3005002:
+                    if (b)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                        b = false;
+                    }
+                    break;
+                case 3005003:
+                    b = true;
+                    break;
+                #endregion
+                #region
+                case 4002002:
+                    if (b)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                        b = false;
+                    }
+                    break;
+                case 4002004:
+                    b = true;
+                    break;
+                case 4005002:
+                    if (b)
+                    {
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                        b = false;
+                    }
+                    break;
+                case 4005003:
+                    b = true;
+                    break;
+                #endregion
                 default:
                     break;
             }
@@ -113,8 +177,8 @@ namespace TaoCi
             sequence.Append(transform.parent.DOLocalRotate(new Vector3(0, 180, -180), 1));
             sequence.OnComplete(delegate {                
                 transform.GetComponent<Collider>().enabled = true;
-            });
-            lumen.GetComponent<Lumen>().ChangeFamen(transform.name);
+                lumen.GetComponent<Lumen>().ChangeFamen(transform.name);
+            });            
         }
 
         public void RotateUp()

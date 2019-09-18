@@ -5,7 +5,7 @@ using UnityEngine;
 using TinyTeam.UI;
 using UnityStandardAssets.Characters.FirstPerson;
 
-namespace TaoCi.Chuantong
+namespace TaoCi
 {
     public class ChuantongStep : StepManager
     {

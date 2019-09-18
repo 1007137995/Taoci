@@ -35,6 +35,28 @@ namespace TaoCi {
                     TTUIPage.ClosePage<UITip>();
                     break;
                 #endregion
+                #region
+                case 3001001:
+                    TTUIPage.ShowPage<UIAttention>();
+                    foreach (GameObject item in att)
+                    {
+                        item.GetComponent<Highlighter>().tween = false;
+                        item.GetComponent<Collider>().enabled = false;
+                    }
+                    TTUIPage.ClosePage<UITip>();
+                    break;
+                #endregion
+                #region
+                case 4001001:
+                    TTUIPage.ShowPage<UIAttention>();
+                    foreach (GameObject item in att)
+                    {
+                        item.GetComponent<Highlighter>().tween = false;
+                        item.GetComponent<Collider>().enabled = false;
+                    }
+                    TTUIPage.ClosePage<UITip>();
+                    break;
+                #endregion
                 default:
                     break;
             }
