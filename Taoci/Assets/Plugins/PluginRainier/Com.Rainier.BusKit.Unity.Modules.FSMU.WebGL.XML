@@ -1,0 +1,225 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Com.Rainier.BusKit.Unity.Modules.FSMU.WebGL</name>
+    </assembly>
+    <members>
+        <member name="T:Com.Rainier.BusKit.Unity.Modules.FSMU.StateTransition">
+            <summary>
+            状态转移枚举
+            </summary>
+        </member>
+        <member name="T:Com.Rainier.BusKit.Unity.Modules.FSMU.IStateMachine">
+            <summary>
+            状态机接口
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.BusKit.Unity.Modules.FSMU.IStateMachine.Component">
+            <summary>
+            获取状态机MonoBehaviour
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.BusKit.Unity.Modules.FSMU.IStateMachine.CurrentStateMap">
+            <summary>
+            当前状态映射表
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.BusKit.Unity.Modules.FSMU.IStateMachine.IsInTransition">
+            <summary>
+            正在转移吗？
+            </summary>
+        </member>
+        <member name="T:Com.Rainier.BusKit.Unity.Modules.FSMU.StateMachine`1">
+            <summary>
+            状态机类定义
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="E:Com.Rainier.BusKit.Unity.Modules.FSMU.StateMachine`1.Changed">
+            <summary>
+            状态变化委托代理
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSMU.StateMachine`1.#ctor(Com.Rainier.BusKit.Unity.Modules.FSMU.StateMachineRunner,UnityEngine.MonoBehaviour)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="engine">状态机运行MonoBehaviour（状态机运行维护）</param>
+            <param name="component">状态机MonoBehaviour（状态机组件）</param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSMU.StateMachine`1.CreateDelegate``1(System.Reflection.MethodInfo,System.Object)">
+            <summary>
+            创建代理
+            </summary>
+            <typeparam name="V"></typeparam>
+            <param name="method"></param>
+            <param name="target"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSMU.StateMachine`1.ChangeState(`0)">
+            <summary>
+            改变状态
+            </summary>
+            <param name="newState">新状态</param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSMU.StateMachine`1.ChangeState(`0,Com.Rainier.BusKit.Unity.Modules.FSMU.StateTransition)">
+            <summary>
+            改变状态
+            </summary>
+            <param name="newState">新状态</param>
+            <param name="transition">状态转移条件</param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSMU.StateMachine`1.ChangeToNewStateRoutine(Com.Rainier.BusKit.Unity.Modules.FSMU.StateMapping,Com.Rainier.BusKit.Unity.Modules.FSMU.StateTransition)">
+            <summary>
+            改变到新状态的例行程序
+            </summary>
+            <param name="newState">新状态</param>
+            <param name="transition">状态转移</param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSMU.StateMachine`1.Initialize(UnityEngine.MonoBehaviour)">
+            <summary>
+            将一个MonoBehaviour初始化为状态机
+            </summary>
+            <param name="component">定义状态方法的MonoBehaviour</param>
+            <returns>状态机实例</returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSMU.StateMachine`1.Initialize(UnityEngine.MonoBehaviour,`0)">
+            <summary>
+            将一个MonoBehaviour初始化为状态机
+            </summary>
+            <param name="component">定义状态方法的MonoBehaviour</param>
+            <param name="startState">状态机实例</param>
+            <returns>A valid stateMachine instance to manage MonoBehaviour state transitions</returns>
+        </member>
+        <member name="T:Com.Rainier.BusKit.Unity.Modules.FSMU.StateMachineRunner">
+            <summary>
+            状态机运行MonoBehaviour
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSMU.StateMachineRunner.Initialize``1(UnityEngine.MonoBehaviour)">
+            <summary>
+            创建一个状态机对象是用来管理MonoBehaviour的状态
+            </summary>
+            <typeparam name="T">状态转移枚举</typeparam>
+            <param name="component">被管理状态的MonoBehaviour</param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSMU.StateMachineRunner.Initialize``1(UnityEngine.MonoBehaviour,``0)">
+            <summary>
+            <para>创建一个状态机对象是用来管理MonoBehaviour的状态,</para>
+            <para>自动转换到起始状态</para>
+            </summary>
+            <typeparam name="T">An Enum listing different state transitions</typeparam>
+            <param name="component">The component whose state will be managed</param>
+            <param name="startState">The default start state</param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSMU.StateMachineRunner.FixedUpdate">
+            <summary>
+            固定更新状态机状态
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSMU.StateMachineRunner.Update">
+            <summary>
+            更新状态机状态
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSMU.StateMachineRunner.LateUpdate">
+            <summary>
+            执行状态更新后更新
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSMU.StateMachineRunner.DoNothing">
+            <summary>
+            状态机委托代理默认操作函数，没有特定意义，仅仅用于状态的内容填充
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSMU.StateMachineRunner.DoNothingCollider(UnityEngine.Collider)">
+            <summary>
+            状态机委托代理默认操作函数，没有特定意义，仅仅用于状态的内容填充
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSMU.StateMachineRunner.DoNothingCollision(UnityEngine.Collision)">
+            <summary>
+            状态机委托代理默认操作函数，没有特定意义，仅仅用于状态的内容填充
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSMU.StateMachineRunner.DoNothingCoroutine">
+            <summary>
+            状态机委托代理默认操作函数，没有特定意义，仅仅用于状态的内容填充
+            </summary>
+        </member>
+        <member name="T:Com.Rainier.BusKit.Unity.Modules.FSMU.StateMapping">
+            <summary>
+            状态映射表
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.BusKit.Unity.Modules.FSMU.StateMapping.state">
+            <summary>
+            状态对象
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.BusKit.Unity.Modules.FSMU.StateMapping.HasEnterRoutine">
+            <summary>
+            具备进入状态例程吗？
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.BusKit.Unity.Modules.FSMU.StateMapping.EnterCall">
+            <summary>
+            进入状态回调函数
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.BusKit.Unity.Modules.FSMU.StateMapping.EnterRoutine">
+            <summary>
+            进入状态例行程序
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.BusKit.Unity.Modules.FSMU.StateMapping.HasExitRoutine">
+            <summary>
+            具备退出状态例程吗？
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.BusKit.Unity.Modules.FSMU.StateMapping.ExitCall">
+            <summary>
+            退出状态例程回到函数
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.BusKit.Unity.Modules.FSMU.StateMapping.ExitRoutine">
+            <summary>
+            退出状态例程
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.BusKit.Unity.Modules.FSMU.StateMapping.Finally">
+            <summary>
+            状态机运行MonoBehaviour的Finally委托
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.BusKit.Unity.Modules.FSMU.StateMapping.Update">
+            <summary>
+            状态机运行MonoBehaviour的Update委托
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.BusKit.Unity.Modules.FSMU.StateMapping.LateUpdate">
+            <summary>
+            状态机运行MonoBehaviour的LateUpdate委托
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.BusKit.Unity.Modules.FSMU.StateMapping.FixedUpdate">
+            <summary>
+            状态机运行MonoBehaviour的FixedUpdate委托
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.BusKit.Unity.Modules.FSMU.StateMapping.OnCollisionEnter">
+            <summary>
+            状态机运行MonoBehaviour的OnCollisionEnter委托
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSMU.StateMapping.#ctor(System.Object)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="state"></param>
+        </member>
+    </members>
+</doc>

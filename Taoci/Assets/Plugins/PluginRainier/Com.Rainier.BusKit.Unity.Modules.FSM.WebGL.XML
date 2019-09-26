@@ -1,0 +1,355 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Com.Rainier.BusKit.Unity.Modules.FSM.WebGL</name>
+    </assembly>
+    <members>
+        <member name="T:Com.Rainier.BusKit.Unity.Modules.FSM.AbsState">
+            <summary>
+            抽象状态：FireEvent(广播状态转移事件)/OnEnter(当进入状态时执行此函数)/OnExit(当退出状态时执行此函数)
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.BusKit.Unity.Modules.FSM.AbsState.mTransTable">
+            <summary>
+            状态转移表，状态转移表由“状态转移条目”组成，
+            每个“状态转移条目”包含四部分信息：
+            开始状态、目标状态、转移事件、转移动作
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.BusKit.Unity.Modules.FSM.AbsState.mCurrentState">
+            <summary>
+            当前状态，整个状态机的当前状态
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSM.AbsState.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSM.AbsState.#ctor(Com.Rainier.BusKit.Unity.Modules.FSM.IState)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="start">初始状态</param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSM.AbsState.FireEvent(System.String)">
+            <summary>
+            分发状态转移事件
+            </summary>
+            <param name="strEvent">状态转移事件</param>
+            <returns>
+            True表示能够处理状态转移事件，否则表示不能处理状态转移事件
+            </returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSM.AbsState.RegisterTransition(Com.Rainier.BusKit.Unity.Modules.FSM.IState,Com.Rainier.BusKit.Unity.Modules.FSM.IState,System.String,Com.Rainier.BusKit.Unity.Modules.FSM.IStateTransitionAction)">
+            <summary>
+            注册状态转移条目
+            </summary>
+            <param name="start">开始状态</param>
+            <param name="target">目标状态</param>
+            <param name="sEvt">状态转移事件</param>
+            <param name="action">状态转移动作</param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSM.AbsState.OnEnter">
+            <summary>
+            当状态进入时执行此函数
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSM.AbsState.OnExit">
+            <summary>
+            当状态退出时执行此函数
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSM.AbsState.GetCurrentState">
+            <summary>
+            获取当前状态
+            </summary>
+            <returns>状态机当前状态</returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSM.AbsState.SetCurrentState(Com.Rainier.BusKit.Unity.Modules.FSM.IState)">
+            <summary>
+            设置当前状态
+            </summary>
+            <param name="state"></param>
+        </member>
+        <member name="T:Com.Rainier.BusKit.Unity.Modules.FSM.AbsTransition">
+            <summary>
+            <para>状态转移表条目，状态转移表记录了“子状态机”的状态转移过程，</para>
+            <para>其中存放的内容为“状态转移条目”。一个条目描述了，从开始</para>
+            <para>状态到目标状态的转移过程，状态转移条目包括：开始状态、目标</para>
+            <para>状态、转移事件、转移函数四部分内容。</para>
+            <para>1、DoTransition  执行状态转移操作</para>
+            <para>2、GetStart      获取开始状态</para>
+            <para>3、GetTarget     获取目标状态</para>
+            <para>4、GetAction     获取状态转移动作</para>
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.BusKit.Unity.Modules.FSM.AbsTransition.mStateStart">
+            <summary>
+            记录开始状态
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.BusKit.Unity.Modules.FSM.AbsTransition.mStateTarget">
+            <summary>
+            目标状态
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.BusKit.Unity.Modules.FSM.AbsTransition.mStrEvent">
+            <summary>
+            状态转移事件
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.BusKit.Unity.Modules.FSM.AbsTransition.mAction">
+            <summary>
+            状态转移操作
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.BusKit.Unity.Modules.FSM.AbsTransition.mOwner">
+            <summary>
+            所属状态
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSM.AbsTransition.#ctor(Com.Rainier.BusKit.Unity.Modules.FSM.IState,Com.Rainier.BusKit.Unity.Modules.FSM.IState,System.String,Com.Rainier.BusKit.Unity.Modules.FSM.IStateTransitionAction,Com.Rainier.BusKit.Unity.Modules.FSM.IState)">
+            <summary>
+            状态转移条目构造函数
+            </summary>
+            <param name="start">开始状态</param>
+            <param name="target">目标状态</param>
+            <param name="sEvt">触发事件</param>
+            <param name="action">触发动作</param>
+            <param name="machine">所属状态</param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSM.AbsTransition.DoTransition">
+            <summary>
+            执行状态转移操作
+            状态转移过程：
+            开始状态执行OnExit-->状态转移动作执行OnStateChanged-->目标状态执行OnEnter
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSM.AbsTransition.GetStart">
+            <summary>
+            获取起始状态
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSM.AbsTransition.GetTarget">
+            <summary>
+            获取目标状态
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSM.AbsTransition.GetAction">
+            <summary>
+            获取状态转移动作
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSM.AbsTransition.GetEvent">
+            <summary>
+            获取状态转移事件
+            </summary>
+            <returns>状态转移事件</returns>
+        </member>
+        <member name="T:Com.Rainier.BusKit.Unity.Modules.FSM.AbsTransitionTable">
+            <summary>
+            <para>状态转移表，状态转仪表记录了，“子状态机”的状态转移过程，</para>
+            <para>其中存放的内容为“状态转移条目”。一个条目描述了，从开始</para>
+            <para>状态到目标状态的转移过程，状态转移条目包括：开始状态、目标</para>
+            <para>状态、转移事件、转移函数四部分内容。</para>
+            <para>1、RegisterTransition 注册状态转移条目</para>
+            <para>2、GetTransition 根据事件获取对应转移条目</para>
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.BusKit.Unity.Modules.FSM.AbsTransitionTable.mTable">
+            <summary>
+            “事件”和“状态转移条目”映射表
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.BusKit.Unity.Modules.FSM.AbsTransitionTable.mOwner">
+            <summary>
+            状态转移表所有者
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSM.AbsTransitionTable.#ctor(Com.Rainier.BusKit.Unity.Modules.FSM.AbsState)">
+            <summary>
+            状态转移表
+            </summary>
+            <param name="owner">状态</param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSM.AbsTransitionTable.RegisterTransition(Com.Rainier.BusKit.Unity.Modules.FSM.IState,Com.Rainier.BusKit.Unity.Modules.FSM.IState,System.String,Com.Rainier.BusKit.Unity.Modules.FSM.IStateTransitionAction)">
+            <summary>
+            注册状态转移条目
+            </summary>
+            <param name="start">开始状态</param>
+            <param name="target">目标状态</param>
+            <param name="sEvt">状态转移事件</param>
+            <param name="action">状态转移动作</param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSM.AbsTransitionTable.GetTransition(System.String)">
+            <summary>
+            通过事件获取状态转移条目
+            </summary>
+            <param name="strEvent">状态转移事件</param>
+            <returns></returns>
+        </member>
+        <member name="T:Com.Rainier.BusKit.Unity.Modules.FSM.DefualtTransition">
+            <summary>
+            默认状态转移条目
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSM.DefualtTransition.#ctor(Com.Rainier.BusKit.Unity.Modules.FSM.IState,Com.Rainier.BusKit.Unity.Modules.FSM.IState,System.String,Com.Rainier.BusKit.Unity.Modules.FSM.IStateTransitionAction,Com.Rainier.BusKit.Unity.Modules.FSM.IState)">
+            <summary>
+            状态转移条目构造函数
+            </summary>
+            <param name="start">开始状态</param>
+            <param name="target">目标状态</param>
+            <param name="sEvt">触发事件</param>
+            <param name="action">触发动作</param>
+            <param name="machine">所属状态</param>
+        </member>
+        <member name="T:Com.Rainier.BusKit.Unity.Modules.FSM.DefaultTransitionTable">
+            <summary>
+            默认状态转移表
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSM.DefaultTransitionTable.#ctor(Com.Rainier.BusKit.Unity.Modules.FSM.AbsState)">
+            <summary>
+            默认构造函数
+            </summary>
+            <param name="owner"></param>
+        </member>
+        <member name="T:Com.Rainier.BusKit.Unity.Modules.FSM.StateObject">
+            <summary>
+            默认状态对象
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSM.StateObject.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSM.StateObject.#ctor(Com.Rainier.BusKit.Unity.Modules.FSM.IState)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="start">初始状态</param>
+        </member>
+        <member name="T:Com.Rainier.BusKit.Unity.Modules.FSM.IState">
+            <summary>
+            状态接口
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSM.IState.FireEvent(System.String)">
+            <summary>
+            分发状态转移事件
+            </summary>
+            <param name="strEvent">状态转移事件</param>
+            <returns>
+            True表示能够处理状态转移事件，否则表示不能处理状态转移事件
+            </returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSM.IState.OnEnter">
+            <summary>
+            当状态进入时执行此函数
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSM.IState.OnExit">
+            <summary>
+            当状态退出时执行此函数
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSM.IState.GetCurrentState">
+            <summary>
+            获取当前状态
+            </summary>
+            <returns>状态机当前状态</returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSM.IState.SetCurrentState(Com.Rainier.BusKit.Unity.Modules.FSM.IState)">
+            <summary>
+            设置当前状态
+            </summary>
+            <param name="state"></param>
+        </member>
+        <member name="T:Com.Rainier.BusKit.Unity.Modules.FSM.IStateTransitionAction">
+            <summary>
+            状态转移动作接口
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSM.IStateTransitionAction.OnStateChanged(Com.Rainier.BusKit.Unity.Modules.FSM.IState,Com.Rainier.BusKit.Unity.Modules.FSM.IState,System.String)">
+            <summary>
+            执行状态转移操作
+            </summary>
+            <param name="objStart">起始状态</param>
+            <param name="objTarget">目标状态</param>
+            <param name="strEvt">触发事件</param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSM.IStateTransitionAction.CheckCondition(Com.Rainier.BusKit.Unity.Modules.FSM.IState,Com.Rainier.BusKit.Unity.Modules.FSM.IState,System.String)">
+            <summary>
+            检测转移条件
+            </summary>
+            <param name="objStart"></param>
+            <param name="objTarget"></param>
+            <param name="strEvt"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Com.Rainier.BusKit.Unity.Modules.FSM.ITransition">
+            <summary>
+            状态转移条目接口
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSM.ITransition.DoTransition">
+            <summary>
+            执行状态转移操作
+            状态转移过程：
+            开始状态执行OnExit-->状态转移动作执行OnStateChanged-->目标状态执行OnEnter
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSM.ITransition.GetStart">
+            <summary>
+            获取起始状态
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSM.ITransition.GetTarget">
+            <summary>
+            获取目标状态
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSM.ITransition.GetAction">
+            <summary>
+            获取状态转移动作
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSM.ITransition.GetEvent">
+            <summary>
+            获取状态转移事件
+            </summary>
+            <returns>状态转移事件</returns>
+        </member>
+        <member name="T:Com.Rainier.BusKit.Unity.Modules.FSM.ITransitionTable">
+            <summary>
+            状态转移表接口
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSM.ITransitionTable.RegisterTransition(Com.Rainier.BusKit.Unity.Modules.FSM.IState,Com.Rainier.BusKit.Unity.Modules.FSM.IState,System.String,Com.Rainier.BusKit.Unity.Modules.FSM.IStateTransitionAction)">
+            <summary>
+            注册状态转移条目
+            </summary>
+            <param name="start">开始状态</param>
+            <param name="target">目标状态</param>
+            <param name="sEvt">状态转移事件</param>
+            <param name="action">状态转移动作</param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.FSM.ITransitionTable.GetTransition(System.String)">
+            <summary>
+            通过事件获取状态转移条目
+            </summary>
+            <param name="strEvent">状态转移事件</param>
+            <returns>事件对应状态转移条目</returns>
+        </member>
+    </members>
+</doc>

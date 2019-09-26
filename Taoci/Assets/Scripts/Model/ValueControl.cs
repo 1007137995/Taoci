@@ -15,24 +15,28 @@ namespace TaoCi
                 #region
                 case 1003002:
                     transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    transform.Find("Arrow").gameObject.SetActive(false);
                     UIManager.Instance.AddStep();
                     break;
                 #endregion
                 #region
                 case 2003002:
                     transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    transform.Find("Arrow").gameObject.SetActive(false);
                     UIManager.Instance.AddStep();
                     break;
                 #endregion
                 #region
                 case 3003002:
                     transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    transform.Find("Arrow").gameObject.SetActive(false);
                     UIManager.Instance.AddStep();
                     break;
                 #endregion
                 #region
                 case 4003002:
                     transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    transform.Find("Arrow").gameObject.SetActive(false);
                     UIManager.Instance.AddStep();
                     break;
                 #endregion
@@ -50,6 +54,7 @@ namespace TaoCi
                     if (b)
                     {
                         transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                        transform.Find("Arrow").gameObject.SetActive(true);
                         b = false;
                     }
                     break;
@@ -62,6 +67,7 @@ namespace TaoCi
                     if (b)
                     {
                         transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                        transform.Find("Arrow").gameObject.SetActive(true);
                         b = false;
                     }
                     break;
@@ -74,6 +80,7 @@ namespace TaoCi
                     if (b)
                     {
                         transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                        transform.Find("Arrow").gameObject.SetActive(true);
                         b = false;
                     }
                     break;
@@ -86,6 +93,7 @@ namespace TaoCi
                     if (b)
                     {
                         transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                        transform.Find("Arrow").gameObject.SetActive(true);
                         b = false;
                     }
                     break;

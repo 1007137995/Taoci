@@ -1,0 +1,723 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Com.Rainier.BusKit.Unity.Modules.DataWatch.WebGL</name>
+    </assembly>
+    <members>
+        <member name="T:Com.Rainier.BusKit.Unity.Modules.DataWatch.ArrayWatchItem">
+            <summary>
+            数组侦听条目
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.BusKit.Unity.Modules.DataWatch.ArrayWatchItem.arrayInit">
+            <summary>
+            初始数组
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.BusKit.Unity.Modules.DataWatch.ArrayWatchItem.arrayNew">
+            <summary>
+            新数组
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.BusKit.Unity.Modules.DataWatch.ArrayWatchItem.arrayOld">
+            <summary>
+            老数组
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.ArrayWatchItem.#ctor(System.Object,System.String,Com.Rainier.BusKit.Unity.Modules.DataWatch.DelOnValueChanged)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="target">目标对象</param>
+            <param name="path">监听对象路径</param>
+            <param name="onValueChanged">值变化回调函数</param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.ArrayWatchItem.IsValueChanged">
+            <summary>
+            值是否发生过变化
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.ArrayWatchItem.UpdateNewValue">
+            <summary>
+            更新新值
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.ArrayWatchItem.UpdateOldValue">
+            <summary>
+            更新老值
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.ArrayWatchItem.FireValueChanged">
+            <summary>
+            广播值变化事件
+            </summary>
+        </member>
+        <member name="T:Com.Rainier.BusKit.Unity.Modules.DataWatch.BaseIgnoreItem">
+            <summary>
+            需要忽视的Item
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.BusKit.Unity.Modules.DataWatch.BaseIgnoreItem.dataEntity">
+            <summary>
+            目标对象
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.BusKit.Unity.Modules.DataWatch.BaseIgnoreItem.propertyName">
+            <summary>
+            属性名称
+            </summary>
+        </member>
+        <member name="T:Com.Rainier.BusKit.Unity.Modules.DataWatch.DelOnValueChanged">
+            <summary>
+            值变化代理
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="T:Com.Rainier.BusKit.Unity.Modules.DataWatch.BaseWatchItem`1">
+            <summary>
+            基本Watch条目
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.BusKit.Unity.Modules.DataWatch.BaseWatchItem`1.Target">
+            <summary>
+            目标对象
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.BusKit.Unity.Modules.DataWatch.BaseWatchItem`1.Path">
+            <summary>
+            属性或字段的路径
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.BusKit.Unity.Modules.DataWatch.BaseWatchItem`1.InitValue">
+            <summary>
+            初始值
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.BusKit.Unity.Modules.DataWatch.BaseWatchItem`1.OldValue">
+            <summary>
+            旧值
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.BusKit.Unity.Modules.DataWatch.BaseWatchItem`1.NewValue">
+            <summary>
+            新值
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.BusKit.Unity.Modules.DataWatch.BaseWatchItem`1.IsValidProperty">
+            <summary>
+            是否是正确的属性监听
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.BusKit.Unity.Modules.DataWatch.BaseWatchItem`1.OnValueChanged">
+            <summary>
+            属性变化代理
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.BusKit.Unity.Modules.DataWatch.BaseWatchItem`1.CanFire">
+            <summary>
+            是否可触发事件
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.BaseWatchItem`1.#ctor(System.Object,System.String,Com.Rainier.BusKit.Unity.Modules.DataWatch.DelOnValueChanged)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="target">目标对象</param>
+            <param name="path">监听对象路径</param>
+            <param name="onValueChanged">值变化回调函数</param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.BaseWatchItem`1.GetPropertyValueByPath(System.Object,System.String,System.Boolean@)">
+            <summary>
+            根据属性路径获取属性值
+            </summary>
+            <param name="obj"></param>
+            <param name="path"></param>
+            <param name="isValidProperty"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.BaseWatchItem`1.GetPropertyValue(System.Object,System.String)">
+            <summary>
+            获取属性值
+            </summary>
+            <param name="obj"></param>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.BaseWatchItem`1.UpdateNewValue">
+            <summary>
+            更新新值
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.BaseWatchItem`1.UpdateOldValue">
+            <summary>
+            更新老值
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.BaseWatchItem`1.IsValueChanged">
+            <summary>
+            值是否发生过变化
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.BaseWatchItem`1.FireValueChanged">
+            <summary>
+            广播值变化事件
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.BaseWatchItem`1.Equals(Com.Rainier.BusKit.Unity.Modules.DataWatch.BaseWatchItem{`0})">
+            <summary>
+            判断是否相等
+            </summary>
+            <param name="other"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Com.Rainier.BusKit.Unity.Modules.DataWatch.CollectionWatchItem">
+            <summary>
+            容器观察条目
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.BusKit.Unity.Modules.DataWatch.CollectionWatchItem.newMessage">
+            <summary>
+            是否侦听到了对象新消息，如果有则表示数据有变化
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.CollectionWatchItem.#ctor(System.Object,System.String,Com.Rainier.BusKit.Unity.Modules.DataWatch.DelOnValueChanged)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="target">目标对象</param>
+            <param name="path">监听对象路径</param>
+            <param name="onValueChanged">值变化回调函数</param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.CollectionWatchItem.OnPropertyChange(Com.Rainier.Buskit.Unity.Architecture.Aop.PropertyMessage)">
+            <summary>
+            处理对象事件
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.CollectionWatchItem.IsValueChanged">
+            <summary>
+            如果收到监听容器事件，则表示值已经变化
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.CollectionWatchItem.FireValueChanged">
+            <summary>
+            广播值变化事件
+            </summary>
+        </member>
+        <member name="T:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableArrayList">
+            <summary>
+            可以被监听的List
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableArrayList.UUID">
+            <summary>
+            对象唯一标识ID号
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableArrayList.pcs">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableArrayList.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableArrayList.#ctor(System.Int32)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="capacity"></param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableArrayList.#ctor(System.Collections.ICollection)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="collection"></param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableArrayList.Finalize">
+            <summary>
+            析构函数
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableArrayList.Item(System.Int32)">
+            <summary>
+            重定义[]，不支持回放
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableArrayList.AddPropertyChangeListener(Com.Rainier.BusKit.Unity.Modules.DataWatch.IPropertyChangeListener)">
+            <summary>
+            添加事件侦听器，不支持回放
+            </summary>
+            <param name="listener"></param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableArrayList.RemovePropertyChangeListener(Com.Rainier.BusKit.Unity.Modules.DataWatch.IPropertyChangeListener)">
+            <summary>
+            删除事件侦听器，不支持回放
+            </summary>
+            <param name="listener"></param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableArrayList.Add(System.Object)">
+            <summary>
+            添加元素，不支持回放
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableArrayList.Remove(System.Object)">
+            <summary>
+            删除元素，不支持回放
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableArrayList.AddRange(System.Collections.ICollection)">
+            <summary>
+            添加集合，不支持回放
+            </summary>
+            <param name="collection"></param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableArrayList.Clear">
+            <summary>
+            执行清理操作，不支持回放
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableArrayList.Insert(System.Int32,System.Object)">
+            <summary>
+            插入数据，不支持回放
+            </summary>
+            <param name="index"></param>
+            <param name="item"></param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableArrayList.InsertRange(System.Int32,System.Collections.ICollection)">
+            <summary>
+            插入集合，不支持回放
+            </summary>
+            <param name="index"></param>
+            <param name="collection"></param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableArrayList.RemoveAt(System.Int32)">
+            <summary>
+            删除制定位置元素，不支持回放
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableArrayList.RemoveRange(System.Int32,System.Int32)">
+            <summary>
+            删除区域,不支持回放
+            </summary>
+            <param name="index"></param>
+            <param name="count"></param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableArrayList.SetRange(System.Int32,System.Collections.ICollection)">
+            <summary>
+            设置集合元素，不支持回放
+            </summary>
+            <param name="index"></param>
+            <param name="c"></param>
+        </member>
+        <member name="T:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableDictionary`2">
+            <summary>
+            可以被监听的
+            </summary>
+            <typeparam name="TKey"></typeparam>
+            <typeparam name="TValue"></typeparam>
+        </member>
+        <member name="P:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableDictionary`2.UUID">
+            <summary>
+            对象唯一标识ID号
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableDictionary`2.pcs">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableDictionary`2.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableDictionary`2.#ctor(System.Int32)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="capacity"></param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableDictionary`2.#ctor(System.Collections.Generic.IEqualityComparer{`0})">
+            <summary>
+            构造函数
+            </summary>
+            <param name="comparer"></param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableDictionary`2.Finalize">
+            <summary>
+            析构函数
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableDictionary`2.Item(`0)">
+            <summary>
+            重定义[]
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableDictionary`2.AddPropertyChangeListener(Com.Rainier.BusKit.Unity.Modules.DataWatch.IPropertyChangeListener)">
+            <summary>
+            添加事件侦听器
+            </summary>
+            <param name="listener"></param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableDictionary`2.RemovePropertyChangeListener(Com.Rainier.BusKit.Unity.Modules.DataWatch.IPropertyChangeListener)">
+            <summary>
+            删除事件侦听器
+            </summary>
+            <param name="listener"></param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableDictionary`2.Add(`0,`1)">
+            <summary>
+            添加数据
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableDictionary`2.Remove(`0)">
+            <summary>
+            删除元素
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableDictionary`2.Clear">
+            <summary>
+            执行清理操作
+            </summary>
+        </member>
+        <member name="T:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableList`1">
+            <summary>
+            可以被监听的List
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableList`1.UUID">
+            <summary>
+            对象唯一标识ID号
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableList`1.pcs">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableList`1.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableList`1.#ctor(System.Int32)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="capacity"></param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableList`1.#ctor(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            构造函数
+            </summary>
+            <param name="collection"></param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableList`1.Finalize">
+            <summary>
+            析构函数
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableList`1.Item(System.Int32)">
+            <summary>
+            重定义[]
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableList`1.AddPropertyChangeListener(Com.Rainier.BusKit.Unity.Modules.DataWatch.IPropertyChangeListener)">
+            <summary>
+            添加事件侦听器
+            </summary>
+            <param name="listener"></param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableList`1.RemovePropertyChangeListener(Com.Rainier.BusKit.Unity.Modules.DataWatch.IPropertyChangeListener)">
+            <summary>
+            删除事件侦听器
+            </summary>
+            <param name="listener"></param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableList`1.Add(`0)">
+            <summary>
+            添加元素
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableList`1.Remove(`0)">
+            <summary>
+            删除元素
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableList`1.AddRange(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            添加集合，不支持回放
+            </summary>
+            <param name="collection"></param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableList`1.Clear">
+            <summary>
+            执行清理操作
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableList`1.Insert(System.Int32,`0)">
+            <summary>
+            插入数据
+            </summary>
+            <param name="index"></param>
+            <param name="item"></param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableList`1.InsertRange(System.Int32,System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            插入集合，不支持回放
+            </summary>
+            <param name="index"></param>
+            <param name="collection"></param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableList`1.RemoveAll(System.Predicate{`0})">
+            <summary>
+            删除所有，不支持回放
+            </summary>
+            <param name="match"></param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableList`1.RemoveAt(System.Int32)">
+            <summary>
+            删除制定位置元素
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchableList`1.RemoveRange(System.Int32,System.Int32)">
+            <summary>
+            删除区域，不支持回放
+            </summary>
+            <param name="index"></param>
+            <param name="count"></param>
+        </member>
+        <member name="T:Com.Rainier.BusKit.Unity.Modules.DataWatch.IPropertyChangeListener">
+            <summary>
+            属性变化侦听接口
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.IPropertyChangeListener.OnPropertyChange(Com.Rainier.Buskit.Unity.Architecture.Aop.PropertyMessage)">
+            <summary>
+            执行属性变化侦听
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="T:Com.Rainier.BusKit.Unity.Modules.DataWatch.IPropertyChangeSupportable">
+            <summary>
+            属性变化侦听支持
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.IPropertyChangeSupportable.AddPropertyChangeListener(Com.Rainier.BusKit.Unity.Modules.DataWatch.IPropertyChangeListener)">
+            <summary>
+            添加事件侦听器
+            </summary>
+            <param name="listener"></param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.IPropertyChangeSupportable.RemovePropertyChangeListener(Com.Rainier.BusKit.Unity.Modules.DataWatch.IPropertyChangeListener)">
+            <summary>
+            删除事件侦听器
+            </summary>
+            <param name="listener"></param>
+        </member>
+        <member name="T:Com.Rainier.BusKit.Unity.Modules.DataWatch.PropertyChangeSupport">
+            <summary>
+            属性变化支持
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.BusKit.Unity.Modules.DataWatch.PropertyChangeSupport.sourceObject">
+            <summary>
+            源对象（发出属性变化事件的对象）
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.BusKit.Unity.Modules.DataWatch.PropertyChangeSupport.listeners">
+            <summary>
+            侦听器
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.PropertyChangeSupport.#ctor(System.Object)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="sourceObject"></param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.PropertyChangeSupport.ClearListeners">
+            <summary>
+            清空侦听器
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.PropertyChangeSupport.AddPropertyChangeListener(Com.Rainier.BusKit.Unity.Modules.DataWatch.IPropertyChangeListener)">
+            <summary>
+            添加侦听器
+            </summary>
+            <param name="listener"></param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.PropertyChangeSupport.RemovePropertyChangeListener(Com.Rainier.BusKit.Unity.Modules.DataWatch.IPropertyChangeListener)">
+            <summary>
+            删除侦听器
+            </summary>
+            <param name="listener"></param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.PropertyChangeSupport.FirePropertyChangeEvent(System.String,System.Object,System.Object)">
+            <summary>
+            广播属性变化事件
+            </summary>
+            <param name="propertyName"></param>
+            <param name="oldValue"></param>
+            <param name="newValue"></param>
+        </member>
+        <member name="T:Com.Rainier.BusKit.Unity.Modules.DataWatch.PropertyWatchItem">
+            <summary>
+            类 名 称：PropertyWatchItem
+            类 功 能：
+            主要接口：
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.PropertyWatchItem.#ctor(System.Object,System.String,Com.Rainier.BusKit.Unity.Modules.DataWatch.DelOnValueChanged)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="target">目标对象</param>
+            <param name="path">监听对象路径</param>
+            <param name="onValueChanged">值变化回调函数</param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.PropertyWatchItem.IsValueChanged">
+            <summary>
+            值是否发生过变化
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchTable">
+            <summary>
+            属性监听表
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchTable.Items">
+            <summary>
+            获取检测表
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchTable._items">
+            <summary>
+            属性监视条目
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchTable.Watch(System.Object,System.String,Com.Rainier.BusKit.Unity.Modules.DataWatch.DelOnValueChanged)">
+            <summary>
+            监视一个对象
+            </summary>
+            <param name="target">被监视的目标对象</param>
+            <param name="path">被监视的属性路径</param>
+            <param name="onValueChanged">监视处理函数</param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchTable.ParseObject(System.Object,System.String,System.Collections.Generic.List{System.String}@)">
+            <summary>
+            分析对象的所有子对象
+            </summary>
+            <param name="target"></param>
+            <param name="path"></param>
+            <param name="pathList"></param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchTable.isSupportedCollection(System.Type)">
+            <summary>
+            判断属性是否为支持的集合类型
+            </summary>
+            <param name="typeOfAttr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchTable.Watch(System.Object,Com.Rainier.BusKit.Unity.Modules.DataWatch.DelOnValueChanged)">
+            <summary>
+            采用*格式时的监视条目生成方法
+            </summary>
+            <param name="target"></param>
+            <param name="onValueChanged"></param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchTable.CreateItem(System.Type,System.Object,System.String,Com.Rainier.BusKit.Unity.Modules.DataWatch.DelOnValueChanged)">
+            <summary>
+            创建监视条目
+            </summary>
+            <param name="typeOfAttr"></param>
+            <param name="target"></param>
+            <param name="path"></param>
+            <param name="onValueChanged"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchTable.Unwatch(System.Object,System.String)">
+            <summary>
+            取消监视
+            </summary>
+            <param name="target">Entiy</param>
+            <param name="propertyName">属性名</param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchTable.Unwatch(System.Object)">
+            <summary>
+            取消监视
+            </summary>
+            <param name="target">Entiy</param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchTable.OnFireAll">
+            <summary>
+            清空忽略的属性事件变化
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchTable.OffFire(System.Object,System.String)">
+            <summary>
+            打开某一个属性值变化的事件响应
+            </summary>
+            <param name="source"></param>
+            <param name="propertyName"></param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchTable.OnFire(System.Object,System.String)">
+            <summary>
+            打开属性变化响应事件
+            </summary>
+            <param name="source"></param>
+            <param name="propertyName"></param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchTable.FireEvent(System.Object,System.String)">
+            <summary>
+            手动触发属性的事件
+            </summary>
+            <param name="source"></param>
+            <param name="propertyName"></param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchTable.Trace">
+            <summary>
+            检查哪些属性发生了改变，如果发生改变则调用代理函数
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.DataWatch.WatchTable.Dispose">
+            <summary>
+            执行销毁
+            </summary>
+        </member>
+        <member name="T:BusKit3D.BindingSystem.BindingException">
+            <summary>
+            绑定系统异常
+            </summary>
+        </member>
+        <member name="M:BusKit3D.BindingSystem.BindingException.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="message"></param>
+        </member>
+    </members>
+</doc>

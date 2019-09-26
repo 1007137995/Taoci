@@ -32,6 +32,7 @@ namespace TaoCi
                     break;
                 case 3004003:
                     SetInLu();
+                    transform.Find("Arrow").gameObject.SetActive(false);
                     transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
                     break;
                 default:
@@ -49,6 +50,7 @@ namespace TaoCi
                 case 3004003:
                     if (b)
                     {
+                        transform.Find("Arrow").gameObject.SetActive(true);
                         transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
                         b = false;
                     }

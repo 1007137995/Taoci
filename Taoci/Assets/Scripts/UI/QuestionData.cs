@@ -57,7 +57,7 @@ namespace TaoCi
             que.qaudio = null;
             que.raudio = null;
             que.waudio = null;
-            que.score = 0;
+            que.score = 3;
             qaq.Add(que.id, que);
 
             que.id = 2;
@@ -82,7 +82,7 @@ namespace TaoCi
             que.qaudio = null;
             que.raudio = null;
             que.waudio = null;
-            que.score = 0;
+            que.score = 3;
             qaq.Add(que.id, que);
 
             que.id = 3;
@@ -107,7 +107,7 @@ namespace TaoCi
             que.qaudio = null;
             que.raudio = null;
             que.waudio = null;
-            que.score = 0;
+            que.score = 3;
             qaq.Add(que.id, que);
 
             que.id = 1004007;
@@ -132,7 +132,7 @@ namespace TaoCi
             que.qaudio = null;
             que.raudio = null;
             que.waudio = null;
-            que.score = 0;
+            que.score = 2;
             qaq.Add(que.id, que);
 
             que.id = 2002004;
@@ -157,7 +157,7 @@ namespace TaoCi
             que.qaudio = null;
             que.raudio = null;
             que.waudio = null;
-            que.score = 0;
+            que.score = 2;
             qaq.Add(que.id, que);
             
             que.id = 3004004;
@@ -182,7 +182,7 @@ namespace TaoCi
             que.qaudio = null;
             que.raudio = null;
             que.waudio = null;
-            que.score = 0;
+            que.score = 3;
             qaq.Add(que.id, que);
         }
     }

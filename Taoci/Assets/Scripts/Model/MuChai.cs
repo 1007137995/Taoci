@@ -12,6 +12,7 @@ namespace TaoCi
         private string info;
         private GameObject aim;
         private Vector3 aimPos;
+        private Vector3 aimRot;
         bool b = true;
 
         private void Start()
@@ -20,6 +21,7 @@ namespace TaoCi
             info = "用于燃烧升温，模仿古代柴烧效果";
             aim = transform.Find("Heap/aim").gameObject;
             aimPos = aim.transform.localPosition;
+            aimRot = aim.transform.localEulerAngles;
         }
 
         public override void OnMouseLeftClick()
@@ -33,6 +35,7 @@ namespace TaoCi
                     break;
                 case 2004002:
                     SetInLu();
+                    transform.Find("Arrow").gameObject.SetActive(false);
                     transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
                     break;
                 default:
@@ -50,6 +53,7 @@ namespace TaoCi
                 case 2004002:
                     if (b)
                     {
+                        transform.Find("Arrow").gameObject.SetActive(true);
                         transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
                         b = false;
                     }
@@ -79,7 +83,45 @@ namespace TaoCi
             sequence.Append(Huoqian.Instance.transform.DOLocalMove(new Vector3(1.919f, -0.2277f, 1.2468f), 1f).OnComplete(delegate
             {
                 aim.transform.SetParent(transform);
+                aim.transform.localPosition = aimPos;
+                aim.transform.localEulerAngles = aimRot;
+                //Huoqian.Instance.transform.localPosition = Huoqian.Instance.oldPos;
+                //Huoqian.Instance.transform.localEulerAngles = Huoqian.Instance.oldRot;
+            }));
+            sequence.Append(Huoqian.Instance.transform.DOLocalMove(new Vector3(2.168f, -0.724f, 3.5838f), 0.05f).OnComplete(delegate
+            {
+                Huoqian.Instance.transform.localEulerAngles = new Vector3(-30, 90, 0);
+            }));
+            sequence.Append(Huoqian.Instance.transform.DOLocalMove(new Vector3(2.168f, -1.139f, 3.5838f), 1f).OnComplete(delegate
+            {
+                aim.transform.SetParent(Huoqian.Instance.transform);
+            }));
+            sequence.Append(Huoqian.Instance.transform.DOLocalMove(new Vector3(1.7063f, 0.0522f, 1.2468f), 1f));
+            sequence.Append(touliaokou.GetComponent<Touliaokou>().Open());
+            sequence.Append(Huoqian.Instance.transform.DOLocalMove(new Vector3(1.919f, -0.2277f, 1.2468f), 1f).OnComplete(delegate
+            {
+                aim.transform.SetParent(transform);
+                aim.transform.localPosition = aimPos;
+                aim.transform.localEulerAngles = aimRot;
+                //Huoqian.Instance.transform.localPosition = Huoqian.Instance.oldPos;
+                //Huoqian.Instance.transform.localEulerAngles = Huoqian.Instance.oldRot;
+            }));
+            sequence.Append(Huoqian.Instance.transform.DOLocalMove(new Vector3(2.168f, -0.724f, 3.5838f), 0.05f).OnComplete(delegate
+            {
+                Huoqian.Instance.transform.localEulerAngles = new Vector3(-30, 90, 0);
+            }));
+            sequence.Append(Huoqian.Instance.transform.DOLocalMove(new Vector3(2.168f, -1.139f, 3.5838f), 1f).OnComplete(delegate
+            {
+                aim.transform.SetParent(Huoqian.Instance.transform);
+            }));
+            sequence.Append(Huoqian.Instance.transform.DOLocalMove(new Vector3(1.7063f, 0.0522f, 1.2468f), 1f));
+            sequence.Append(touliaokou.GetComponent<Touliaokou>().Open());
+            sequence.Append(Huoqian.Instance.transform.DOLocalMove(new Vector3(1.919f, -0.2277f, 1.2468f), 1f).OnComplete(delegate
+            {
+                aim.transform.SetParent(transform);
                 aim.gameObject.SetActive(false);
+                aim.transform.localPosition = aimPos;
+                aim.transform.localEulerAngles = aimRot;
                 Huoqian.Instance.transform.localPosition = Huoqian.Instance.oldPos;
                 Huoqian.Instance.transform.localEulerAngles = Huoqian.Instance.oldRot;
             }));

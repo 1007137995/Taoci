@@ -395,7 +395,14 @@ namespace TaoCi
                             AudioManager.instance.PlayAudio(Resources.Load<AudioClip>("Audio/Worning"));
                             break;
                         case "4":
-                            ScoreInfo.AddSocreInfo(new ScoreInfo(0, "排水阶段时间设置：", "C", true, errorindex));
+                            if (errorindex == 0)
+                            {
+                                ScoreInfo.AddSocreInfo(new ScoreInfo(3, "排水阶段时间设置：", "C", true, errorindex));
+                            }
+                            else
+                            {
+                                ScoreInfo.AddSocreInfo(new ScoreInfo(0, "排水阶段时间设置：", "C", true, errorindex));
+                            }                            
                             stepButton[1].GetComponent<Button>().interactable = true;
                             tipText.text = "选择正确";
                             tipText.color = new Color(0, 130.0f / 255.0f, 10.0f / 255.0f);
@@ -424,7 +431,14 @@ namespace TaoCi
                             AudioManager.instance.PlayAudio(Resources.Load<AudioClip>("Audio/Worning"));
                             break;
                         case "3":
-                            ScoreInfo.AddSocreInfo(new ScoreInfo(0, "低温阶段时间设置：", "C", true, errorindex));
+                            if (errorindex == 0)
+                            {
+                                ScoreInfo.AddSocreInfo(new ScoreInfo(3, "低温阶段时间设置：", "C", true, errorindex));
+                            }
+                            else
+                            {
+                                ScoreInfo.AddSocreInfo(new ScoreInfo(0, "低温阶段时间设置：", "C", true, errorindex));
+                            }
                             stepButton[2].GetComponent<Button>().interactable = true;
                             tipText.text = "选择正确";
                             tipText.color = new Color(0, 130.0f / 255.0f, 10.0f / 255.0f);
@@ -453,7 +467,14 @@ namespace TaoCi
                             AudioManager.instance.PlayAudio(Resources.Load<AudioClip>("Audio/Worning"));
                             break;
                         case "3":
-                            ScoreInfo.AddSocreInfo(new ScoreInfo(0, "中温阶段时间设置：", "C", true, errorindex));
+                            if (errorindex == 0)
+                            {
+                                ScoreInfo.AddSocreInfo(new ScoreInfo(3, "中温阶段时间设置：", "C", true, errorindex));
+                            }
+                            else
+                            {
+                                ScoreInfo.AddSocreInfo(new ScoreInfo(0, "中温阶段时间设置：", "C", true, errorindex));
+                            }                            
                             stepButton[3].GetComponent<Button>().interactable = true;
                             tipText.text = "选择正确";
                             tipText.color = new Color(0, 130.0f / 255.0f, 10.0f / 255.0f);
@@ -504,7 +525,14 @@ namespace TaoCi
                             AudioManager.instance.PlayAudio(Resources.Load<AudioClip>("Audio/Worning"));
                             break;
                         case "1150":
-                            ScoreInfo.AddSocreInfo(new ScoreInfo(0, "高温阶段温度设置：", "A", true, errorindex));
+                            if (errorindex == 0)
+                            {
+                                ScoreInfo.AddSocreInfo(new ScoreInfo(3, "高温阶段温度设置：", "A", true, errorindex));
+                            }
+                            else
+                            {
+                                ScoreInfo.AddSocreInfo(new ScoreInfo(0, "高温阶段温度设置：", "A", true, errorindex));
+                            }                            
                             stepButton[4].GetComponent<Button>().interactable = true;
                             tipText.text = "选择正确";
                             tipText.color = new Color(0, 130.0f / 255.0f, 10.0f / 255.0f);

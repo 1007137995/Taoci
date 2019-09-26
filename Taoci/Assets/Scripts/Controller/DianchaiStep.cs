@@ -33,7 +33,7 @@ namespace TaoCi
                     TTUIPage.ShowPage<UITitle>();
                     //TTUIPage.ShowPage<UIIntroduceBtn>();
                     TTUIPage.ShowPage<UITip>();
-                    UITip.Instance.SetTip("请先阅读实验守则和实验目的。");
+                    UITip.Instance.SetTip("点击墙上高亮的安全守则查看相关内容。");
                     CamOperator.Instance.GetComponent<CamOperator>().enabled = false;
                     break;
                 case 2001002:
@@ -110,7 +110,7 @@ namespace TaoCi
                 case 2003001:
                     UICProcess.Instance.SetPage(3);
                     TTUIPage.ShowPage<UITip>();
-                    UITip.Instance.SetTip("点击开关，通电。");
+                    UITip.Instance.SetTip("请前往电窑左侧，将墙上开关通电。");
                     break;
                 case 2003002:
                     UITip.Instance.SetTip("点击电窑控制面板，设定坭兴陶烧制升温曲线。");
@@ -148,6 +148,7 @@ namespace TaoCi
                     //Fire.Instance.ChangeLittleFire(true);
                     TTUIPage.ShowPage<UISingleBtn>();
                     UISingleBtn.Instance.transform.Find("EffectBtn").gameObject.SetActive(true);
+                    UITip.Instance.SetTip("点击炉内效果按钮，可查看窑内陶瓷烧制动态效果。");
                     UIManager.Instance.Delay(Openpaiyankou());
                     break;
                 case 2004005:
@@ -160,6 +161,10 @@ namespace TaoCi
                     UIManager.Instance.Delay(Wait());
                     break;
                 case 2004006:
+                    TTUIPage.ShowPage<UITip>();
+                    UITip.Instance.SetTip("请关闭电源，开启降温环节。");
+                    break;
+                case 2004007:
                     Fire.Instance.ChangeInFire(false);
                     Fire.Instance.ChangeOutFire(false);
                     //UITip.Instance.SetTip("开启排烟口、观火口、投料口，进入降温环节。");       
@@ -168,14 +173,14 @@ namespace TaoCi
                     TTUIPage.ShowPage<UISlider>();
                     UISlider.Instance.Wait("降温阶段，等待24小时");
                     break;
-                case 2004007:
+                case 2004008:
                     TTUIPage.ClosePage<UISingleBtn>();
                     TTUIPage.ClosePage<UISlider>();
                     TTUIPage.ShowPage<UIQuestion>();
                     UIQuestion.Instance.GetQuestion(1004007);
                     UIManager.Instance.Delay(QuestionEnd());
                     break;
-                case 2004008:
+                case 2004009:
                     Lumen.Instance.gameObject.SetActive(true);
                     SetStep(2005001);
                     break;

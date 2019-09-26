@@ -12,6 +12,7 @@ namespace TaoCi
         private string info;
         private GameObject aim;
         private Vector3 aimPos;
+        private Vector3 aimRot;
         bool b = true;
 
         private void Start()
@@ -20,6 +21,7 @@ namespace TaoCi
             info = "用于熏窑，消耗窑内氧气使窑内气氛转换成还原气氛或中性气氛";
             aim = transform.Find("Heap/aim").gameObject;
             aimPos = aim.transform.localPosition;
+            aimRot = aim.transform.localEulerAngles;
         }
 
         public override void OnMouseLeftClick()
@@ -34,6 +36,7 @@ namespace TaoCi
                     break;
                 case 1004002:
                     SetInLu();
+                    transform.Find("Arrow").gameObject.SetActive(false);
                     transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
                     break;
                 #endregion
@@ -45,6 +48,7 @@ namespace TaoCi
                     break;
                 case 4004002:
                     SetInLu();
+                    transform.Find("Arrow").gameObject.SetActive(false);
                     transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
                     break;
                 #endregion
@@ -64,6 +68,7 @@ namespace TaoCi
                 case 1004002:                    
                     if (b)
                     {
+                        transform.Find("Arrow").gameObject.SetActive(true);
                         transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
                         b = false;
                     }
@@ -79,6 +84,7 @@ namespace TaoCi
                 case 4004002:
                     if (b)
                     {
+                        transform.Find("Arrow").gameObject.SetActive(true);
                         transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
                         b = false;
                     }
@@ -109,6 +115,8 @@ namespace TaoCi
             sequence.Append(Huoqian.Instance.transform.DOLocalMove(new Vector3(1.919f, -0.2277f, 1.2468f), 1f).OnComplete(delegate
             {
                 aim.transform.SetParent(transform);
+                aim.transform.localPosition = aimPos;
+                aim.transform.localEulerAngles = aimRot;
                 aim.gameObject.SetActive(false);
                 Huoqian.Instance.transform.localPosition = Huoqian.Instance.oldPos;
                 Huoqian.Instance.transform.localEulerAngles = Huoqian.Instance.oldRot;

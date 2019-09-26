@@ -28,8 +28,11 @@ namespace TinyTeam.UI
                     transform.Find("PaiyankouBtn").gameObject.SetActive(true);
                 }                
             });
+            transform.Find("HelpBtn").GetComponent<Button>().onClick.AddListener(() => transform.Find("Help").gameObject.SetActive(true));
+            transform.Find("Help/Close").GetComponent<Button>().onClick.AddListener(() => transform.Find("Help").gameObject.SetActive(false));
             transform.Find("PaiyankouBtn").gameObject.SetActive(false);
             transform.Find("EffectBtn").gameObject.SetActive(false);
+            transform.Find("HelpBtn").gameObject.SetActive(false);
         }
     }
 }

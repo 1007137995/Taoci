@@ -34,7 +34,7 @@ namespace TaoCi
                     TTUIPage.ShowPage<UITitle>();
                     //TTUIPage.ShowPage<UIIntroduceBtn>();
                     TTUIPage.ShowPage<UITip>();
-                    UITip.Instance.SetTip("请先阅读实验守则和实验目的。");
+                    UITip.Instance.SetTip("点击墙上高亮的安全守则查看相关内容。");
                     CamOperator.Instance.GetComponent<CamOperator>().enabled = false;
                     break;
                 case 4001002:
@@ -110,7 +110,7 @@ namespace TaoCi
                 case 4003001:
                     UICProcess.Instance.SetPage(3);
                     TTUIPage.ShowPage<UITip>();
-                    UITip.Instance.SetTip("点击开关，通电。");
+                    UITip.Instance.SetTip("请前往电窑左侧，将墙上开关通电。");
                     break;
                 case 4003002:
                     UITip.Instance.SetTip("点击电窑控制面板，设定坭兴陶烧制升温曲线。");
@@ -149,11 +149,14 @@ namespace TaoCi
                     TTUIPage.ShowPage<UISingleBtn>();
                     UISingleBtn.Instance.transform.Find("EffectBtn").gameObject.SetActive(true);
                     UISingleBtn.Instance.transform.Find("PaiyankouBtn").gameObject.SetActive(false);
-                    UIManager.Instance.Delay(Openpaiyankou());
-                    UITip.Instance.SetTip("煤块和松香燃烧消耗窑内氧气，产生少量火焰和大量浓烟，形成还原气氛，坭兴陶坯体中的高价铁会还原变成氧化亚铁，浓烟中的碳元素会吸附到坭兴陶表面，形成黑灰色、深青色或深蓝色等暗色调，而有匣钵覆盖的地方遮挡而无法被碳元素附着，形成古铜色或深红色。至此，定点窑变形成。");
-                    UIManager.Instance.Delay(Wait());
+                    UITip.Instance.SetTip("点击炉内效果按钮，可查看窑内陶瓷烧制动态效果。");
+                    UIManager.Instance.Delay(Openpaiyankou());                    
                     break;
                 case 4004005:
+                    TTUIPage.ShowPage<UITip>();
+                    UITip.Instance.SetTip("请关闭电源，开启降温环节。");
+                    break;
+                case 4004006:
                     Fire.Instance.ChangeLittleFire(false);
                     Fire.Instance.ChangeOutFire(false);
                     //UITip.Instance.SetTip("开启排烟口、观火口、投料口，进入降温环节。");       
@@ -162,14 +165,14 @@ namespace TaoCi
                     TTUIPage.ShowPage<UISlider>();
                     UISlider.Instance.Wait("降温阶段，等待24小时");
                     break;
-                case 4004006:
+                case 4004007:
                     TTUIPage.ClosePage<UISingleBtn>();
                     TTUIPage.ClosePage<UISlider>();
                     TTUIPage.ShowPage<UIQuestion>();
                     UIQuestion.Instance.GetQuestion(1004007);
                     UIManager.Instance.Delay(QuestionEnd());
                     break;
-                case 4004007:
+                case 4004008:
                     Lumen.Instance.gameObject.SetActive(true);
                     SetStep(4005001);
                     break;
@@ -257,6 +260,8 @@ namespace TaoCi
         {
             yield return new WaitUntil(() => UISingleBtn.Instance.transform.Find("PaiyankouBtn").gameObject.activeSelf);
             UISingleBtn.Instance.transform.Find("PaiyankouBtn").gameObject.SetActive(false);
+            UITip.Instance.SetTip("煤块和松香燃烧消耗窑内氧气，产生少量火焰和大量浓烟，形成还原气氛，坭兴陶坯体中的高价铁会还原变成氧化亚铁，浓烟中的碳元素会吸附到坭兴陶表面，形成黑灰色、深青色或深蓝色等暗色调，而有匣钵覆盖的地方遮挡而无法被碳元素附着，形成古铜色或深红色。");
+            UIManager.Instance.Delay(Wait());
         }
     }
 }

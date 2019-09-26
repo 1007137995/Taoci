@@ -33,7 +33,7 @@ namespace TaoCi
                     TTUIPage.ShowPage<UITitle>();
                     //TTUIPage.ShowPage<UIIntroduceBtn>();
                     TTUIPage.ShowPage<UITip>();
-                    UITip.Instance.SetTip("请先阅读实验守则和实验目的。");
+                    UITip.Instance.SetTip("点击墙上高亮的安全守则查看相关内容。");
                     CamOperator.Instance.GetComponent<CamOperator>().enabled = false;
                     break;
                 case 1001002:
@@ -104,7 +104,7 @@ namespace TaoCi
                 case 1003001:
                     UICProcess.Instance.SetPage(3);
                     TTUIPage.ShowPage<UITip>();
-                    UITip.Instance.SetTip("点击开关，通电。");
+                    UITip.Instance.SetTip("请前往电窑左侧，将墙上开关通电。");
                     break;
                 case 1003002:
                     UITip.Instance.SetTip("点击电窑控制面板，设定坭兴陶烧制升温曲线。");
@@ -137,7 +137,7 @@ namespace TaoCi
                     UITip.Instance.SetTip("进入窑变技艺环节，点击松香，从投料口向炉内投入0.5kg松香。");
                     break;
                 case 1004004:
-                    UITip.Instance.SetTip("开启排烟口，使窑内上下通气，煤块、松香接触氧气火焰升高，窜出排烟口，而浓烟滞留在窑内两侧，此时窑内既有氧化气氛又有还原气氛，即中性气氛。");
+                    UITip.Instance.SetTip("开启排烟口，使窑内上下通气，煤块、松香接触氧气火焰升高，窜出排烟口，而浓烟滞留在窑内两侧，此时窑内既有氧化气氛又有还原气氛，即中性气氛。点击炉内效果按钮，可查看窑内陶瓷烧制动态效果。");
                     ShaderColorController.Instance.Burn();
                     ShaderColorController.Instance.fireLight.intensity = 3;
                     Fire.Instance.ChangeLittleFire(true);
@@ -154,6 +154,10 @@ namespace TaoCi
                     UIManager.Instance.Delay(Wait());
                     break;
                 case 1004006:
+                    TTUIPage.ShowPage<UITip>();
+                    UITip.Instance.SetTip("请关闭电源，开启降温环节。");
+                    break;
+                case 1004007:
                     Fire.Instance.ChangeInFire(false);
                     Fire.Instance.ChangeOutFire(false);
                     //UITip.Instance.SetTip("开启排烟口、观火口、投料口，进入降温环节。");       
@@ -162,14 +166,14 @@ namespace TaoCi
                     TTUIPage.ShowPage<UISlider>();
                     UISlider.Instance.Wait("降温阶段，等待24小时");
                     break;
-                case 1004007:
+                case 1004008:
                     TTUIPage.ClosePage<UISingleBtn>();
                     TTUIPage.ClosePage<UISlider>();
                     TTUIPage.ShowPage<UIQuestion>();
                     UIQuestion.Instance.GetQuestion(1004007);
                     UIManager.Instance.Delay(QuestionEnd());
                     break;
-                case 1004008:
+                case 1004009:
                     Lumen.Instance.gameObject.SetActive(true);
                     SetStep(1005001);
                     break;

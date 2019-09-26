@@ -94,6 +94,7 @@ namespace TinyTeam.UI
                 }
             }
             UITitle.Instance.transform.Find("StartBtn").gameObject.SetActive(true);
+            btn.interactable = false;
         }
     }
 }

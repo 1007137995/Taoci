@@ -1,0 +1,1020 @@
+*********************************ReplayData**********************************
+[
+  {
+    "$type": "Com.Rainier.Buskit3D.RecordItem, Assembly-CSharp",
+    "FrameCount": 199,
+    "ObjectId": 24932,
+    "PropertyPath": "position",
+    "NewValue": {
+      "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+      "x": -3.1536727,
+      "y": 0.130021214,
+      "z": 0.0,
+      "normalized": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": -0.99915123,
+        "y": 0.04119351,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.00000012
+      },
+      "magnitude": 3.1563518,
+      "sqrMagnitude": 9.962557
+    }
+  },
+  {
+    "$type": "Com.Rainier.Buskit3D.RecordItem, Assembly-CSharp",
+    "FrameCount": 200,
+    "ObjectId": 24932,
+    "PropertyPath": "position",
+    "NewValue": {
+      "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+      "x": -3.07458425,
+      "y": 0.130021214,
+      "z": 0.0,
+      "normalized": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": -0.999107,
+        "y": 0.0422512777,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      },
+      "magnitude": 3.07733226,
+      "sqrMagnitude": 9.469974
+    }
+  },
+  {
+    "$type": "Com.Rainier.Buskit3D.RecordItem, Assembly-CSharp",
+    "FrameCount": 201,
+    "ObjectId": 24932,
+    "PropertyPath": "position",
+    "NewValue": {
+      "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+      "x": -2.936178,
+      "y": 0.130021214,
+      "z": 0.0,
+      "normalized": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": -0.999020934,
+        "y": 0.044239115,
+        "z": 0.0,
+        "normalized": {
+          "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+          "x": -0.999021,
+          "y": 0.04423912,
+          "z": 0.0,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 0.99999994,
+        "sqrMagnitude": 0.99999994
+      },
+      "magnitude": 2.93905544,
+      "sqrMagnitude": 8.638046
+    }
+  },
+  {
+    "$type": "Com.Rainier.Buskit3D.RecordItem, Assembly-CSharp",
+    "FrameCount": 201,
+    "ObjectId": 24932,
+    "PropertyPath": "normalColor",
+    "NewValue": {
+      "$type": "UnityEngine.Color32, UnityEngine.CoreModule",
+      "r": 255,
+      "g": 0,
+      "b": 0,
+      "a": 255
+    }
+  },
+  {
+    "$type": "Com.Rainier.Buskit3D.RecordItem, Assembly-CSharp",
+    "FrameCount": 202,
+    "ObjectId": 24932,
+    "PropertyPath": "position",
+    "NewValue": {
+      "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+      "x": -2.71868348,
+      "y": 0.3277439,
+      "z": 0.0,
+      "normalized": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": -0.992811859,
+        "y": 0.119685873,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.00000012
+      },
+      "magnitude": 2.73836732,
+      "sqrMagnitude": 7.498656
+    }
+  },
+  {
+    "$type": "Com.Rainier.Buskit3D.RecordItem, Assembly-CSharp",
+    "FrameCount": 203,
+    "ObjectId": 24932,
+    "PropertyPath": "position",
+    "NewValue": {
+      "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+      "x": -2.54073358,
+      "y": 0.5650106,
+      "z": 0.0,
+      "normalized": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": -0.9761542,
+        "y": 0.217078045,
+        "z": 0.0,
+        "normalized": {
+          "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+          "x": -0.976154268,
+          "y": 0.21707806,
+          "z": 0.0,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 0.99999994,
+        "sqrMagnitude": 0.99999994
+      },
+      "magnitude": 2.60279942,
+      "sqrMagnitude": 6.77456427
+    }
+  },
+  {
+    "$type": "Com.Rainier.Buskit3D.RecordItem, Assembly-CSharp",
+    "FrameCount": 204,
+    "ObjectId": 24932,
+    "PropertyPath": "position",
+    "NewValue": {
+      "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+      "x": -2.4221,
+      "y": 0.9604559,
+      "z": 0.0,
+      "normalized": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": -0.9295821,
+        "y": 0.3686151,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      },
+      "magnitude": 2.60557938,
+      "sqrMagnitude": 6.78904438
+    }
+  },
+  {
+    "$type": "Com.Rainier.Buskit3D.RecordItem, Assembly-CSharp",
+    "FrameCount": 205,
+    "ObjectId": 24932,
+    "PropertyPath": "position",
+    "NewValue": {
+      "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+      "x": -2.36278367,
+      "y": 1.55362272,
+      "z": 0.0,
+      "normalized": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": -0.8355535,
+        "y": 0.549409151,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.00000012
+      },
+      "magnitude": 2.82780647,
+      "sqrMagnitude": 7.99649
+    }
+  },
+  {
+    "$type": "Com.Rainier.Buskit3D.RecordItem, Assembly-CSharp",
+    "FrameCount": 206,
+    "ObjectId": 24932,
+    "PropertyPath": "position",
+    "NewValue": {
+      "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+      "x": -2.36278367,
+      "y": 2.1665616,
+      "z": 0.0,
+      "normalized": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": -0.737049,
+        "y": 0.6758393,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      },
+      "magnitude": 3.205735,
+      "sqrMagnitude": 10.2767363
+    }
+  },
+  {
+    "$type": "Com.Rainier.Buskit3D.RecordItem, Assembly-CSharp",
+    "FrameCount": 207,
+    "ObjectId": 24932,
+    "PropertyPath": "position",
+    "NewValue": {
+      "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+      "x": -2.36278367,
+      "y": 2.72018528,
+      "z": 0.0,
+      "normalized": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": -0.6557685,
+        "y": 0.754962,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      },
+      "magnitude": 3.60307574,
+      "sqrMagnitude": 12.9821548
+    }
+  },
+  {
+    "$type": "Com.Rainier.Buskit3D.RecordItem, Assembly-CSharp",
+    "FrameCount": 208,
+    "ObjectId": 24932,
+    "PropertyPath": "position",
+    "NewValue": {
+      "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+      "x": -2.30346632,
+      "y": 3.03654051,
+      "z": 0.0,
+      "normalized": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": -0.604367137,
+        "y": 0.796705961,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      },
+      "magnitude": 3.81136918,
+      "sqrMagnitude": 14.526535
+    }
+  },
+  {
+    "$type": "Com.Rainier.Buskit3D.RecordItem, Assembly-CSharp",
+    "FrameCount": 209,
+    "ObjectId": 24932,
+    "PropertyPath": "position",
+    "NewValue": {
+      "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+      "x": -2.263922,
+      "y": 3.11563087,
+      "z": 0.0,
+      "normalized": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": -0.587833464,
+        "y": 0.808981955,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      },
+      "magnitude": 3.85129833,
+      "sqrMagnitude": 14.8324986
+    }
+  },
+  {
+    "$type": "Com.Rainier.Buskit3D.RecordItem, Assembly-CSharp",
+    "FrameCount": 210,
+    "ObjectId": 24932,
+    "PropertyPath": "normalColor",
+    "NewValue": {
+      "$type": "UnityEngine.Color32, UnityEngine.CoreModule",
+      "r": 0,
+      "g": 153,
+      "b": 247,
+      "a": 255
+    }
+  },
+  {
+    "$type": "Com.Rainier.Buskit3D.RecordItem, Assembly-CSharp",
+    "FrameCount": 232,
+    "ObjectId": 13620,
+    "PropertyPath": "position",
+    "NewValue": {
+      "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+      "x": -0.0889751539,
+      "y": -0.2061069,
+      "z": 0.0,
+      "normalized": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": -0.396340072,
+        "y": -0.9181038,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.00000012
+      },
+      "magnitude": 0.224491939,
+      "sqrMagnitude": 0.0503966324
+    }
+  },
+  {
+    "$type": "Com.Rainier.Buskit3D.RecordItem, Assembly-CSharp",
+    "FrameCount": 233,
+    "ObjectId": 13620,
+    "PropertyPath": "position",
+    "NewValue": {
+      "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+      "x": -0.108747341,
+      "y": -0.24565208,
+      "z": 0.0,
+      "normalized": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": -0.4047972,
+        "y": -0.9144065,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      },
+      "magnitude": 0.268646479,
+      "sqrMagnitude": 0.07217093
+    }
+  },
+  {
+    "$type": "Com.Rainier.Buskit3D.RecordItem, Assembly-CSharp",
+    "FrameCount": 234,
+    "ObjectId": 13620,
+    "PropertyPath": "position",
+    "NewValue": {
+      "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+      "x": -0.32624203,
+      "y": -0.2851962,
+      "z": 0.0,
+      "normalized": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": -0.752880335,
+        "y": -0.6581574,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      },
+      "magnitude": 0.4333252,
+      "sqrMagnitude": 0.187770724
+    }
+  },
+  {
+    "$type": "Com.Rainier.Buskit3D.RecordItem, Assembly-CSharp",
+    "FrameCount": 234,
+    "ObjectId": 13620,
+    "PropertyPath": "normalColor",
+    "NewValue": {
+      "$type": "UnityEngine.Color32, UnityEngine.CoreModule",
+      "r": 255,
+      "g": 0,
+      "b": 0,
+      "a": 255
+    }
+  },
+  {
+    "$type": "Com.Rainier.Buskit3D.RecordItem, Assembly-CSharp",
+    "FrameCount": 235,
+    "ObjectId": 13620,
+    "PropertyPath": "position",
+    "NewValue": {
+      "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+      "x": -0.6228255,
+      "y": -0.3247403,
+      "z": 0.0,
+      "normalized": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": -0.886708736,
+        "y": -0.4623286,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.00000012
+      },
+      "magnitude": 0.702401459,
+      "sqrMagnitude": 0.493367851
+    }
+  },
+  {
+    "$type": "Com.Rainier.Buskit3D.RecordItem, Assembly-CSharp",
+    "FrameCount": 236,
+    "ObjectId": 13620,
+    "PropertyPath": "position",
+    "NewValue": {
+      "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+      "x": -0.998498261,
+      "y": -0.403829575,
+      "z": 0.0,
+      "normalized": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": -0.9270515,
+        "y": -0.374933869,
+        "z": 0.0,
+        "normalized": {
+          "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+          "x": -0.927051544,
+          "y": -0.3749339,
+          "z": 0.0,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 0.99999994,
+        "sqrMagnitude": 0.9999999
+      },
+      "magnitude": 1.07706881,
+      "sqrMagnitude": 1.1600771
+    }
+  },
+  {
+    "$type": "Com.Rainier.Buskit3D.RecordItem, Assembly-CSharp",
+    "FrameCount": 237,
+    "ObjectId": 13620,
+    "PropertyPath": "position",
+    "NewValue": {
+      "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+      "x": -1.45325983,
+      "y": -0.423601627,
+      "z": 0.0,
+      "normalized": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": -0.9600472,
+        "y": -0.279838145,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      },
+      "magnitude": 1.51373792,
+      "sqrMagnitude": 2.29140258
+    }
+  },
+  {
+    "$type": "Com.Rainier.Buskit3D.RecordItem, Assembly-CSharp",
+    "FrameCount": 238,
+    "ObjectId": 13620,
+    "PropertyPath": "position",
+    "NewValue": {
+      "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+      "x": -2.36278367,
+      "y": -0.482918859,
+      "z": 0.0,
+      "normalized": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": -0.979745746,
+        "y": -0.200245887,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.00000012
+      },
+      "magnitude": 2.41162944,
+      "sqrMagnitude": 5.815957
+    }
+  },
+  {
+    "$type": "Com.Rainier.Buskit3D.RecordItem, Assembly-CSharp",
+    "FrameCount": 239,
+    "ObjectId": 13620,
+    "PropertyPath": "position",
+    "NewValue": {
+      "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+      "x": -2.91640615,
+      "y": -0.482918859,
+      "z": 0.0,
+      "normalized": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": -0.9865661,
+        "y": -0.163362488,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      },
+      "magnitude": 2.95611835,
+      "sqrMagnitude": 8.738635
+    }
+  },
+  {
+    "$type": "Com.Rainier.Buskit3D.RecordItem, Assembly-CSharp",
+    "FrameCount": 240,
+    "ObjectId": 13620,
+    "PropertyPath": "position",
+    "NewValue": {
+      "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+      "x": -3.311851,
+      "y": -0.403829575,
+      "z": 0.0,
+      "normalized": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": -0.9926479,
+        "y": -0.121038228,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.00000012
+      },
+      "magnitude": 3.33638048,
+      "sqrMagnitude": 11.1314354
+    }
+  },
+  {
+    "$type": "Com.Rainier.Buskit3D.RecordItem, Assembly-CSharp",
+    "FrameCount": 241,
+    "ObjectId": 13620,
+    "PropertyPath": "position",
+    "NewValue": {
+      "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+      "x": -3.6479795,
+      "y": -0.24565208,
+      "z": 0.0,
+      "normalized": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": -0.9977404,
+        "y": -0.0671870559,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      },
+      "magnitude": 3.65624118,
+      "sqrMagnitude": 13.3680992
+    }
+  },
+  {
+    "$type": "Com.Rainier.Buskit3D.RecordItem, Assembly-CSharp",
+    "FrameCount": 242,
+    "ObjectId": 13620,
+    "PropertyPath": "position",
+    "NewValue": {
+      "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+      "x": -3.9643352,
+      "y": -0.08747351,
+      "z": 0.0,
+      "normalized": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": -0.9997567,
+        "y": -0.0220597461,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.00000012
+      },
+      "magnitude": 3.9653,
+      "sqrMagnitude": 15.7236052
+    }
+  },
+  {
+    "$type": "Com.Rainier.Buskit3D.RecordItem, Assembly-CSharp",
+    "FrameCount": 243,
+    "ObjectId": 13620,
+    "PropertyPath": "position",
+    "NewValue": {
+      "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+      "x": -4.14228535,
+      "y": 0.0707051158,
+      "z": 0.0,
+      "normalized": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": -0.9998544,
+        "y": 0.0170666222,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.00000012
+      },
+      "magnitude": 4.14288855,
+      "sqrMagnitude": 17.1635265
+    }
+  },
+  {
+    "$type": "Com.Rainier.Buskit3D.RecordItem, Assembly-CSharp",
+    "FrameCount": 244,
+    "ObjectId": 13620,
+    "PropertyPath": "position",
+    "NewValue": {
+      "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+      "x": -4.241146,
+      "y": 0.2881986,
+      "z": 0.0,
+      "normalized": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": -0.997699142,
+        "y": 0.06779665,
+        "z": 0.0,
+        "normalized": {
+          "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+          "x": -0.9976992,
+          "y": 0.067796655,
+          "z": 0.0,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 0.99999994,
+        "sqrMagnitude": 0.99999994
+      },
+      "magnitude": 4.250927,
+      "sqrMagnitude": 18.07038
+    }
+  },
+  {
+    "$type": "Com.Rainier.Buskit3D.RecordItem, Assembly-CSharp",
+    "FrameCount": 245,
+    "ObjectId": 13620,
+    "PropertyPath": "position",
+    "NewValue": {
+      "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+      "x": -4.32023525,
+      "y": 0.545238554,
+      "z": 0.0,
+      "normalized": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": -0.9921299,
+        "y": 0.1252125,
+        "z": 0.0,
+        "normalized": {
+          "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+          "x": -0.99213,
+          "y": 0.12521252,
+          "z": 0.0,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 0.99999994,
+        "sqrMagnitude": 0.99999994
+      },
+      "magnitude": 4.35450554,
+      "sqrMagnitude": 18.9617176
+    }
+  },
+  {
+    "$type": "Com.Rainier.Buskit3D.RecordItem, Assembly-CSharp",
+    "FrameCount": 246,
+    "ObjectId": 13620,
+    "PropertyPath": "position",
+    "NewValue": {
+      "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+      "x": -4.34000826,
+      "y": 0.8418214,
+      "z": 0.0,
+      "normalized": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": -0.981703,
+        "y": 0.190418661,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      },
+      "magnitude": 4.42089748,
+      "sqrMagnitude": 19.5443344
+    }
+  },
+  {
+    "$type": "Com.Rainier.Buskit3D.RecordItem, Assembly-CSharp",
+    "FrameCount": 247,
+    "ObjectId": 13620,
+    "PropertyPath": "position",
+    "NewValue": {
+      "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+      "x": -4.39932442,
+      "y": 1.23726666,
+      "z": 0.0,
+      "normalized": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": -0.9626534,
+        "y": 0.270736784,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      },
+      "magnitude": 4.56999826,
+      "sqrMagnitude": 20.8848839
+    }
+  },
+  {
+    "$type": "Com.Rainier.Buskit3D.RecordItem, Assembly-CSharp",
+    "FrameCount": 248,
+    "ObjectId": 13620,
+    "PropertyPath": "normalColor",
+    "NewValue": {
+      "$type": "UnityEngine.Color32, UnityEngine.CoreModule",
+      "r": 125,
+      "g": 238,
+      "b": 41,
+      "a": 255
+    }
+  }
+]*********************************RestoreData**********************************
+{
+  "$type": "System.Collections.Generic.Dictionary`2[[System.Int32, mscorlib],[Com.Rainier.Buskit3D.BaseDataModelEntity, Assembly-CSharp]], mscorlib",
+  "29613": {
+    "$type": "Buskit3D_Example_005_StorageSystem.ObjectShapeEntity, Assembly-CSharp",
+    "position": {
+      "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "magnitude": 0.0,
+      "sqrMagnitude": 0.0
+    },
+    "normalColor": {
+      "$type": "UnityEngine.Color32, UnityEngine.CoreModule",
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 0
+    },
+    "objectID": 29613,
+    "transInfo": {
+      "$type": "Com.Rainier.Buskit3D.TransInfo, Assembly-CSharp",
+      "positon": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": 2.795,
+        "y": 0.0,
+        "z": 0.0,
+        "normalized": {
+          "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+          "x": 1.0,
+          "y": 0.0,
+          "z": 0.0,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 2.795,
+        "sqrMagnitude": 7.81202555
+      },
+      "eulerAngles": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "magnitude": 0.0,
+        "sqrMagnitude": 0.0
+      },
+      "localScale": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0,
+        "normalized": {
+          "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+          "x": 0.577350259,
+          "y": 0.577350259,
+          "z": 0.577350259,
+          "normalized": {
+            "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+            "x": 0.5773503,
+            "y": 0.5773503,
+            "z": 0.5773503,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 1.73205078,
+        "sqrMagnitude": 3.0
+      },
+      "isActive": true
+    },
+    "igcsName": ""
+  },
+  "24932": {
+    "$type": "Buskit3D_Example_005_StorageSystem.ObjectShapeEntity, Assembly-CSharp",
+    "position": {
+      "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+      "x": -2.263922,
+      "y": 3.11563087,
+      "z": 0.0,
+      "normalized": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": -0.587833464,
+        "y": 0.808981955,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      },
+      "magnitude": 3.85129833,
+      "sqrMagnitude": 14.8324986
+    },
+    "normalColor": {
+      "$type": "UnityEngine.Color32, UnityEngine.CoreModule",
+      "r": 0,
+      "g": 153,
+      "b": 247,
+      "a": 255
+    },
+    "objectID": 24932,
+    "transInfo": {
+      "$type": "Com.Rainier.Buskit3D.TransInfo, Assembly-CSharp",
+      "positon": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": -2.263922,
+        "y": 3.11563087,
+        "z": 0.0,
+        "normalized": {
+          "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+          "x": -0.587833464,
+          "y": 0.808981955,
+          "z": 0.0,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 3.85129833,
+        "sqrMagnitude": 14.8324986
+      },
+      "eulerAngles": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "magnitude": 0.0,
+        "sqrMagnitude": 0.0
+      },
+      "localScale": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0,
+        "normalized": {
+          "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+          "x": 0.577350259,
+          "y": 0.577350259,
+          "z": 0.577350259,
+          "normalized": {
+            "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+            "x": 0.5773503,
+            "y": 0.5773503,
+            "z": 0.5773503,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 1.73205078,
+        "sqrMagnitude": 3.0
+      },
+      "isActive": true
+    },
+    "igcsName": ""
+  },
+  "13620": {
+    "$type": "Buskit3D_Example_005_StorageSystem.ObjectShapeEntity, Assembly-CSharp",
+    "position": {
+      "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+      "x": -4.39932442,
+      "y": 1.23726666,
+      "z": 0.0,
+      "normalized": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": -0.9626534,
+        "y": 0.270736784,
+        "z": 0.0,
+        "magnitude": 1.0,
+        "sqrMagnitude": 1.0
+      },
+      "magnitude": 4.56999826,
+      "sqrMagnitude": 20.8848839
+    },
+    "normalColor": {
+      "$type": "UnityEngine.Color32, UnityEngine.CoreModule",
+      "r": 125,
+      "g": 238,
+      "b": 41,
+      "a": 255
+    },
+    "objectID": 13620,
+    "transInfo": {
+      "$type": "Com.Rainier.Buskit3D.TransInfo, Assembly-CSharp",
+      "positon": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": -4.39932442,
+        "y": 1.23726666,
+        "z": 0.0,
+        "normalized": {
+          "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+          "x": -0.9626534,
+          "y": 0.270736784,
+          "z": 0.0,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 4.56999826,
+        "sqrMagnitude": 20.8848839
+      },
+      "eulerAngles": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "magnitude": 0.0,
+        "sqrMagnitude": 0.0
+      },
+      "localScale": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0,
+        "normalized": {
+          "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+          "x": 0.577350259,
+          "y": 0.577350259,
+          "z": 0.577350259,
+          "normalized": {
+            "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+            "x": 0.5773503,
+            "y": 0.5773503,
+            "z": 0.5773503,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 1.73205078,
+        "sqrMagnitude": 3.0
+      },
+      "isActive": true
+    },
+    "igcsName": ""
+  },
+  "22242": {
+    "$type": "Com.Rainier.Buskit3D.ReplayEntity, Assembly-CSharp",
+    "sceneIdNameOfPrefab": [],
+    "sceneName": "Buskit3D_Example_005_StorageSystem",
+    "objectID": 22242,
+    "transInfo": {
+      "$type": "Com.Rainier.Buskit3D.TransInfo, Assembly-CSharp",
+      "positon": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "magnitude": 0.0,
+        "sqrMagnitude": 0.0
+      },
+      "eulerAngles": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "magnitude": 0.0,
+        "sqrMagnitude": 0.0
+      },
+      "localScale": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "magnitude": 0.0,
+        "sqrMagnitude": 0.0
+      },
+      "isActive": false
+    },
+    "igcsName": ""
+  },
+  "-12719": {
+    "$type": "Buskit3D_Example_005_StorageSystem.InputHandlerEntity, Assembly-CSharp",
+    "prefabInfo": {
+      "$type": "Buskit3D_Example_005_StorageSystem.PrefabInfo, Assembly-CSharp",
+      "nameOfPrefab": null,
+      "position": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "magnitude": 0.0,
+        "sqrMagnitude": 0.0
+      }
+    },
+    "objectID": -12719,
+    "transInfo": {
+      "$type": "Com.Rainier.Buskit3D.TransInfo, Assembly-CSharp",
+      "positon": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "magnitude": 0.0,
+        "sqrMagnitude": 0.0
+      },
+      "eulerAngles": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "magnitude": 0.0,
+        "sqrMagnitude": 0.0
+      },
+      "localScale": {
+        "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0,
+        "normalized": {
+          "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+          "x": 0.577350259,
+          "y": 0.577350259,
+          "z": 0.577350259,
+          "normalized": {
+            "$type": "UnityEngine.Vector3, UnityEngine.CoreModule",
+            "x": 0.5773503,
+            "y": 0.5773503,
+            "z": 0.5773503,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.00000012
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 1.73205078,
+        "sqrMagnitude": 3.0
+      },
+      "isActive": true
+    },
+    "igcsName": ""
+  }
+}

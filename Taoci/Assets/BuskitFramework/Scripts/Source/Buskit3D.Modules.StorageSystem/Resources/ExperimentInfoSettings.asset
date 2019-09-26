@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35ee55013d94ad9419da4f5c29be0c0e, type: 3}
+  m_Name: ExperimentInfoSettings
+  m_EditorClassIdentifier: 
+  experimentName: "\u94FE\u63A5\u5B9E\u9A8C"
+  experimentEsid: windows
+  loginUrl: http://127.0.0.1:8080/outer/login
+  uploadIgcsUrl: http://127.0.0.1:8080/outer/intelligent/!guidance
+  uploadReplayUrl: http://127.0.0.1:8080/outer/playback/!submit
+  downloadReplayUrl: http://127.0.0.1:8080/outer/playback/!obtain

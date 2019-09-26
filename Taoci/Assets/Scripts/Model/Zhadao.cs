@@ -18,12 +18,17 @@ namespace TaoCi
                     if (b == true)
                     {
                         OpenEle();
+                        transform.Find("Arrow").gameObject.SetActive(false);
                         transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
                     }                    
                     break;
-                case 1004001:
-                    //CloseEle();
-                    //transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                case 1004006:
+                    if (true)
+                    {
+                        CloseEle();
+                        transform.Find("Arrow").gameObject.SetActive(false);
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    }
                     break;
                 #endregion
                 #region
@@ -31,12 +36,17 @@ namespace TaoCi
                     if (b == true)
                     {
                         OpenEle();
+                        transform.Find("Arrow").gameObject.SetActive(false);
                         transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
                     }
                     break;
-                case 2004001:
-                    //CloseEle();
-                    //transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                case 2004006:
+                    if (true)
+                    {
+                        CloseEle();
+                        transform.Find("Arrow").gameObject.SetActive(false);
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    }
                     break;
                 #endregion
                 #region
@@ -44,12 +54,17 @@ namespace TaoCi
                     if (b == true)
                     {
                         OpenEle();
+                        transform.Find("Arrow").gameObject.SetActive(false);
                         transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
                     }
                     break;
-                case 3004001:
-                    //CloseEle();
-                    //transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                case 3004006:
+                    if (true)
+                    {
+                        CloseEle();
+                        transform.Find("Arrow").gameObject.SetActive(false);
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    }
                     break;
                 #endregion
                 #region
@@ -57,12 +72,17 @@ namespace TaoCi
                     if (b == true)
                     {
                         OpenEle();
+                        transform.Find("Arrow").gameObject.SetActive(false);
                         transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
                     }
                     break;
-                case 4004001:
-                    //CloseEle();
-                    //transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                case 4004005:
+                    if (true)
+                    {
+                        CloseEle();
+                        transform.Find("Arrow").gameObject.SetActive(false);
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    }
                     break;
                 #endregion
                 default:
@@ -78,85 +98,93 @@ namespace TaoCi
                 case 1003001:
                     if (b)
                     {
+                        transform.Find("Arrow").gameObject.SetActive(true);
                         transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
                     }
                     break;
                 case 1003002:
                     b = true;
                     break;
-                //case 1004001:
-                //    if (b)
-                //    {
-                //        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
-                //        b = false;
-                //    }
-                //    break;
-                //case 1004002:
-                //    b = true;
-                //    break;
+                case 1004006:
+                    if (b)
+                    {
+                        transform.Find("Arrow").gameObject.SetActive(true);
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                        b = false;
+                    }
+                    break;
+                case 1004007:
+                    b = true;
+                    break;
                 #endregion
                 #region
                 case 2003001:
                     if (b)
                     {
+                        transform.Find("Arrow").gameObject.SetActive(true);
                         transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
                     }
                     break;
                 case 2003002:
                     b = true;
                     break;
-                //case 2004001:
-                //    if (b)
-                //    {
-                //        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
-                //        b = false;
-                //    }
-                //    break;
-                //case 2004002:
-                //    b = true;
-                //    break;
+                case 2004006:
+                    if (b)
+                    {
+                        transform.Find("Arrow").gameObject.SetActive(true);
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                        b = false;
+                    }
+                    break;
+                case 2004007:
+                    b = true;
+                    break;
                 #endregion
                 #region
                 case 3003001:
                     if (b)
                     {
+                        transform.Find("Arrow").gameObject.SetActive(true);
                         transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
                     }
                     break;
                 case 3003002:
                     b = true;
                     break;
-                //case 3004001:
-                //    if (b)
-                //    {
-                //        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
-                //        b = false;
-                //    }
-                //    break;
-                //case 3004002:
-                //    b = true;
-                //    break;
+                case 3004006:
+                    if (b)
+                    {
+                        transform.Find("Arrow").gameObject.SetActive(true);
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                        b = false;
+                    }
+                    break;
+                case 3004007:
+                    b = true;
+                    break;
                 #endregion
                 #region
                 case 4003001:
                     if (b)
                     {
+                        transform.Find("Arrow").gameObject.SetActive(true);
                         transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
                     }
                     break;
                 case 4003002:
                     b = true;
                     break;
-                //case 1004001:
-                //    if (b)
-                //    {
-                //        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
-                //        b = false;
-                //    }
-                //    break;
-                //case 1004002:
-                //    b = true;
-                //    break;
+                case 4004005:
+                    if (b)
+                    {
+                        transform.Find("Arrow").gameObject.SetActive(true);
+                        transform.GetComponent<HighlightingSystem.Highlighter>().tween = true;
+                        b = false;
+                    }
+                    break;
+                case 4004006:
+                    b = true;
+                    break;
                 #endregion
                 default:
                     break;
@@ -166,13 +194,13 @@ namespace TaoCi
         private void OpenEle()
         {
             b = false;
-            transform.DOLocalRotate(new Vector3(0, -90, -90), 1f).OnComplete(()=> UIManager.Instance.AddStep());
+            transform.Find("ZhaDao02").DOLocalRotate(new Vector3(0, -90, -90), 1f).OnComplete(()=> UIManager.Instance.AddStep());
         }
 
         private void CloseEle()
         {
             b = false;
-            transform.DOLocalRotate(new Vector3(0, -90, -235), 1f).OnComplete(()=> UIManager.Instance.AddStep());
+            transform.Find("ZhaDao02").DOLocalRotate(new Vector3(0, -90, -235), 1f).OnComplete(()=> UIManager.Instance.AddStep());
         }
     }
 }

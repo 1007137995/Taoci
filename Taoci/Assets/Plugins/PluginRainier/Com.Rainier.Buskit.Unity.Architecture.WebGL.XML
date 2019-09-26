@@ -1,0 +1,1729 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Com.Rainier.Buskit.Unity.Architecture.WebGL</name>
+    </assembly>
+    <members>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Aop.AopInterception">
+            <summary>
+            抽象AOP拦截器定义，其中主要声明了Before和After函数；
+            Before执行前调用Before函数，用于拦截函数执行前行为如，参数值检测等操作；
+            After用于函数调用后操作，常用在需要发送消息的或存储的环境。
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.Buskit.Unity.Architecture.Aop.AopInterception._canProceed">
+            <summary>
+            是否可以执行
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Aop.AopInterception.MessageRoute">
+            <summary>
+            消息路由节点
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.AopInterception.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.AopInterception.Before(Com.Rainier.Buskit.Unity.Architecture.Aop.Invocation)">
+            <summary>
+            函数执行前拦截
+            </summary>
+            <param name="invoker"></param>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.AopInterception.AsyBefore(Com.Rainier.Buskit.Unity.Architecture.Aop.Invocation)">
+            <summary>
+            函数执行前拦截
+            </summary>
+            <param name="invoker"></param>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.AopInterception.After(Com.Rainier.Buskit.Unity.Architecture.Aop.Invocation)">
+            <summary>
+            函数执行后处理
+            </summary>
+            <param name="invoker"></param>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.AopInterception.AysAfter(Com.Rainier.Buskit.Unity.Architecture.Aop.Invocation)">
+            <summary>
+            函数执行后处理
+            </summary>
+            <param name="invoker"></param>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Aop.NoticeAfterMethod">
+            <summary>
+            AOP拦截注解，标识函数执行完成拦截
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.NoticeAfterMethod.After(Com.Rainier.Buskit.Unity.Architecture.Aop.Invocation)">
+            <summary>
+            函数执行后通知所有观察源函数执行已经完成
+            </summary>
+            <param name="invoker"></param>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.NoticeAfterMethod.Before(Com.Rainier.Buskit.Unity.Architecture.Aop.Invocation)">
+            <summary>
+            禁止任何方法执行后拦截
+            </summary>
+            <param name="invoker"></param>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Aop.NoticeBeforeMethod">
+            <summary>
+            AOP拦截注解，标识函数执行前拦截
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.NoticeBeforeMethod.After(Com.Rainier.Buskit.Unity.Architecture.Aop.Invocation)">
+            <summary>
+            禁止任何方法执行前拦截
+            </summary>
+            <param name="invoker"></param>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.NoticeBeforeMethod.Before(Com.Rainier.Buskit.Unity.Architecture.Aop.Invocation)">
+            <summary>
+            函数执行前通知所有侦听器此函数将要执行
+            </summary>
+            <param name="invoker"></param>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Aop.NoticePropertyChanged">
+            <summary>
+            AOP拦截注解，在属性执行Set方法后发送事件，通知侦听器属性变化事件
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.NoticePropertyChanged.After(Com.Rainier.Buskit.Unity.Architecture.Aop.Invocation)">
+            <summary>
+            属性变化后，通知侦听器属性变化事件
+            </summary>
+            <param name="invoker"></param>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.NoticePropertyChanged.Before(Com.Rainier.Buskit.Unity.Architecture.Aop.Invocation)">
+            <summary>
+            禁止任何属性变化前发送事件
+            </summary>
+            <param name="invoker"></param>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Aop.ValidateInt">
+            <summary>
+            整数值校验注解，用于整形数据校验
+            </summary>
+            <exception cref="T:System.MissingFieldException"></exception>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.ValidateInt.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.ValidateInt.Validate(Com.Rainier.Buskit.Unity.Architecture.Aop.Invocation)">
+            <summary>
+            执行整数校验
+            </summary>
+            <param name="invokder">回调</param>
+            <returns>校验是否成功</returns>
+            <seealso cref="T:Com.Rainier.Buskit.Unity.Architecture.Aop.Invocation"/>
+            <exception cref="T:System.MissingFieldException"></exception>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Aop.ValidateMax">
+            <summary>
+            最大值校验注解
+            </summary>
+            <exception cref="T:System.MissingFieldException"></exception>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Aop.ValidateMax.MaxValue">
+            <summary>
+            最大值
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.ValidateMax.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.ValidateMax.Validate(Com.Rainier.Buskit.Unity.Architecture.Aop.Invocation)">
+            <summary>
+            执行最大值校验
+            </summary>
+            <param name="invokder">回调</param>
+            <returns>校验是否成功</returns>
+            <seealso cref="T:Com.Rainier.Buskit.Unity.Architecture.Aop.Invocation"/>
+            <exception cref="T:System.MissingFieldException"></exception>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Aop.ValidateMin">
+            <summary>
+            最小值校验注解
+            </summary>
+            <exception cref="T:System.MissingFieldException"></exception>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Aop.ValidateMin.MinValue">
+            <summary>
+            最小值
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.ValidateMin.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.ValidateMin.Validate(Com.Rainier.Buskit.Unity.Architecture.Aop.Invocation)">
+            <summary>
+            执行最小值校验
+            </summary>
+            <param name="invokder">回调</param>
+            <returns>校验是否成功</returns>
+            <seealso cref="T:Com.Rainier.Buskit.Unity.Architecture.Aop.Invocation"/>
+            <exception cref="T:System.MissingFieldException"></exception>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Aop.ValidateMinMax">
+            <summary>
+            最大值最小值校验注解
+            </summary>
+            <exception cref="T:System.MissingFieldException"></exception>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Aop.ValidateMinMax.MinValue">
+            <summary>
+            最小值
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Aop.ValidateMinMax.MaxValue">
+            <summary>
+            最大值
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.ValidateMinMax.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.ValidateMinMax.Validate(Com.Rainier.Buskit.Unity.Architecture.Aop.Invocation)">
+            <summary>
+            执行最大值最小值校验
+            </summary>
+            <param name="invokder">回调</param>
+            <returns>校验是否成功</returns>
+            <seealso cref="T:Com.Rainier.Buskit.Unity.Architecture.Aop.Invocation"/>
+            <exception cref="T:System.MissingFieldException"></exception>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Aop.ValidateNotEmpty">
+            <summary>
+            值不能为空校验注解
+            </summary>
+            <exception cref="T:System.MissingFieldException"></exception>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.ValidateNotEmpty.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.ValidateNotEmpty.Validate(Com.Rainier.Buskit.Unity.Architecture.Aop.Invocation)">
+            <summary>
+            执行不为空校验
+            </summary>
+            <param name="invokder">回调</param>
+            <returns>校验是否成功</returns>
+            <seealso cref="T:Com.Rainier.Buskit.Unity.Architecture.Aop.Invocation"/>
+            <exception cref="T:System.MissingFieldException"></exception>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Aop.ValidateNumeric">
+            <summary>
+            校验字符串是否为数字注解
+            </summary>
+            <exception cref="T:System.MissingFieldException"></exception>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.ValidateNumeric.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.ValidateNumeric.Validate(Com.Rainier.Buskit.Unity.Architecture.Aop.Invocation)">
+            <summary>
+            校验字符串是否为数字校验
+            </summary>
+            <param name="invokder">回调</param>
+            <returns>校验是否成功</returns>
+            <seealso cref="T:Com.Rainier.Buskit.Unity.Architecture.Aop.Invocation"/>
+            <exception cref="T:System.MissingFieldException"></exception>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Aop.ValidatePattern">
+            <summary>
+            正则表达式校验注解
+            </summary>
+            <exception cref="T:System.MissingFieldException"></exception>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Aop.ValidatePattern.Pattern">
+            <summary>
+            正则表达式
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.ValidatePattern.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.ValidatePattern.Validate(Com.Rainier.Buskit.Unity.Architecture.Aop.Invocation)">
+            <summary>
+            执行正则表达式校验
+            </summary>
+            <param name="invokder">回调</param>
+            <returns>校验是否成功</returns>
+            <seealso cref="T:Com.Rainier.Buskit.Unity.Architecture.Aop.Invocation"/>
+            <exception cref="T:System.MissingFieldException"></exception>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Aop.Validation">
+            <summary>
+            校验注解基类，通过AOP拦截实现数据校验
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Aop.Validation.ErrorMessage">
+            <summary>
+            错误信息
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Aop.Validation.OkMessage">
+            <summary>
+            通过验证信息
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.Buskit.Unity.Architecture.Aop.Validation.LocalService">
+            <summary>
+            本地化服务
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.Validation.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.Validation.Validate(Com.Rainier.Buskit.Unity.Architecture.Aop.Invocation)">
+            <summary>
+            执行校验过程
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.Validation.Before(Com.Rainier.Buskit.Unity.Architecture.Aop.Invocation)">
+            <summary>
+            执行赋值前检测
+            </summary>
+            <param name="invoker"></param>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Aop.BaseAopClass">
+            <summary>
+            通过代理函数实现AOP拦截，能够支持Property（public字段）和 Public类型方法
+            主要实现了ProxyProperty、PropertyMethod、ProxyMember几个方法，
+            ProxyProperty用于属性值的设置与获取，支持AOP拦截
+            PropertyMethod用于函数的调用，支持AOP拦截
+            ProxyMember用于属性值的设置与获取、函数的调用，支持AOP拦截
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Aop.BaseAopClass.UUID">
+            <summary>
+            对象唯一标识ID号
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.BaseAopClass._initAop">
+            <summary>
+            执行初始化操作
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.BaseAopClass.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.BaseAopClass.ProxyMethod``1(System.String,System.Object[])">
+            <summary>
+            代理执行函数（执行AOP检测）
+            </summary>
+            <typeparam name="T">返回值类型</typeparam>
+            <param name="strMethodName">函数名称</param>
+            <param name="args">对象列表</param>
+            <returns></returns>
+            <exception cref="T:System.FieldAccessException"/>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.BaseAopClass.ProxyMethod``1(System.String,System.Object[],System.Boolean)">
+            <summary>
+            代理执行函数（doInspect根据执行AOP检测）
+            </summary>
+            <typeparam name="T">返回值类型</typeparam>
+            <param name="strMethodName">函数名称</param>
+            <param name="args">对象列表</param>
+            <param name="doInspect">是否执行AOP检测</param>
+            <returns></returns>
+            <exception cref="T:System.FieldAccessException"/>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.BaseAopClass.ProxyProperty``1(System.String)">
+            <summary>
+            属性调用代理，当中Get函数使用（不执行AOP检测）
+            </summary>
+            <typeparam name="T">属性数据类型</typeparam>
+            <param name="strPropertyName">属性名</param>
+            <returns></returns>
+            <exception cref="T:System.FieldAccessException"/>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.BaseAopClass.ProxyProperty``1(System.String,``0)">
+            <summary>
+            属性调用代理，当中Set函数使用（执行AOP检测）
+            </summary>
+            <typeparam name="T">属性数据类型</typeparam>
+            <param name="strPropertyName">属性名</param>
+            <param name="value">属性值</param>
+            <returns></returns>
+            <exception cref="T:System.FieldAccessException"/>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.BaseAopClass.ProxyProperty``1(System.String,``0,System.Boolean)">
+            <summary>
+            属性调用代理，当中Set或Get函数使用；当中Set函数时
+            可以通过doInspect设置，是否执行AOP检测；当用作
+            Get函数时，无论doInspect是true还是false都不执行AOP检测。
+            </summary>
+            <typeparam name="T">属性数据类型</typeparam>
+            <param name="strPropertyName">属性名</param>
+            <param name="objArg">属性值</param>
+            <param name="doInspect">是否执行AOP</param>
+            <returns></returns>
+            <exception cref="T:System.FieldAccessException"/>
+        </member>
+        <!-- 对于成员“M:Com.Rainier.Buskit.Unity.Architecture.Aop.BaseAopClass.ProxyMember``1(System.String,System.Object)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:Com.Rainier.Buskit.Unity.Architecture.Aop.BaseAopClass.ProxyMember``1(System.String,System.Object,System.Boolean)”忽略有格式错误的 XML 注释 -->
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.BaseAopClass.Dispose">
+            <summary>
+            执行AOP拦截器
+            </summary>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Aop.BaseAopMonoBehaviour">
+            <summary>
+            支持AOP代理方法的MonoBehaviour定义；通过代理函数实现AOP拦截，
+            能够支持Property（public字段）和 Public类型方法。
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Aop.BaseAopMonoBehaviour.UUID">
+            <summary>
+            对象唯一标识ID号
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.BaseAopMonoBehaviour.Awake">
+            <summary>
+            唤醒时生成新的UUID
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.BaseAopMonoBehaviour.ProxyMethod``1(System.String,System.Object[])">
+            <summary>
+            代理执行函数（执行AOP检测）
+            </summary>
+            <typeparam name="T">返回值类型</typeparam>
+            <param name="strMethodName">函数名称</param>
+            <param name="args">对象列表</param>
+            <returns></returns>
+            <exception cref="T:System.FieldAccessException"/>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.BaseAopMonoBehaviour.ProxyMethod``1(System.String,System.Object[],System.Boolean)">
+            <summary>
+            代理执行函数（doInspect根据执行AOP检测）
+            </summary>
+            <typeparam name="T">返回值类型</typeparam>
+            <param name="strMethodName">函数名称</param>
+            <param name="args">对象列表</param>
+            <param name="doInspect">是否执行AOP检测</param>
+            <returns></returns>
+            <exception cref="T:System.FieldAccessException"/>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.BaseAopMonoBehaviour.ProxyProperty``1(System.String)">
+            <summary>
+            属性调用代理，当中Get函数使用（不执行AOP检测）
+            </summary>
+            <typeparam name="T">属性数据类型</typeparam>
+            <param name="strPropertyName">属性名</param>
+            <returns></returns>
+            <exception cref="T:System.FieldAccessException"/>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.BaseAopMonoBehaviour.ProxyProperty``1(System.String,``0)">
+            <summary>
+            属性调用代理，当中Set函数使用（执行AOP检测）
+            </summary>
+            <typeparam name="T">属性数据类型</typeparam>
+            <param name="strPropertyName">属性名</param>
+            <param name="value">属性值</param>
+            <returns></returns>
+            <exception cref="T:System.FieldAccessException"/>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.BaseAopMonoBehaviour.ProxyProperty``1(System.String,``0,System.Boolean)">
+            <summary>
+            属性调用代理，当中Set或Get函数使用；当中Set函数时
+            可以通过doInspect设置，是否执行AOP检测；当用作
+            Get函数时，无论doInspect是true还是false都不执行AOP检测。
+            </summary>
+            <typeparam name="T">属性数据类型</typeparam>
+            <param name="strPropertyName">属性名</param>
+            <param name="objArg">属性值</param>
+            <param name="doInspect">是否执行AOP</param>
+            <returns></returns>
+            <exception cref="T:System.FieldAccessException"/>
+        </member>
+        <!-- 对于成员“M:Com.Rainier.Buskit.Unity.Architecture.Aop.BaseAopMonoBehaviour.ProxyMember``1(System.String,System.Object)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:Com.Rainier.Buskit.Unity.Architecture.Aop.BaseAopMonoBehaviour.ProxyMember``1(System.String,System.Object,System.Boolean)”忽略有格式错误的 XML 注释 -->
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Aop.BaseAopScriptableObject">
+            <summary>
+            支持AOP代理方法的ScriptableObject定义；通过代理函数实现AOP拦截，能够支持Property（public字段）和 Public类型方法
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Aop.BaseAopScriptableObject.UUID">
+            <summary>
+            对象唯一标识ID号
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.BaseAopScriptableObject.Awake">
+            <summary>
+            唤醒时生成新的UUID
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.BaseAopScriptableObject.ProxyMethod``1(System.String,System.Object[])">
+            <summary>
+            代理执行函数（执行AOP检测）
+            </summary>
+            <typeparam name="T">返回值类型</typeparam>
+            <param name="strMethodName">函数名称</param>
+            <param name="args">对象列表</param>
+            <returns></returns>
+            <exception cref="T:System.FieldAccessException"/>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.BaseAopScriptableObject.ProxyMethod``1(System.String,System.Object[],System.Boolean)">
+            <summary>
+            代理执行函数（doInspect根据执行AOP检测）
+            </summary>
+            <typeparam name="T">返回值类型</typeparam>
+            <param name="strMethodName">函数名称</param>
+            <param name="args">对象列表</param>
+            <param name="doInspect">是否执行AOP检测</param>
+            <returns></returns>
+            <exception cref="T:System.FieldAccessException"/>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.BaseAopScriptableObject.ProxyProperty``1(System.String)">
+            <summary>
+            属性调用代理，当中Get函数使用（不执行AOP检测）
+            </summary>
+            <typeparam name="T">属性数据类型</typeparam>
+            <param name="strPropertyName">属性名</param>
+            <returns></returns>
+            <exception cref="T:System.FieldAccessException"/>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.BaseAopScriptableObject.ProxyProperty``1(System.String,``0)">
+            <summary>
+            属性调用代理，当中Set函数使用（执行AOP检测）
+            </summary>
+            <typeparam name="T">属性数据类型</typeparam>
+            <param name="strPropertyName">属性名</param>
+            <param name="value">属性值</param>
+            <returns></returns>
+            <exception cref="T:System.FieldAccessException"/>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.BaseAopScriptableObject.ProxyProperty``1(System.String,``0,System.Boolean)">
+            <summary>
+            属性调用代理，当中Set或Get函数使用；当中Set函数时
+            可以通过doInspect设置，是否执行AOP检测；当用作
+            Get函数时，无论doInspect是true还是false都不执行AOP检测。
+            </summary>
+            <typeparam name="T">属性数据类型</typeparam>
+            <param name="strPropertyName">属性名</param>
+            <param name="objArg">属性值</param>
+            <param name="doInspect">是否执行AOP</param>
+            <returns></returns>
+            <exception cref="T:System.FieldAccessException"/>
+        </member>
+        <!-- 对于成员“M:Com.Rainier.Buskit.Unity.Architecture.Aop.BaseAopScriptableObject.ProxyMember``1(System.String,System.Object)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:Com.Rainier.Buskit.Unity.Architecture.Aop.BaseAopScriptableObject.ProxyMember``1(System.String,System.Object,System.Boolean)”忽略有格式错误的 XML 注释 -->
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Aop.Invocation">
+            <summary>
+            回调一个函数或属性时所需要的资源集合
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Aop.Invocation.TargetObject">
+            <summary>
+            回调对象
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Aop.Invocation.InvokeArgments">
+            <summary>
+            回调函数参数
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Aop.Invocation.AopInterceptor">
+            <summary>
+            AOP拦截器
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Aop.Invocation.MemberInfo">
+            <summary>
+            回调函数描述符
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Aop.Invocation.ReturnValue">
+            <summary>
+            函数返回值
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Aop.Invocation.PropertyOldValue">
+            <summary>
+            回调属性的老值
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Aop.Invocation.PropertyNewValue">
+            <summary>
+            回调属性的新值
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.Invocation.DoProceed">
+            <summary>
+            执行回调操作
+            </summary>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Aop.AfterMethodMessage">
+            <summary>
+            函数已执行完成消息
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Aop.AfterMethodMessage.MethodInfo">
+            <summary>
+            函数描述符
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Aop.AfterMethodMessage.TargetObject">
+            <summary>
+            目标对象
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Aop.AfterMethodMessage.RetValue">
+            <summary>
+            函数返回值
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Aop.AfterMethodMessage.Parameters">
+            <summary>
+            函数参数
+            </summary>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Aop.BeforeMethodMessage">
+            <summary>
+            函数已执行完成消息
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Aop.BeforeMethodMessage.MethodInfo">
+            <summary>
+            函数描述符
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Aop.BeforeMethodMessage.TargetObject">
+            <summary>
+            目标对象
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Aop.BeforeMethodMessage.Parameters">
+            <summary>
+            函数参数
+            </summary>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Aop.PropertyMessage">
+            <summary>
+            属性值变化消息
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Aop.PropertyMessage.TargetObject">
+            <summary>
+            目标对象
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Aop.PropertyMessage.OldValue">
+            <summary>
+            老值
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Aop.PropertyMessage.NewValue">
+            <summary>
+            新值
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Aop.PropertyMessage.PropertyName">
+            <summary>
+            属性名
+            </summary>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Aop.ValidateMessage">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Aop.ValidateMessage.ErrorMessage">
+            <summary>
+            消息
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Aop.ValidateMessage.ExpectedValue">
+            <summary>
+            期望值
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Aop.ValidateMessage.OkMessage">
+            <summary>
+            正确消息
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Aop.ValidateMessage.IsOK">
+            <summary>
+            验证是否成功
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Aop.ValidateMessage.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.DataTree.DataMapping">
+            <summary>
+            数据绑定服务，可以向其中注册字符串代表的变量，
+            当字符串变量发生变化时，可以通知观察员对象，数据
+            值发生变化。
+            </summary>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.DataTree.DataMapping.EventDelegate">
+            <summary>
+            数据变化代理
+            </summary>
+            <param name="str"></param>
+            <param name="oldValue"></param>
+            <param name="newValue"></param>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.DataTree.DataMapping.DataStruct">
+            <summary>
+            数据结构：放置数据和事件代理
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.Buskit.Unity.Architecture.DataTree.DataMapping._dataMap">
+            <summary>
+            数据映射表
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.DataTree.DataMapping.SetData(System.String,System.Object)">
+            <summary>
+            如果有变量则覆盖数据值
+            如果没有变量则注册新的
+            </summary>
+            <param name="strKey"></param>
+            <param name="objDefault"></param>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.DataTree.DataMapping.GetData(System.String)">
+            <summary>
+            获取数据
+            </summary>
+            <param name="strKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.DataTree.DataMapping.BindingData(System.String,Com.Rainier.Buskit.Unity.Architecture.DataTree.DataMapping.EventDelegate)">
+            <summary>
+            绑定数据侦听，当设置变量值时发出数据
+            </summary>
+            <param name="strKey"></param>
+            <param name="observer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.DataTree.DataMapping.Dispose">
+            <summary>
+            清理
+            </summary>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Data.BufferExt">
+            <summary>
+            缓冲区数据扩展
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Data.BufferExt.ConvertBytesToMegabytes(System.Int64)">
+            <summary>
+            Human码可读性处理
+            </summary>
+            <param name="bytes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Data.BufferExt.ConvertKilobytesToMegabytes(System.Int64)">
+            <summary>
+            Human码可读性处理
+            </summary>
+            <param name="kilobytes"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Data.BufferHelper">
+            <summary>
+            <para>Byte数据缓存助手，将基本数据类型转换为字节数字，支持数据类型为：</para>
+            <para>byte\bool\short\ushort\int\uint\double\long\ulong\float\char\string</para>
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Data.BufferHelper.ReadBool(System.Byte[],System.Int32)">
+            <summary>
+            从一个字节数组中读取Bool值
+            </summary>
+            <param name="buffer">字节数字</param>
+            <param name="index">从那个字节开始读</param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Data.BufferHelper.ReadByte(System.Byte[],System.Int32)">
+            <summary>
+            从一个字节数组中读取byte值
+            </summary>
+            <param name="buffer">字节数字</param>
+            <param name="index">从那个字节开始读</param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Data.BufferHelper.ReadInt16(System.Byte[],System.Int32)">
+            <summary>
+            从一个字节数组中读取short值
+            </summary>
+            <param name="buffer">字节数字</param>
+            <param name="index">从那个字节开始读</param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Data.BufferHelper.ReadUInt16(System.Byte[],System.Int32)">
+            <summary>
+            从一个字节数组中读取ushort值
+            </summary>
+            <param name="buffer">字节数字</param>
+            <param name="index">从那个字节开始读</param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Data.BufferHelper.ReadInt32(System.Byte[],System.Int32)">
+            <summary>
+            从一个字节数组中读取int值
+            </summary>
+            <param name="buffer">字节数字</param>
+            <param name="index">从那个字节开始读</param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Data.BufferHelper.ReadUInt32(System.Byte[],System.Int32)">
+            <summary>
+            从一个字节数组中读取uint值
+            </summary>
+            <param name="buffer">字节数字</param>
+            <param name="index">从那个字节开始读</param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Data.BufferHelper.ReadInt64(System.Byte[],System.Int32)">
+            <summary>
+            从一个字节数组中读取long值
+            </summary>
+            <param name="buffer">字节数字</param>
+            <param name="index">从那个字节开始读</param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Data.BufferHelper.ReadUInt64(System.Byte[],System.Int32)">
+            <summary>
+            从一个字节数组中读取ulong值
+            </summary>
+            <param name="buffer">字节数字</param>
+            <param name="index">从那个字节开始读</param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Data.BufferHelper.ReadDouble(System.Byte[],System.Int32)">
+            <summary>
+            从一个字节数组中读取double值
+            </summary>
+            <param name="buffer">字节数字</param>
+            <param name="index">从那个字节开始读</param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Data.BufferHelper.ReadFloat(System.Byte[],System.Int32)">
+            <summary>
+            从一个字节数组中读取float值
+            </summary>
+            <param name="buffer">字节数字</param>
+            <param name="index">从那个字节开始读</param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Data.BufferHelper.ReadChar(System.Byte[],System.Int32)">
+            <summary>
+            从一个字节数组中读取char值
+            </summary>
+            <param name="buffer">字节数字</param>
+            <param name="index">从那个字节开始读</param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Data.BufferHelper.ReadString(System.Byte[],System.Int32)">
+            <summary>
+            从一个字节数组中读取string值
+            </summary>
+            <param name="buffer">字节数字</param>
+            <param name="index">从那个字节开始读</param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Data.BufferHelper.Write(System.Byte[],System.Int32,System.Byte[],System.Int32)">
+            <summary>
+            将载荷（源字节数组）字节数组写入到目标字节数组中
+            </summary>
+            <param name="buffer">目标字节数组</param>
+            <param name="index">从哪里开始</param>
+            <param name="payload">源字节数组</param>
+            <param name="count">写多少</param>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Data.BufferHelper.Write(System.Byte[],System.Int32,System.Byte)">
+            <summary>
+            将指定字节b写到字节数组的index位置中
+            </summary>
+            <param name="buffer">目标数组</param>
+            <param name="index">写到哪里</param>
+            <param name="b">字节</param>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Data.BufferHelper.Write(System.Byte[],System.Int32,System.Boolean)">
+            <summary>
+            将bool值写入到字节数组中
+            </summary>
+            <param name="buffer">目标字节数组</param>
+            <param name="index">从哪里开始写</param>
+            <param name="value">数据值</param>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Data.BufferHelper.Write(System.Byte[],System.Int32,System.Int16)">
+            <summary>
+            将short值写入到字节数组中
+            </summary>
+            <param name="buffer">目标字节数组</param>
+            <param name="index">从哪里开始写</param>
+            <param name="value">数据值</param>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Data.BufferHelper.Write(System.Byte[],System.Int32,System.UInt16)">
+            <summary>
+            将ushort值写入到字节数组中
+            </summary>
+            <param name="buffer">目标字节数组</param>
+            <param name="index">从哪里开始写</param>
+            <param name="value">数据值</param>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Data.BufferHelper.Write(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            将int值写入到字节数组中
+            </summary>
+            <param name="buffer">目标字节数组</param>
+            <param name="index">从哪里开始写</param>
+            <param name="value">数据值</param>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Data.BufferHelper.Write(System.Byte[],System.Int32,System.UInt32)">
+            <summary>
+            将uint值写入到字节数组中
+            </summary>
+            <param name="buffer">目标字节数组</param>
+            <param name="index">从哪里开始写</param>
+            <param name="value">数据值</param>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Data.BufferHelper.Write(System.Byte[],System.Int32,System.Double)">
+            <summary>
+            将double值写入到字节数组中
+            </summary>
+            <param name="buffer">目标字节数组</param>
+            <param name="index">从哪里开始写</param>
+            <param name="value">数据值</param>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Data.BufferHelper.Write(System.Byte[],System.Int32,System.Int64)">
+            <summary>
+            将long值写入到字节数组中
+            </summary>
+            <param name="buffer">目标字节数组</param>
+            <param name="index">从哪里开始写</param>
+            <param name="value">数据值</param>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Data.BufferHelper.Write(System.Byte[],System.Int32,System.UInt64)">
+            <summary>
+            将ulong值写入到字节数组中
+            </summary>
+            <param name="buffer">目标字节数组</param>
+            <param name="index">从哪里开始写</param>
+            <param name="value">数据值</param>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Data.BufferHelper.Write(System.Byte[],System.Int32,System.Single)">
+            <summary>
+            将float值写入到字节数组中
+            </summary>
+            <param name="buffer">目标字节数组</param>
+            <param name="index">从哪里开始写</param>
+            <param name="value">数据值</param>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Data.BufferHelper.Write(System.Byte[],System.Int32,System.Char)">
+            <summary>
+            将char值写入到字节数组中
+            </summary>
+            <param name="buffer">目标字节数组</param>
+            <param name="index">从哪里开始写</param>
+            <param name="value">数据值</param>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Data.BufferHelper.Write(System.Byte[],System.Int32,System.String)">
+            <summary>
+            将string值写入到字节数组中
+            </summary>
+            <param name="buffer">目标字节数组</param>
+            <param name="index">从哪里开始写</param>
+            <param name="value">数据值</param>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Data.JsonHelper">
+            <summary>
+            平台无关的Json序列化工具
+            </summary>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Data.StructHelper">
+            <summary>
+            将结构体存储为字节数字，主要是为了快速系列化操作
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Data.StructHelper.ReadStruct``1(System.Byte[],System.Int32)">
+            <summary>
+            从字节数组中读取T类型结构体实例
+            </summary>
+            <typeparam name="T">指定结构体类型</typeparam>
+            <param name="buffer">字节数组</param>
+            <param name="startIndex">从哪里开始</param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Data.StructHelper.WriteStruct``1(``0)">
+            <summary>
+            将T类型结构体写入到字节数组中
+            </summary>
+            <typeparam name="T">型结构体类型</typeparam>
+            <param name="instance">结构体实例</param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Data.StructHelper.WriteStruct``1(``0,System.Byte[],System.Int32)">
+            <summary>
+            将T类型结构体写入到字节数组中
+            </summary>
+            <typeparam name="T">型结构体类型</typeparam>
+            <param name="instance">结构体实例</param>
+            <param name="buffer">给定字节数组</param>
+            <param name="startIndex">从哪里开始</param>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Injector.InjectAttribute">
+            <summary>
+            InjectService会解析这个标签，并动态为字段赋值；
+            </summary>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Injector.InjectService">
+            <summary>
+            依赖注入服务，主要执行瞬态依赖注入和单利依赖注入两种操作
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Injector.InjectService.RegisterTransient``2">
+            <summary>
+            注册一个瞬态服务，在每次执行字段的Get时都会实例化一个新的服务实例
+            </summary>
+            <typeparam name="TInterface">服务接口类型</typeparam>
+            <typeparam name="TInstance">服务实例类型</typeparam>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Injector.InjectService.RegisterTransient``1">
+            <summary>
+            注册一个瞬态服务，在每次执行字段的Get时都会实例化一个新的服务实例
+            </summary>
+            <typeparam name="TInstance">服务实例类型</typeparam>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Injector.InjectService.RegisterTransient``2(System.Func{``1})">
+            <summary>
+            注册一个瞬态服务，在每次执行字段的Get时都会实例化一个新的服务实例
+            </summary>
+            <typeparam name="TInterface">服务接口类型</typeparam>
+            <typeparam name="TInstance">服务实例类型</typeparam>
+            <param name="factory">对象工厂</param>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Injector.InjectService.RegisterTransient``1(System.Func{``0})">
+            <summary>
+            注册一个瞬态服务，在每次执行字段的Get时都会实例化一个新的服务实例
+            </summary>
+            <typeparam name="TInstance">服务实例类型</typeparam>
+            <param name="factory">对象工厂</param>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Injector.InjectService.RegisterSingleton``2">
+            <summary>
+            注册一个单利服务，被注册的单利在软件的软件整个生命周期内都存且指存在唯一实例；
+            </summary>
+            <typeparam name="TInterface">服务接口类型</typeparam>
+            <typeparam name="TInstance">服务实例类型</typeparam>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Injector.InjectService.RegisterSingleton``1">
+            <summary>
+            注册一个单利服务，被注册的单利在软件的软件整个生命周期内都存且指存在唯一实例；
+            </summary>
+            <typeparam name="TInstance">服务实例类型</typeparam>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Injector.InjectService.RegisterSingleton``2(System.Func{``1})">
+            <summary>
+            注册一个单利服务，被注册的单利在软件的软件整个生命周期内都存且指存在唯一实例；
+            </summary>
+            <typeparam name="TInterface">服务接口类型</typeparam>
+            <typeparam name="TInstance">服务实例类型</typeparam>
+            <param name="factory">实例化工厂</param>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Injector.InjectService.RegisterSingleton``1(System.Func{``0})">
+            <summary>
+            注册一个单利服务，被注册的单利在软件的软件整个生命周期内都存且指存在唯一实例；
+            </summary>
+            <typeparam name="TInstance">服务接口类型</typeparam>
+            <param name="factory">实例化工厂</param>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Injector.InjectService.RegisterSingleton``2(``1)">
+            <summary>
+            注册一个单利服务，被注册的单利在软件的软件整个生命周期内都存且指存在唯一实例；
+            </summary>
+            <typeparam name="TInterface">服务接口类型</typeparam>
+            <typeparam name="TInstance">服务实例类型</typeparam>
+            <param name="instance">已经存在的实例（不在注册时实例化）</param>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Injector.InjectService.RegisterSingleton``1(``0)">
+            <summary>
+            注册一个单利服务，被注册的单利在软件的软件整个生命周期内都存且指存在唯一实例；
+            </summary>
+            <typeparam name="TInterface">服务接口类型</typeparam>
+            <param name="instance">服务实例类型</param>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Injector.InjectService.Unregister``1">
+            <summary>
+            删除注册的实例引用
+            </summary>
+            <typeparam name="TInterface">实例接口类型</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Injector.InjectService.UnregisterAll">
+            <summary>
+            删除所有注册实例引用
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Injector.InjectService.Get``1">
+            <summary>
+            在容器中获取一个实例引用
+            </summary>
+            <typeparam name="TInterface">实例</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Injector.InjectService.Get(System.Type)">
+            <summary>
+            在容器中获取一个实例引用
+            </summary>
+            <param name="interfaceType">接口类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Injector.InjectService.Print">
+            <summary>
+            打印容器内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Injector.InjectService.InjectInto(System.Object)">
+            <summary>
+            想实例中注入对象；
+            此方法实现依赖与注解、反射、递归
+            </summary>
+            <param name="instance">需要注入对象的实例</param>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Injector.InjectService.InjectReference">
+            <summary>
+            注入引用
+            主要描述了被注入对象（服务）的创建方法，实例对象，是否为单例三个
+            属性值；
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.Buskit.Unity.Architecture.Injector.InjectService.Container">
+            <summary>
+            注册的实例列表
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Injector.InjectService.DefaultFactory``1">
+            <summary>
+            获取实例默认创建工厂
+            </summary>
+            <typeparam name="TInstance"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Injector.InjectService.DefaultFactory``1(System.Func{``0})">
+            <summary>
+            获取实例默认创建工厂
+            </summary>
+            <typeparam name="TInstance"></typeparam>
+            <param name="factory"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Localization.CNLocalData">
+            <summary>
+            中文本地化数据
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Localization.CNLocalData.#ctor">
+            <summary>
+            构造函数，添加对照数据
+            </summary>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Localization.ENLocalData">
+            <summary>
+            英文本地化数据
+            </summary>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Localization.ILocalData">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Localization.ILocalData.LocalKey">
+            <summary>
+            获取本地化数据标识号
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Localization.ILocalData.GetRealData">
+            <summary>
+            获取数据映射表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Localization.ILocalData.GetLocalData(System.String)">
+            <summary>
+            获取本地化数据
+            </summary>
+            <param name="strBranch">key</param>
+            <returns>本地化数据字符串</returns>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Localization.ILocalData.SetLocalData(System.String,System.String)">
+            <summary>
+            设置本地化数据
+            </summary>
+            <param name="strBranch">key</param>
+            <param name="strData">新值</param>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Localization.ILocalizationService">
+            <summary>
+            本地化服务接口定义
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Localization.ILocalizationService.SetCurrent(System.String)">
+            <summary>
+            设置当前本地化服务
+            </summary>
+            <param name="strLoclKey">E.G:EN/CN/US/...</param>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Localization.ILocalizationService.GetCurrent">
+            <summary>
+            获取当前使用的本地化数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Localization.ILocalizationService.RegisterLocal(System.String,Com.Rainier.Buskit.Unity.Architecture.Localization.ILocalData)">
+            <summary>
+            注册本地化数据
+            </summary>
+            <param name="strLocalKey"></param>
+            <param name="data"></param>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Localization.ILocalizationService.GetLocalData(System.String)">
+            <summary>
+            获取本地化数据存储类
+            </summary>
+            <param name="strLocalKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Localization.ILocalizationService.GetLocalData(System.String,System.String)">
+            <summary>
+            获取本地化数据
+            </summary>
+            <param name="strLocalKey"></param>
+            <param name="strBranch"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Localization.LocalChangedMessage">
+            <summary>
+            本地化数据改变通知
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Localization.LocalChangedMessage.OldLocalData">
+            <summary>
+            老本地化数据
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Localization.LocalChangedMessage.NewLocalData">
+            <summary>
+            新本地化数据
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Localization.LocalChangedMessage.OldLocalKey">
+            <summary>
+            老本地化数据Key
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Localization.LocalChangedMessage.NewLocalKey">
+            <summary>
+            新本地化数据Key
+            </summary>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Localization.LocalData">
+            <summary>
+            类功能：本地化数据
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.Buskit.Unity.Architecture.Localization.LocalData._dataService">
+            <summary>
+            数据映射表
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Localization.LocalData.LocalKey">
+            <summary>
+            本地化数据标识符
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Localization.LocalData.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Localization.LocalData.GetLocalData(System.String)">
+            <summary>
+            获取数据值
+            </summary>
+            <param name="strBranch">数据存储支路</param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Localization.LocalData.GetRealData">
+            <summary>
+            获取数据存储结构
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Localization.LocalData.SetLocalData(System.String,System.String)">
+            <summary>
+            设置或添加本地数据
+            </summary>
+            <param name="strBranch">支路</param>
+            <param name="strData">数据</param>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Localization.LocalizationService">
+            <summary>
+            提供本地化数据注册和数据获取服务
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Localization.LocalizationService.LocalKey">
+            <summary>
+            本地化数据Key
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.Buskit.Unity.Architecture.Localization.LocalizationService._localMap">
+            <summary>
+            本地化数据存储
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.Buskit.Unity.Architecture.Localization.LocalizationService._currentLocal">
+            <summary>
+            当前使用的本地化数据
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Localization.LocalizationService.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Localization.LocalizationService.SetCurrent(System.String)">
+            <summary>
+            设置当前使用的本地化数据
+            </summary>
+            <param name="strLocalKey"></param>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Localization.LocalizationService.GetCurrent">
+            <summary>
+            获取当前使用的本地化数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Localization.LocalizationService.GetLocalData(System.String)">
+            <summary>
+            获取本地化数据
+            </summary>
+            <param name="strLocalKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Localization.LocalizationService.GetLocalData(System.String,System.String)">
+            <summary>
+            获取本地化数据
+            </summary>
+            <param name="strLocalKey">key：en/zh/zp/fn..</param>
+            <param name="strBranch">数据支路</param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Localization.LocalizationService.RegisterLocal(System.String,Com.Rainier.Buskit.Unity.Architecture.Localization.ILocalData)">
+            <summary>
+            注册本地化数据
+            </summary>
+            <param name="strLocalKey">key：en/zh/zp/fn..</param>
+            <param name="data">数据</param>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Logging.LogLevel">
+            <summary>
+            定义日志级别
+            </summary>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Logging.LogModel">
+            <summary>
+            日志模型定义
+            </summary>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.LogService">
+            <summary>
+            Cross platform logging interface
+            </summary>
+        </member>
+        <member name="E:Com.Rainier.Buskit.Unity.Architecture.LogService.OnLog">
+            <summary>
+             extensibility point
+            </summary>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Messaging.DomainEvents`1">
+            <summary>
+            全局消息广播器（通用消息广播器）；通过路由方式发送消息；
+            </summary>
+            <typeparam name="TMessage">the type of message being raised</typeparam>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Messaging.DomainEvents`1.MessageDelegate">
+            <summary>
+            消息处理器代理函数定义
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="E:Com.Rainier.Buskit.Unity.Architecture.Messaging.DomainEvents`1.OnMessage">
+            <summary>
+            事件代理
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Messaging.DomainEvents`1.Publish(`0)">
+            <summary>
+            发送消息给订阅者
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Messaging.DomainEvents`1.Publish(System.Object)">
+            <summary>
+            发送消息给订阅者
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Messaging.DomainEvents`1.Subscribe(Com.Rainier.Buskit.Unity.Architecture.Messaging.DomainEvents{`0}.MessageDelegate)">
+            <summary>
+            添加路由节点（添加消息订阅器）
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Messaging.DomainEvents`1.Unsubscribe(Com.Rainier.Buskit.Unity.Architecture.Messaging.DomainEvents{`0}.MessageDelegate)">
+            <summary>
+            删除路由节点（删除消息订阅器）
+            </summary>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Messaging.DomainEvents">
+            <summary>
+            非一般化消息广播器
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Messaging.DomainEvents.Publish(System.Object,System.Type)">
+            <summary>
+            发送消息到侦听器
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Messaging.DomainEvents.Publish``1(``0)">
+            <summary>
+            发送消息到侦听器
+            </summary>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Messaging.ObjectEvents`2">
+            <summary>
+            类定义：Com.Rainier.Buskit.Unity.Architecture.Messaging.ObjectEvents
+            泛型消息广播器，支持消息过滤
+            </summary>
+            <remarks>
+            例如：发送消息给GameObject
+            </remarks>
+            <typeparam name="TRoute">
+            路由节点（标识是哪个对象发出的信息）一般情况下是字符串或GameObject
+            </typeparam>
+            <typeparam name="TMessage">需要广播的消息类型</typeparam>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Messaging.ObjectEvents`2.MessageDelegate">
+            <summary>
+            消息代理
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="F:Com.Rainier.Buskit.Unity.Architecture.Messaging.ObjectEvents`2._listeners">
+            <summary>
+            所有真听器和发布器列表
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Messaging.ObjectEvents`2.Publish(`0,`1)">
+            <summary>
+            广播消息给订阅者
+            </summary>
+            <param name="message">消息</param>
+            <param name="route">路由节点</param>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Messaging.ObjectEvents`2.Publish(System.Object,System.Object)">
+            <summary>
+            广播消息给订阅者
+            </summary>
+            <param name="route">路由节点对象</param>
+            <param name="message">消息</param>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Messaging.ObjectEvents`2.Subscribe(`0,Com.Rainier.Buskit.Unity.Architecture.Messaging.ObjectEvents{`0,`1}.MessageDelegate)">
+            <summary>
+            添加路由和消息侦听器（订阅者）
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Messaging.ObjectEvents`2.Unsubscribe(`0,Com.Rainier.Buskit.Unity.Architecture.Messaging.ObjectEvents{`0,`1}.MessageDelegate)">
+            <summary>
+            删除消息侦听器（订阅者）
+            </summary>
+            <param name="route">路由节点</param>
+            <param name="handler">消息处理函数</param>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Messaging.ObjectEvents`2.Unsubscribe(`0)">
+            <summary>
+            删除某个路由节点的所有消息侦听器
+            </summary>
+            <param name="route">路由节点</param>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Messaging.ObjectEvents`2.Clear">
+            <summary>
+            删除所有消息侦听器
+            </summary>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Messaging.ObjectEvents">
+            <summary>
+            类定义：Com.Rainier.Buskit.Unity.Architecture.Messaging.ObjectEvents
+            类功能：非泛型消息广播器
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Messaging.ObjectEvents.Publish(System.Object,System.Object,System.Type,System.Type)">
+            <summary>
+            广播消息到指定侦听器
+            </summary>
+            <param name="route">路由节点对象</param>
+            <param name="message">发送的消息</param>
+            <param name="routeType">路由节点类型</param>
+            <param name="messageType">消息类型</param>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Messaging.ObjectEvents.Publish``2(``0,``1)">
+            <summary>
+            广播消息
+            </summary>
+            <param name="route">路由节点</param>
+            <param name="message">消息</param>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Pooling.Pool`1">
+            <summary>
+            超简洁的对象池定义
+            </summary>
+            <remarks>
+            非线程安全
+            </remarks>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="F:Com.Rainier.Buskit.Unity.Architecture.Pooling.Pool`1.Default">
+            <summary>
+            全局单利
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.Buskit.Unity.Architecture.Pooling.Pool`1._items">
+            <summary>
+            持有的对象表
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Pooling.Pool`1.Rent">
+            <summary>
+            从栈顶弹出一个对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Pooling.Pool`1.Return(`0)">
+            <summary>
+            将对象返回到池里（向堆栈中添加一个对象）
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Pooling.Pool`1.Clear">
+            <summary>
+            清理所有对象
+            </summary>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Pooling.ThreadSafePool`1">
+            <summary>
+            超简洁线程安全对象池定义
+            </summary>
+            <remarks>
+            线程安全
+            </remarks>
+            <typeparam name="T">对象类型</typeparam>
+        </member>
+        <member name="F:Com.Rainier.Buskit.Unity.Architecture.Pooling.ThreadSafePool`1.Default">
+            <summary>
+            全局单利
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.Buskit.Unity.Architecture.Pooling.ThreadSafePool`1._items">
+            <summary>
+            持有的对象
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.Buskit.Unity.Architecture.Pooling.ThreadSafePool`1._lock">
+            <summary>
+            线程安全锁
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Pooling.ThreadSafePool`1.Rent">
+            <summary>
+            从栈顶弹出一个对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Pooling.ThreadSafePool`1.Return(`0)">
+            <summary>
+            将对象返回到池里（向堆栈中添加一个对象）
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Pooling.ThreadSafePool`1.Clear">
+            <summary>
+            清除池内容
+            </summary>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Threading.IThreadingService">
+            <summary>
+            主线程/后台线程服务接口定义
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Threading.IThreadingService.IsMainThread">
+            <summary>
+            是主线程吗？
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Threading.IThreadingService.RunUpdate(System.Action{System.Double})">
+            <summary>
+            持续更新循环
+            </summary>
+            <param name="callback">更新处理器具备一个增量控制值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Threading.IThreadingService.RunDelay(System.Action,System.Single)">
+            <summary>
+            回调函数延迟
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Threading.IThreadingService.RunRoutine(System.Collections.IEnumerator)">
+            <summary>
+            运行协程，通过yield返回结束执行
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Threading.IThreadingService.RunMainThread(System.Action)">
+            <summary>
+            在主线程上运行一个回调函数
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Threading.IThreadingService.RunBackgroundThread(System.Action)">
+            <summary>
+            在后台线程上运行一个回调函数
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Threading.IThreadingService.RunBackgroundThread(System.Action,System.Action)">
+            <summary>
+            运行后台线程
+            </summary>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Threading.UnityThreadService">
+            <summary>
+            通用一个Mono仿造线程
+            <seealso cref="T:Com.Rainier.Buskit.Unity.Architecture.Threading.IThreadingService"/>
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Threading.UnityThreadService.IsMainThread">
+            <summary>
+            Checks if this is the main thread
+            </summary>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Threading.RoutineTimer">
+            <summary>
+            平台无关定时器，可以配合回调函数使用
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Threading.RoutineTimer.Interval">
+            <summary>
+            时间间隔
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Threading.RoutineTimer.Callback">
+            <summary>
+            计时器回调函数
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Threading.RoutineTimer.IsRunning">
+            <summary>
+            计时器还在运行吗？
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Threading.RoutineTimer.#ctor(System.TimeSpan,System.Action)">
+            <summary>
+            计时器
+            </summary>
+            <param name="interval">计时间隔</param>
+            <param name="callback">回调函数</param>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Threading.RoutineTimer.Dispose">
+            <summary>
+            丢弃时停止运行并置回调函数为空
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Threading.RoutineTimer.Stop">
+            <summary>
+            停止计时
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Threading.RoutineTimer.Start">
+            <summary>
+            开始计时
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Threading.RoutineTimer.Handler(System.Double)">
+            <summary>
+            处理回调
+            </summary>
+            <param name="d"></param>
+        </member>
+        <member name="T:Com.Rainier.Buskit.Unity.Architecture.Threading.ThreadingService">
+            <summary>
+            主线程/后台线程工具：一般情况下，无论在客户端还是服务器上，游戏（实验）需要持续的线程和时间服务
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.Buskit.Unity.Architecture.Threading.ThreadingService.Instance">
+            <summary>
+            线程服务单例
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.Buskit.Unity.Architecture.Threading.ThreadingService.IsMainThread">
+            <summary>
+            这个是主线程吗？
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Threading.ThreadingService.RunUpdate(System.Action{System.Double})">
+            <summary>
+            持续更新循环
+            </summary>
+            <param name="callback">更新处理器具备一个增量控制值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Threading.ThreadingService.RunDelay(System.Action,System.Single)">
+            <summary>
+            回调函数延迟
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Threading.ThreadingService.RunRoutine(System.Collections.IEnumerator)">
+            <summary>
+            运行协程，通过yield返回结束执行
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Threading.ThreadingService.RunMainThread(System.Action)">
+            <summary>
+            在主线程上运行一个回调函数
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Threading.ThreadingService.RunBackgroundThread(System.Action)">
+            <summary>
+            在后台线程上运行一个回调函数
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.Buskit.Unity.Architecture.Threading.ThreadingService.RunBackgroundThread(System.Action,System.Action)">
+            <summary>
+            运行后台线程
+            </summary>
+        </member>
+    </members>
+</doc>

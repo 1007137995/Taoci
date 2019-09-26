@@ -1,0 +1,486 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Com.Rainier.BusKit.Unity.Modules.Command.WebGL</name>
+    </assembly>
+    <members>
+        <member name="T:Com.Rainier.BusKit.Unity.Modules.Command.AbsCommand">
+            <summary>
+            命令抽象类，具体命令可以实际情况复写Execute\Undo\Redo\Cancel\CanExecute四个方法
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.AbsCommand.#ctor">
+            <summary>
+            构造函数
+            </summary>  
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.AbsCommand.#ctor(Com.Rainier.BusKit.Unity.Modules.Command.ICommandContext)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="ctx">命令系统上下文环境</param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.AbsCommand.Cancel">
+            <summary>
+            执行取消操作
+            <seealso cref="M:Com.Rainier.BusKit.Unity.Modules.Command.ICommand.Cancel"/>
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.AbsCommand.CanExecute">
+            <summary>
+            询问命令是否可以执行
+            <seealso cref="M:Com.Rainier.BusKit.Unity.Modules.Command.ICommand.CanExecute"/>
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.AbsCommand.SetContext(Com.Rainier.BusKit.Unity.Modules.Command.ICommandContext)">
+            <summary>
+            设置命令系统上下文环境
+            </summary>
+            <param name="ctx"></param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.AbsCommand.GetContext">
+            <summary>
+            获取命令系统上下文环境
+            </summary>
+            <returns>ICommandContext</returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.AbsCommand.Execute">
+            <summary>
+            在具体命令中实现执行操作
+            <seealso cref="M:Com.Rainier.BusKit.Unity.Modules.Command.ICommand.Execute"/>
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.AbsCommand.Redo">
+            <summary>
+            在具体命令中实现重做操作
+            <seealso cref="M:Com.Rainier.BusKit.Unity.Modules.Command.ICommand.Redo"/>
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.AbsCommand.Undo">
+            <summary>
+            在具体命令中实现重做操作
+            <seealso cref="M:Com.Rainier.BusKit.Unity.Modules.Command.ICommand.Undo"/>
+            </summary>
+        </member>
+        <member name="T:Com.Rainier.BusKit.Unity.Modules.Command.AbsCommandContext">
+            <summary>
+            抽象命令系统上下文环境
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.AbsCommandContext.#ctor">
+            <summary>
+            默认构造函数
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.AbsCommandContext.GetCommandStack">
+            <summary>
+            获取命令堆栈实例
+            </summary>
+            <seealso cref="T:Com.Rainier.BusKit.Unity.Modules.Command.ICommandContext"/>
+            <returns>ICommandStack</returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.AbsCommandContext.Initialize">
+            <summary>
+            初始化命令系统上下文环境
+            </summary>
+        </member>
+        <member name="T:Com.Rainier.BusKit.Unity.Modules.Command.AbsCommandStack">
+            <summary>
+            抽象命令系统堆栈
+            </summary>
+            <see cref="T:Com.Rainier.BusKit.Unity.Modules.Command.ICommandStack"/>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.AbsCommandStack.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.AbsCommandStack.SetMaxUndoCount(System.Int32)">
+            <summary>
+            设置最大Undo次数
+            </summary>
+            <param name="iCount"></param>
+            <seealso cref="M:Com.Rainier.BusKit.Unity.Modules.Command.ICommandStack.SetMaxUndoCount(System.Int32)"/>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.AbsCommandStack.GetMaxUndoCount">
+            <summary>
+            获取最大Undo次数
+            </summary>
+            <seealso cref="M:Com.Rainier.BusKit.Unity.Modules.Command.ICommandStack.GetMaxUndoCount"/>
+            <returns>最大Undo次数</returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.AbsCommandStack.Reset">
+            <summary>
+            执行堆栈清理
+            </summary>
+            <seealso cref="M:Com.Rainier.BusKit.Unity.Modules.Command.ICommandStack.Reset"/>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.AbsCommandStack.CanRedo">
+            <summary>
+            是否能够执行Redo操作
+            </summary>
+            <seealso cref="M:Com.Rainier.BusKit.Unity.Modules.Command.ICommandStack.CanRedo"/>
+            <returns>Bool</returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.AbsCommandStack.CanUndo">
+            <summary>
+            是否能够执行Undo操作
+            </summary>
+            <seealso cref="M:Com.Rainier.BusKit.Unity.Modules.Command.ICommandStack.CanUndo"/>
+            <returns>Bool</returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.AbsCommandStack.BeginTransaction">
+            <summary>
+            开始执行命令事务
+            </summary>
+            <seealso cref="M:Com.Rainier.BusKit.Unity.Modules.Command.ICommandStack.BeginTransaction"/>
+            <returns>ICommandStack</returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.AbsCommandStack.CommitTransaction">
+            <summary>
+            提交命令事务
+            </summary>
+            <seealso cref="M:Com.Rainier.BusKit.Unity.Modules.Command.ICommandStack.CommitTransaction"/>
+            <returns>ICommandStack</returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.AbsCommandStack.Execute(Com.Rainier.BusKit.Unity.Modules.Command.ICommand)">
+            <summary>
+            <para>执行命令</para>
+            <para>如果命令CanExecute返回true则执行命令的Execute函数，并且将命令添加到命令堆栈中</para>
+            <para>如果命令CanExecute返回false则不执行命令的Execute函数，同时堆栈中也不会添加此命令</para>
+            </summary>
+            <param name="objCmd"></param>
+            <seealso cref="M:Com.Rainier.BusKit.Unity.Modules.Command.ICommandStack.Execute(Com.Rainier.BusKit.Unity.Modules.Command.ICommand)"/>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.AbsCommandStack.Redo">
+            <summary>
+            在命令堆栈中弹出一条命令并执行命令的重做操作
+            </summary>
+            <seealso cref="M:Com.Rainier.BusKit.Unity.Modules.Command.ICommandStack.Redo"/>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.AbsCommandStack.Undo">
+            <summary>
+            在命令堆栈中弹出一条并且执行命令的撤销操作
+            </summary>
+            <seealso cref="M:Com.Rainier.BusKit.Unity.Modules.Command.ICommandStack.Undo"/>
+            <returns>ICommandStack</returns>
+        </member>
+        <member name="T:Com.Rainier.BusKit.Unity.Modules.Command.AbsCommandTransaction">
+            <summary>
+            抽象命令系统事务
+            </summary>
+            <see cref="T:Com.Rainier.BusKit.Unity.Modules.Command.ICommandStack"/>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.AbsCommandTransaction.#ctor">
+            <summary>
+            默认构造函数
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.AbsCommandTransaction.#ctor(Com.Rainier.BusKit.Unity.Modules.Command.ICommandContext)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="ctx">命令系统上下文环境</param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.AbsCommandTransaction.AddCommand(Com.Rainier.BusKit.Unity.Modules.Command.ICommand)">
+            <summary>
+            向命令事务中添加命令
+            </summary>
+            <param name="objCmd">命令实例</param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.AbsCommandTransaction.Cancel">
+            <summary>
+            执行Cancel操作
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.AbsCommandTransaction.CanExecute">
+            <summary>
+            查询事务命令是否可以执行
+            </summary>
+            <seealso cref="M:Com.Rainier.BusKit.Unity.Modules.Command.ICommand.CanExecute"/>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.AbsCommandTransaction.Execute">
+            <summary>
+            执行事务命令
+            </summary>
+            <seealso cref="M:Com.Rainier.BusKit.Unity.Modules.Command.ICommand.Execute"/>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.AbsCommandTransaction.List">
+            <summary>
+            获取命令列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.AbsCommandTransaction.Redo">
+            <summary>
+            执行事务命令的重做操作
+            </summary>
+            <seealso cref="M:Com.Rainier.BusKit.Unity.Modules.Command.ICommand.Redo"/>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.AbsCommandTransaction.Undo">
+            <summary>
+            执行事务命令的撤销操作
+            </summary>
+            <seealso cref="M:Com.Rainier.BusKit.Unity.Modules.Command.ICommand.Undo"/>
+        </member>
+        <member name="T:Com.Rainier.BusKit.Unity.Modules.Command.CommandContext">
+            <summary>
+            命令系统上下文环境
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.CommandContext.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="T:Com.Rainier.BusKit.Unity.Modules.Command.CommandException">
+            <summary>
+            命令系统异常
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.CommandException.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.CommandException.#ctor(System.String)">
+            <summary>
+            默认构造函数
+            </summary>
+            <param name="msg">异常消息</param>
+        </member>
+        <member name="T:Com.Rainier.BusKit.Unity.Modules.Command.CommandStack">
+            <summary>
+            命令系统堆栈具体实现类
+            </summary>
+            <see cref="T:Com.Rainier.BusKit.Unity.Modules.Command.ICommandStack"/>
+            <see cref="T:Com.Rainier.BusKit.Unity.Modules.Command.AbsCommandStack"/>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.CommandStack.#ctor">
+            <summary>
+            默认构造函数
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.CommandStack.BeginTransaction">
+            <summary>
+            开始执行命令事务
+            </summary>
+            <seealso cref="M:Com.Rainier.BusKit.Unity.Modules.Command.ICommandStack.BeginTransaction"/>
+            <returns>ICommandStack</returns>
+        </member>
+        <member name="T:Com.Rainier.BusKit.Unity.Modules.Command.CommandTransaction">
+            <summary>
+            命令系统事务具体实现
+            </summary>
+            <see cref="T:Com.Rainier.BusKit.Unity.Modules.Command.AbsCommandTransaction"/>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.CommandTransaction.#ctor">
+            <summary>
+            默认构造函数
+            </summary>
+        </member>
+        <member name="T:Com.Rainier.BusKit.Unity.Modules.Command.Constraints">
+            <summary>
+            命令系统使用的常量定义
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.BusKit.Unity.Modules.Command.Constraints.C_S_EVENT_STACK_PRE_EXECUTE">
+            <summary>
+            命令堆栈执行前事件
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.BusKit.Unity.Modules.Command.Constraints.C_S_EVENT_STACK_POST_EXECUTE">
+            <summary>
+            命令堆栈执行后事件
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.BusKit.Unity.Modules.Command.Constraints.C_S_EVENT_STACK_PRE_UNDO">
+            <summary>
+            命令堆栈UNDO前事件
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.BusKit.Unity.Modules.Command.Constraints.C_S_EVENT_STACK_POST_UNDO">
+            <summary>
+            命令堆栈UNDO后事件
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.BusKit.Unity.Modules.Command.Constraints.C_S_EVENT_STACK_PRE_REDO">
+            <summary>
+            命令堆栈REDO前事件
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.BusKit.Unity.Modules.Command.Constraints.C_S_EVENT_STACK_POST_REDO">
+            <summary>
+            命令堆栈REDO后事件
+            </summary>
+        </member>
+        <member name="F:Com.Rainier.BusKit.Unity.Modules.Command.Constraints.C_I_EVENT_STACK_DEFAULT_MAX_UNDO">
+            <summary>
+            命令堆栈默认最多UNDO次数
+            </summary>
+        </member>
+        <member name="T:Com.Rainier.BusKit.Unity.Modules.Command.ICommand">
+            <summary>
+            命令接口:CanExecute(命令是否能够执行)/Execute(执行命令)/Undo(执行撤销)/Redo(执行重做)/Cancel(撤销)
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.ICommand.CanExecute">
+            <summary>
+            判断命令是否能够执行
+            </summary>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.ICommand.Execute">
+            <summary>
+            执行命令
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.ICommand.Undo">
+            <summary>
+            执行撤销操作
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.ICommand.Redo">
+            <summary>
+            执行重做操作
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.ICommand.Cancel">
+            <summary>
+            取消命令执行
+            </summary>
+        </member>
+        <member name="T:Com.Rainier.BusKit.Unity.Modules.Command.ICommandContext">
+            <summary>
+            命令上下文环境接口
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.ICommandContext.Initialize">
+            <summary>
+            初始化上下文环境
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.ICommandContext.GetCommandStack">
+            <summary>
+            获取命令堆栈实例
+            </summary>
+            <returns>ICommandStack</returns>
+        </member>
+        <member name="T:Com.Rainier.BusKit.Unity.Modules.Command.ICommandStack">
+            <summary>
+            命令堆栈接口
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.ICommandStack.Execute(Com.Rainier.BusKit.Unity.Modules.Command.ICommand)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="objCmd">命令对象</param>
+            <returns>CommandStack实例</returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.ICommandStack.Undo">
+            <summary>
+            执行Undo操作
+            </summary>
+            <returns>CommandStack实例</returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.ICommandStack.Redo">
+            <summary>
+            执行Redo操作
+            </summary>
+            <returns>CommandStack实例</returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.ICommandStack.BeginTransaction">
+            <summary>
+            开始执行命令事务
+            </summary>
+            <returns>CommandStack实例</returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.ICommandStack.CommitTransaction">
+            <summary>
+            提交命令事务
+            </summary>
+            <returns>CommandStack实例</returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.ICommandStack.SetMaxUndoCount(System.Int32)">
+            <summary>
+            设置最大Undo次数
+            </summary>
+            <param name="iCount">undo操作次数</param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.ICommandStack.GetMaxUndoCount">
+            <summary>
+            获取最大Undo次数
+            </summary>
+            <returns>最大Undo次数</returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.ICommandStack.CanUndo">
+            <summary>
+            是否可以执行Undo操作
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.ICommandStack.CanRedo">
+            <summary>
+            是否可以执行Redo操作
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.ICommandStack.Reset">
+            <summary>
+            重置命令堆栈
+            </summary>
+        </member>
+        <member name="T:Com.Rainier.BusKit.Unity.Modules.Command.ICommandTransication">
+            <summary>
+            命令堆栈接口
+            </summary>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.ICommandTransication.AddCommand(Com.Rainier.BusKit.Unity.Modules.Command.ICommand)">
+            <summary>
+            添加命令
+            </summary>
+            <param name="objCmd">命令实例</param>
+        </member>
+        <member name="M:Com.Rainier.BusKit.Unity.Modules.Command.ICommandTransication.List">
+            <summary>
+            获取命令列表
+            </summary>
+            <returns>命令列表</returns>
+        </member>
+        <member name="T:Com.Rainier.BusKit.Unity.Modules.Command.CommandMessage">
+            <summary>
+            命令系统执行消息
+            </summary>
+        </member>
+        <member name="P:Com.Rainier.BusKit.Unity.Modules.Command.CommandMessage.Message">
+            <summary>
+            命令消息
+            </summary>
+            <seealso cref="F:Com.Rainier.BusKit.Unity.Modules.Command.Constraints.C_S_EVENT_STACK_POST_EXECUTE"/>
+            <seealso cref="F:Com.Rainier.BusKit.Unity.Modules.Command.Constraints.C_S_EVENT_STACK_PRE_EXECUTE"/>
+            <seealso cref="F:Com.Rainier.BusKit.Unity.Modules.Command.Constraints.C_S_EVENT_STACK_POST_UNDO"/>
+            <seealso cref="F:Com.Rainier.BusKit.Unity.Modules.Command.Constraints.C_S_EVENT_STACK_PRE_UNDO"/>
+            <seealso cref="F:Com.Rainier.BusKit.Unity.Modules.Command.Constraints.C_S_EVENT_STACK_POST_REDO"/>
+            <seealso cref="F:Com.Rainier.BusKit.Unity.Modules.Command.Constraints.C_S_EVENT_STACK_PRE_REDO"/>
+        </member>
+        <member name="P:Com.Rainier.BusKit.Unity.Modules.Command.CommandMessage.CommandStack">
+            <summary>
+            命令堆栈
+            </summary>
+            <seealso cref="T:Com.Rainier.BusKit.Unity.Modules.Command.ICommandStack"/>
+            <seealso cref="P:Com.Rainier.BusKit.Unity.Modules.Command.CommandMessage.CommandStack"/>
+        </member>
+        <member name="P:Com.Rainier.BusKit.Unity.Modules.Command.CommandMessage.TargetCommand">
+            <summary>
+            目标命令实例
+            </summary>
+            <seealso cref="T:Com.Rainier.BusKit.Unity.Modules.Command.ICommand"/>
+            <seealso cref="T:Com.Rainier.BusKit.Unity.Modules.Command.AbsCommand"/>
+        </member>
+    </members>
+</doc>

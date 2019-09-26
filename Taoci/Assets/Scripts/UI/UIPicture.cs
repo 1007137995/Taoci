@@ -21,7 +21,6 @@ namespace TinyTeam.UI
             Instance = this;
             index = 0;
             transform.Find("EndBtn").GetComponent<Button>().onClick.AddListener(() => {
-                index++;
                 if (index == 3)
                 {
                     UIManager.Instance.AddStep();
@@ -36,6 +35,7 @@ namespace TinyTeam.UI
         public void SetImg(Sprite sprite)
         {
             transform.Find("Image").GetComponent<Image>().overrideSprite = sprite;
+            index++;
         }
 
         //public void Last()

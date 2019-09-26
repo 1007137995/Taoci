@@ -1,0 +1,71 @@
+<Experiment ScriptVersion="GB-T-2019.03.14" LastModifyTime="" Copyright="版权所有@北京润尼尔网络科技有限公司" Author="北京润尼尔网络科技有限公司">
+	<ExperimentInformation Name="" Uuid="60ca5770-4777-46f3-945d-f4cf4183bfe4" Subject="" Course="" />
+	<ExperimentSceneState>
+		<SceneObjects SceneObjectCount="5">
+			<SceneObject Name="" Uuid="-12126" TargetType="Buskit3D.Example_0xx_Igcs.TestEntity">
+				<GuiProperties />
+				<LogicModelProperties PropertyCount="10">
+					<LogicModelProperty Name="SignalWindowType" Value="-1" Meaning="信号窗函数类型" Way="AssertOption" AssertValue="汉明窗" Options="汉明窗,矩形窗,三角窗,高斯窗" />
+					<LogicModelProperty Name="frequency" Value="0" Meaning="信号源频率" Way="AssertEquals" AssertValue="0.8" />
+					<LogicModelProperty Name="opened" Value="False" Meaning="开关是否打开" Way="AssertFalse" AssertValue="False" />
+					<LogicModelProperty Name="y" Value="0.2" Meaning="最低频率1" Way="AssertGreater" AssertValue="1" />
+					<LogicModelProperty Name="z" Value="0.2" Meaning="最低频率2" Way="AssertGreaterOrEquals" AssertValue="3" />
+					<LogicModelProperty Name="x" Value="0.4" Meaning="X坐标范围" Way="AssertInterval" AssertValue="null" Max="122.3" Min="10" />
+					<LogicModelProperty Name="w" Value="0.2" Meaning="最高频率1" Way="AssertLess" AssertValue="1" />
+					<LogicModelProperty Name="o" Value="0.2" Meaning="最高频率2" Way="AssertLessOrEquals" AssertValue="3" />
+					<LogicModelProperty Name="number" Value="20" Meaning="元素数量" Way="AssertNotEquals" AssertValue="30" />
+					<LogicModelProperty Name="started" Value="False" Meaning="是否启动" Way="AssertTrue" AssertValue="True" />
+				</LogicModelProperties>
+			</SceneObject>
+			<SceneObject Name="" Uuid="-23689" TargetType="Com.Rainier.Buskit3D.ReplayEntity">
+				<GuiProperties />
+				<LogicModelProperties PropertyCount="0" />
+			</SceneObject>
+			<SceneObject Name="" Uuid="-17575" TargetType="Buskit3D.Example_0xx_Igcs.TestEntity">
+				<GuiProperties />
+				<LogicModelProperties PropertyCount="10">
+					<LogicModelProperty Name="SignalWindowType" Value="-1" Meaning="信号窗函数类型" Way="AssertOption" AssertValue="汉明窗" Options="汉明窗,矩形窗,三角窗,高斯窗" />
+					<LogicModelProperty Name="frequency" Value="0" Meaning="信号源频率" Way="AssertEquals" AssertValue="0.8" />
+					<LogicModelProperty Name="opened" Value="False" Meaning="开关是否打开" Way="AssertFalse" AssertValue="False" />
+					<LogicModelProperty Name="y" Value="0.2" Meaning="最低频率1" Way="AssertGreater" AssertValue="1" />
+					<LogicModelProperty Name="z" Value="0.2" Meaning="最低频率2" Way="AssertGreaterOrEquals" AssertValue="3" />
+					<LogicModelProperty Name="x" Value="0.4" Meaning="X坐标范围" Way="AssertInterval" AssertValue="null" Max="122.3" Min="10" />
+					<LogicModelProperty Name="w" Value="0.2" Meaning="最高频率1" Way="AssertLess" AssertValue="1" />
+					<LogicModelProperty Name="o" Value="0.2" Meaning="最高频率2" Way="AssertLessOrEquals" AssertValue="3" />
+					<LogicModelProperty Name="number" Value="20" Meaning="元素数量" Way="AssertNotEquals" AssertValue="30" />
+					<LogicModelProperty Name="started" Value="False" Meaning="是否启动" Way="AssertTrue" AssertValue="True" />
+				</LogicModelProperties>
+			</SceneObject>
+			<SceneObject Name="" Uuid="3375" TargetType="Buskit3D.Example_0xx_Igcs.TestEntity">
+				<GuiProperties />
+				<LogicModelProperties PropertyCount="10">
+					<LogicModelProperty Name="SignalWindowType" Value="-1" Meaning="信号窗函数类型" Way="AssertOption" AssertValue="汉明窗" Options="汉明窗,矩形窗,三角窗,高斯窗" />
+					<LogicModelProperty Name="frequency" Value="0" Meaning="信号源频率" Way="AssertEquals" AssertValue="0.8" />
+					<LogicModelProperty Name="opened" Value="False" Meaning="开关是否打开" Way="AssertFalse" AssertValue="False" />
+					<LogicModelProperty Name="y" Value="0.2" Meaning="最低频率1" Way="AssertGreater" AssertValue="1" />
+					<LogicModelProperty Name="z" Value="0.2" Meaning="最低频率2" Way="AssertGreaterOrEquals" AssertValue="3" />
+					<LogicModelProperty Name="x" Value="0.4" Meaning="X坐标范围" Way="AssertInterval" AssertValue="null" Max="122.3" Min="10" />
+					<LogicModelProperty Name="w" Value="0.2" Meaning="最高频率1" Way="AssertLess" AssertValue="1" />
+					<LogicModelProperty Name="o" Value="0.2" Meaning="最高频率2" Way="AssertLessOrEquals" AssertValue="3" />
+					<LogicModelProperty Name="number" Value="20" Meaning="元素数量" Way="AssertNotEquals" AssertValue="30" />
+					<LogicModelProperty Name="started" Value="False" Meaning="是否启动" Way="AssertTrue" AssertValue="True" />
+				</LogicModelProperties>
+			</SceneObject>
+			<SceneObject Name="" Uuid="-1818" TargetType="Buskit3D.Example_0xx_Igcs.TestEntity">
+				<GuiProperties />
+				<LogicModelProperties PropertyCount="10">
+					<LogicModelProperty Name="SignalWindowType" Value="-1" Meaning="信号窗函数类型" Way="AssertOption" AssertValue="汉明窗" Options="汉明窗,矩形窗,三角窗,高斯窗" />
+					<LogicModelProperty Name="frequency" Value="0" Meaning="信号源频率" Way="AssertEquals" AssertValue="0.8" />
+					<LogicModelProperty Name="opened" Value="False" Meaning="开关是否打开" Way="AssertFalse" AssertValue="False" />
+					<LogicModelProperty Name="y" Value="0.2" Meaning="最低频率1" Way="AssertGreater" AssertValue="1" />
+					<LogicModelProperty Name="z" Value="0.2" Meaning="最低频率2" Way="AssertGreaterOrEquals" AssertValue="3" />
+					<LogicModelProperty Name="x" Value="0.4" Meaning="X坐标范围" Way="AssertInterval" AssertValue="null" Max="122.3" Min="10" />
+					<LogicModelProperty Name="w" Value="0.2" Meaning="最高频率1" Way="AssertLess" AssertValue="1" />
+					<LogicModelProperty Name="o" Value="0.2" Meaning="最高频率2" Way="AssertLessOrEquals" AssertValue="3" />
+					<LogicModelProperty Name="number" Value="20" Meaning="元素数量" Way="AssertNotEquals" AssertValue="30" />
+					<LogicModelProperty Name="started" Value="False" Meaning="是否启动" Way="AssertTrue" AssertValue="True" />
+				</LogicModelProperties>
+			</SceneObject>
+		</SceneObjects>
+	</ExperimentSceneState>
+</Experiment>

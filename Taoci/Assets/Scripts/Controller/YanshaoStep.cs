@@ -33,7 +33,7 @@ namespace TaoCi
                     TTUIPage.ShowPage<UITitle>();
                     //TTUIPage.ShowPage<UIIntroduceBtn>();
                     TTUIPage.ShowPage<UITip>();
-                    UITip.Instance.SetTip("请先阅读实验守则和实验目的。");
+                    UITip.Instance.SetTip("点击墙上高亮的安全守则查看相关内容。");
                     CamOperator.Instance.GetComponent<CamOperator>().enabled = false;
                     break;
                 case 3001002:
@@ -104,7 +104,7 @@ namespace TaoCi
                 case 3003001:
                     UICProcess.Instance.SetPage(3);
                     TTUIPage.ShowPage<UITip>();
-                    UITip.Instance.SetTip("点击开关，通电。");
+                    UITip.Instance.SetTip("请前往电窑左侧，将墙上开关通电。");
                     break;
                 case 3003002:
                     UITip.Instance.SetTip("点击电窑控制面板，设定坭兴陶烧制升温曲线。");
@@ -141,7 +141,7 @@ namespace TaoCi
                     TTUIPage.ShowPage<UIQuestion>();
                     UIQuestion.Instance.GetQuestion(3004004);
                     UIManager.Instance.Delay(QuestionEnd());
-                    break;
+                    break;                
                 case 3004005:
                     ShaderColorController.Instance.Burn();
                     ShaderColorController.Instance.fireLight.intensity = 3;
@@ -149,12 +149,14 @@ namespace TaoCi
                     TTUIPage.ShowPage<UISingleBtn>();
                     UISingleBtn.Instance.transform.Find("EffectBtn").gameObject.SetActive(true);
                     UISingleBtn.Instance.transform.Find("PaiyankouBtn").gameObject.SetActive(false);
+                    UITip.Instance.SetTip("点击炉内效果按钮，可查看窑内陶瓷烧制动态效果。");
                     UIManager.Instance.Delay(Openpaiyankou());
-                    Fire.Instance.ChangeInFire(true);
-                    UITip.Instance.SetTip("海盐遇高温融化，海盐在高温中分解出的钠化合物与二氧化硅结合形成薄薄釉面，同时也会与胚体中的氧化铝产生排斥现象，造成“桔皮”的玻璃质感的窑变效果。");
-                    UIManager.Instance.Delay(Wait());
                     break;
                 case 3004006:
+                    TTUIPage.ShowPage<UITip>();
+                    UITip.Instance.SetTip("请关闭电源，开启降温环节。");
+                    break;
+                case 3004007:
                     Fire.Instance.ChangeInFire(false);
                     Fire.Instance.ChangeOutFire(false);
                     //UITip.Instance.SetTip("开启排烟口、观火口、投料口，进入降温环节。");       
@@ -163,14 +165,14 @@ namespace TaoCi
                     TTUIPage.ShowPage<UISlider>();
                     UISlider.Instance.Wait("降温阶段，等待24小时");
                     break;
-                case 3004007:
+                case 3004008:
                     TTUIPage.ClosePage<UISingleBtn>();
                     TTUIPage.ClosePage<UISlider>();
                     TTUIPage.ShowPage<UIQuestion>();
                     UIQuestion.Instance.GetQuestion(1004007);
                     UIManager.Instance.Delay(QuestionEnd());
                     break;
-                case 3004008:
+                case 3004009:
                     Lumen.Instance.gameObject.SetActive(true);
                     SetStep(3005001);
                     break;
@@ -253,6 +255,9 @@ namespace TaoCi
         {
             yield return new WaitUntil(() => UISingleBtn.Instance.transform.Find("PaiyankouBtn").gameObject.activeSelf);
             UISingleBtn.Instance.transform.Find("PaiyankouBtn").gameObject.SetActive(false);
+            Fire.Instance.ChangeInFire(true);
+            UITip.Instance.SetTip("海盐遇高温融化，海盐在高温中分解出的钠化合物与二氧化硅结合形成薄薄釉面，同时也会与胚体中的氧化铝产生排斥现象，造成“桔皮”的玻璃质感的窑变效果。");
+            UIManager.Instance.Delay(Wait());
         }
     }
 }

@@ -8135,8 +8135,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -11403,7 +11403,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -35, y: -130}
+  m_AnchoredPosition: {x: -822, y: -121}
   m_SizeDelta: {x: 109, y: 48}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &5953218308014085216
@@ -12803,7 +12803,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 29.3, y: -121.20001}
+  m_AnchoredPosition: {x: 29.3, y: -225}
   m_SizeDelta: {x: 109, y: 48}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &5953218306415675786
@@ -15752,7 +15752,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.38431373, g: 0.20392157, b: 0.08235294, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -15771,7 +15771,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u63D0\u793A"
+  m_Text: 
 --- !u!1 &5875274291777770870
 GameObject:
   m_ObjectHideFlags: 0
@@ -16067,7 +16067,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 40}
+  m_SizeDelta: {x: 600, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7442144758627753679
 CanvasRenderer:
@@ -16099,7 +16099,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: c8863b0a28dc7874998c8e78f3ebad00, type: 3}
-    m_FontSize: 30
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -16110,4 +16110,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u8BBE\u7F6E\u576D\u5174\u9676\u70E7\u5236\u5347\u6E29\u66F2\u7EBF"
+  m_Text: "\u70B9\u51FB\u5DE6\u4FA7\u5404\u9636\u6BB5\u6309\u94AE\uFF0C\u8BBE\u7F6E\u576D\u5174\u9676\u70E7\u5236\u5347\u6E29\u66F2\u7EBF"

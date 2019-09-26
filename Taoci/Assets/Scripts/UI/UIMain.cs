@@ -27,6 +27,10 @@ namespace TinyTeam.UI
             MainScene.Instance.scene ="CTYB";
             MainScene.Instance.chuantong.SetActive(true);
             TTUIPage.ClosePage(this);
+            TTUIPage.ShowPage<UISingleBtn>();
+            TTUIPage.ShowPage<UITip>();
+            UITip.Instance.SetTip("点击帮助按钮，查看操作说明，控制人物进入实验室。");
+            UISingleBtn.Instance.transform.Find("HelpBtn").gameObject.SetActive(true);
         }
 
         public void Dianchai()
@@ -34,6 +38,10 @@ namespace TinyTeam.UI
             MainScene.Instance.scene = "CDYB";
             MainScene.Instance.dianchai.SetActive(true);
             TTUIPage.ClosePage(this);
+            TTUIPage.ShowPage<UISingleBtn>();
+            TTUIPage.ShowPage<UITip>();
+            UITip.Instance.SetTip("点击帮助按钮，查看操作说明，控制人物进入实验室。");
+            UISingleBtn.Instance.transform.Find("HelpBtn").gameObject.SetActive(true);
         }
 
         public void Dingdian()
@@ -41,6 +49,10 @@ namespace TinyTeam.UI
             MainScene.Instance.scene = "DDYB";
             MainScene.Instance.dingdian.SetActive(true);
             TTUIPage.ClosePage(this);
+            TTUIPage.ShowPage<UISingleBtn>();
+            TTUIPage.ShowPage<UITip>();
+            UITip.Instance.SetTip("点击帮助按钮，查看操作说明，控制人物进入实验室。");
+            UISingleBtn.Instance.transform.Find("HelpBtn").gameObject.SetActive(true);
         }
 
         public void Yanshao()
@@ -48,6 +60,10 @@ namespace TinyTeam.UI
             MainScene.Instance.scene = "YSYB";
             MainScene.Instance.yanshao.SetActive(true);
             TTUIPage.ClosePage(this);
+            TTUIPage.ShowPage<UISingleBtn>();
+            TTUIPage.ShowPage<UITip>();
+            UITip.Instance.SetTip("点击帮助按钮，查看操作说明，控制人物进入实验室。");
+            UISingleBtn.Instance.transform.Find("HelpBtn").gameObject.SetActive(true);
         }
     }
 }
