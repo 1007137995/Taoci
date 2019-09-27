@@ -12,7 +12,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using Newtonsoft.Json.Linq;
-
+using TaoCi;
+using UnityEngine.SceneManagement;
 
 namespace Com.Rainier.ZC_Frame
 {
@@ -27,7 +28,7 @@ namespace Com.Rainier.ZC_Frame
 
         public Text showText;
 
-        private string score = "90";
+        private int score = 0;
 
         private WebCommunicationSystem webCommunicationSystem;
 
@@ -62,11 +63,23 @@ namespace Com.Rainier.ZC_Frame
             }
         }
 
+        public void ShowScore()
+        {
+            for (int i = 0; i < ScoreInfo.scoreList.Count; i++)
+            {
+                transform.Find("List").GetChild(i).gameObject.SetActive(true);
+                transform.Find("List").GetChild(i).transform.Find("question").GetComponent<Text>().text = ScoreInfo.scoreList[i].info;
+                transform.Find("List").GetChild(i).transform.Find("score").GetComponent<Text>().text = ScoreInfo.scoreList[i].wrong.ToString();
+                score += ScoreInfo.scoreList[i].score;
+            }
+        }
+
         /// <summary>
         /// 上传分数
         /// </summary>
         private void UpLoadScore() {
-            webCommunicationSystem.UpLoadScore(score,Listen);
+            webCommunicationSystem.UpLoadScore(score.ToString(),Listen);
+            SceneManager.LoadSceneAsync("Main");
         }
 
         private void Listen(string value) {

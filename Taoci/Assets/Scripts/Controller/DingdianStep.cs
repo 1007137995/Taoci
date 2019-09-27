@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Com.Rainier.ZC_Frame;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TinyTeam.UI;
@@ -237,7 +238,7 @@ namespace TaoCi
                     UITitle.Instance.SetPage(4);
                     TTUIPage.ClosePage<UIPicture>();
                     TTUIPage.ShowPage<UIEnd>();
-                    UIEnd.Instance.ShowScore();
+                    UIEnd.Instance.transform.GetComponent<Test>().ShowScore();
                     break;
                 default:
                     break;

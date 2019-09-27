@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TinyTeam.UI;
 using UnityStandardAssets.Characters.FirstPerson;
+using Com.Rainier.ZC_Frame;
 
 namespace TaoCi
 {
@@ -232,7 +233,7 @@ namespace TaoCi
                     UITitle.Instance.SetPage(4);
                     TTUIPage.ClosePage<UIPicture>();
                     TTUIPage.ShowPage<UIEnd>();
-                    UIEnd.Instance.ShowScore();
+                    UIEnd.Instance.transform.GetComponent<Test>().ShowScore();
                     break;
                 default:
                     break;

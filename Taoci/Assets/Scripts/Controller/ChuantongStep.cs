@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TinyTeam.UI;
 using UnityStandardAssets.Characters.FirstPerson;
+using Com.Rainier.ZC_Frame;
 
 namespace TaoCi
 {
@@ -137,12 +138,13 @@ namespace TaoCi
                     UITip.Instance.SetTip("进入窑变技艺环节，点击松香，从投料口向炉内投入0.5kg松香。");
                     break;
                 case 1004004:
-                    UITip.Instance.SetTip("开启排烟口，使窑内上下通气，煤块、松香接触氧气火焰升高，窜出排烟口，而浓烟滞留在窑内两侧，此时窑内既有氧化气氛又有还原气氛，即中性气氛。点击炉内效果按钮，可查看窑内陶瓷烧制动态效果。");
+                    UITip.Instance.SetTip("点击炉内效果按钮，可查看窑内陶瓷烧制动态效果。");
                     ShaderColorController.Instance.Burn();
                     ShaderColorController.Instance.fireLight.intensity = 3;
                     Fire.Instance.ChangeLittleFire(true);
                     TTUIPage.ShowPage<UISingleBtn>();                    
                     UISingleBtn.Instance.transform.Find("EffectBtn").gameObject.SetActive(true);
+                    UIManager.Instance.Delay(Openpaiyankou());
                     break;
                 case 1004005:
                     UISingleBtn.Instance.transform.Find("PaiyankouBtn").gameObject.SetActive(false);                    
@@ -233,7 +235,7 @@ namespace TaoCi
                     UITitle.Instance.SetPage(4);
                     TTUIPage.ClosePage<UIPicture>();
                     TTUIPage.ShowPage<UIEnd>();
-                    UIEnd.Instance.ShowScore();
+                    UIEnd.Instance.transform.GetComponent<Test>().ShowScore();
                     break;
                 default:
                     break;
@@ -250,6 +252,12 @@ namespace TaoCi
         {
             yield return new WaitUntil(() => !UIQuestion.Instance.gameObject.activeSelf);
             LocalStepAdd();
+        }
+
+        IEnumerator Openpaiyankou()
+        {
+            yield return new WaitUntil(() => UISingleBtn.Instance.transform.Find("PaiyankouBtn").gameObject.activeSelf);
+            UITip.Instance.SetTip("开启排烟口，使窑内上下通气，煤块、松香接触氧气火焰升高，窜出排烟口，而浓烟滞留在窑内两侧，此时窑内既有氧化气氛又有还原气氛，即中性气氛。");
         }
     }
 }
