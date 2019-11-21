@@ -132,7 +132,7 @@ namespace TaoCi
             que.qaudio = null;
             que.raudio = null;
             que.waudio = null;
-            que.score = 2;
+            que.score = 3;
             qaq.Add(que.id, que);
 
             que.id = 2002004;
@@ -182,7 +182,7 @@ namespace TaoCi
             que.qaudio = null;
             que.raudio = null;
             que.waudio = null;
-            que.score = 3;
+            que.score = 2;
             qaq.Add(que.id, que);
         }
     }

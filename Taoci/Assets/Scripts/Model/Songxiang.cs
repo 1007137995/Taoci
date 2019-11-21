@@ -35,6 +35,7 @@ namespace TaoCi
                 case 1004003:
                     transform.Find("Arrow").gameObject.SetActive(false);
                     transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    transform.GetComponent<Collider>().enabled = false;
                     SetInLu();                    
                     break;
                 #endregion
@@ -47,6 +48,7 @@ namespace TaoCi
                 case 4004003:
                     transform.Find("Arrow").gameObject.SetActive(false);
                     transform.GetComponent<HighlightingSystem.Highlighter>().tween = false;
+                    transform.GetComponent<Collider>().enabled = false;
                     SetInLu();
                     break;
                 #endregion

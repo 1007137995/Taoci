@@ -23,6 +23,8 @@ namespace TinyTeam.UI
             transform.Find("BackBtn").GetComponent<Button>().onClick.AddListener(delegate
             {
                 ShaderColorController.Instance.Reset();
+                ScoreInfo.ClearScoreInfo();
+                UISingleBtn.Instance.b = true;
                 SceneManager.LoadScene("Main");
             });
             transform.Find("HelpBtn").GetComponent<Button>().onClick.AddListener(() => transform.Find("Help").gameObject.SetActive(true));

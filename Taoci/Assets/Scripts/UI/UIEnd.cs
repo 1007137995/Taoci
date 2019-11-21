@@ -22,6 +22,7 @@ namespace TinyTeam.UI
             Instance = this;
             transform.Find("Redo").GetComponent<Button>().onClick.AddListener(delegate
             {
+                ScoreInfo.ClearScoreInfo();
                 SceneManager.LoadScene("Main");
             });
         }

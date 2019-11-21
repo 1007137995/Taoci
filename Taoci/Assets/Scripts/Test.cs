@@ -14,6 +14,7 @@ using UnityEngine.UI;
 using Newtonsoft.Json.Linq;
 using TaoCi;
 using UnityEngine.SceneManagement;
+using TinyTeam.UI;
 
 namespace Com.Rainier.ZC_Frame
 {
@@ -59,7 +60,16 @@ namespace Com.Rainier.ZC_Frame
             {
                 showText.text = "ExpId:" + LoginInformation.ExpId +
                             "\nUpLoadScoreURLKey:" + LoginInformation.UpLoadScoreURLKey;
-                            
+
+            }
+            if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.F))
+            {
+                showText.gameObject.SetActive(true);
+
+            }
+            else
+            {
+                showText.gameObject.SetActive(false);
             }
         }
 
@@ -72,18 +82,25 @@ namespace Com.Rainier.ZC_Frame
                 transform.Find("List").GetChild(i).transform.Find("score").GetComponent<Text>().text = ScoreInfo.scoreList[i].wrong.ToString();
                 score += ScoreInfo.scoreList[i].score;
             }
+            score = ScoreSave.AddScore(SceneManager.GetActiveScene().name, score);
+            transform.Find("score").GetComponent<Text>().text = score.ToString();
         }
 
         /// <summary>
         /// 上传分数
         /// </summary>
         private void UpLoadScore() {
+            
             webCommunicationSystem.UpLoadScore(score.ToString(),Listen);
-            SceneManager.LoadSceneAsync("Main");
+            ScoreInfo.ClearScoreInfo();
+            UISingleBtn.Instance.b = true;
         }
 
         private void Listen(string value) {
-            text.text = value;
+            Debug.Log(value);
+            //text.text = value;
+
+            SceneManager.LoadSceneAsync("Main");
         }
     }
 }

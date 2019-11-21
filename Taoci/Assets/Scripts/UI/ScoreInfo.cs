@@ -44,5 +44,10 @@ namespace TaoCi
                 instack = false;
             }
         }
+
+        public static void ClearScoreInfo()
+        {
+            scoreList.Clear();
+        }
     }
 }

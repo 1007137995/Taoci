@@ -4,24 +4,31 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TinyTeam.UI;
 
-public class MainScene : MonoBehaviour
+namespace TaoCi
 {
-    public string scene;
-    public static MainScene Instance;
-
-    public GameObject chuantong;
-    public GameObject dingdian;
-    public GameObject dianchai;
-    public GameObject yanshao;
-
-    void Awake()
+    public class MainScene : MonoBehaviour
     {
-        Instance = this;
-        TTUIPage.ShowPage<UIMain>();
-    }
+        public string scene;
+        public static MainScene Instance;
 
-    public void GoScene()
-    {
-        SceneManager.LoadScene(scene);
+        public GameObject chuantong;
+        public GameObject dingdian;
+        public GameObject dianchai;
+        public GameObject yanshao;
+
+        void Awake()
+        {
+            Instance = this;
+            TTUIPage.ShowPage<UIMain>();
+            if (ScoreSave.Instance == null)
+            {
+                Instantiate(Resources.Load("ScoreSave"));
+            }
+        }
+
+        public void GoScene()
+        {
+            SceneManager.LoadScene(scene);
+        }
     }
 }

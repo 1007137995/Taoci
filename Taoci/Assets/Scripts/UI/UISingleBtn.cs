@@ -19,6 +19,7 @@ namespace TinyTeam.UI
         public override void Awake(GameObject go)
         {
             Instance = this;
+            //Debug.Log(b);
             transform.Find("PaiyankouBtn").GetComponent<Button>().onClick.AddListener(() => UIManager.Instance.AddStep());
             transform.Find("EffectBtn").GetComponent<Button>().onClick.AddListener(() => {
                 Lumen.Instance.gameObject.SetActive(!Lumen.Instance.gameObject.activeSelf);
